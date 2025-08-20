@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Explore Theme</title>
-    <link>https://yogirk.github.io/explore/categories/</link>
+    <link>http://localhost:1313/explore/categories/</link>
     <description>Recent content in Categories on Explore Theme</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 20 Aug 2025 10:00:00 +0530</lastBuildDate>
-    <atom:link href="https://yogirk.github.io/explore/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/explore/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Started</title>
-      <link>https://yogirk.github.io/explore/categories/getting-started/</link>
+      <link>http://localhost:1313/explore/categories/getting-started/</link>
       <pubDate>Wed, 20 Aug 2025 10:00:00 +0530</pubDate>
-      <guid>https://yogirk.github.io/explore/categories/getting-started/</guid>
+      <guid>http://localhost:1313/explore/categories/getting-started/</guid>
       <description></description>
     </item>
     <item>
       <title>Hugo</title>
-      <link>https://yogirk.github.io/explore/categories/hugo/</link>
+      <link>http://localhost:1313/explore/categories/hugo/</link>
       <pubDate>Wed, 20 Aug 2025 10:00:00 +0530</pubDate>
-      <guid>https://yogirk.github.io/explore/categories/hugo/</guid>
+      <guid>http://localhost:1313/explore/categories/hugo/</guid>
       <description></description>
     </item>
     <item>
       <title>Theme Guide</title>
-      <link>https://yogirk.github.io/explore/categories/theme-guide/</link>
+      <link>http://localhost:1313/explore/categories/theme-guide/</link>
       <pubDate>Tue, 19 Aug 2025 10:00:00 +0530</pubDate>
-      <guid>https://yogirk.github.io/explore/categories/theme-guide/</guid>
+      <guid>http://localhost:1313/explore/categories/theme-guide/</guid>
       <description></description>
     </item>
     <item>
       <title>Demo Content</title>
-      <link>https://yogirk.github.io/explore/categories/demo-content/</link>
+      <link>http://localhost:1313/explore/categories/demo-content/</link>
       <pubDate>Mon, 18 Aug 2025 10:00:00 +0530</pubDate>
-      <guid>https://yogirk.github.io/explore/categories/demo-content/</guid>
+      <guid>http://localhost:1313/explore/categories/demo-content/</guid>
       <description></description>
     </item>
     <item>
       <title>Features</title>
-      <link>https://yogirk.github.io/explore/categories/features/</link>
+      <link>http://localhost:1313/explore/categories/features/</link>
       <pubDate>Thu, 14 Aug 2025 11:00:00 +0530</pubDate>
-      <guid>https://yogirk.github.io/explore/categories/features/</guid>
+      <guid>http://localhost:1313/explore/categories/features/</guid>
       <description></description>
     </item>
     <item>
       <title>Layouts</title>
-      <link>https://yogirk.github.io/explore/categories/layouts/</link>
+      <link>http://localhost:1313/explore/categories/layouts/</link>
       <pubDate>Thu, 14 Aug 2025 11:00:00 +0530</pubDate>
-      <guid>https://yogirk.github.io/explore/categories/layouts/</guid>
+      <guid>http://localhost:1313/explore/categories/layouts/</guid>
       <description></description>
     </item>
   </channel>

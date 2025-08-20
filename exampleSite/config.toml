@@ -2,7 +2,8 @@ baseURL = "https://yogirk.github.io/explore/"
 languageCode = "en-us"
 title = "Explore Theme"
 theme = "explore"
-publishDir = "docs"
+# Change this to "docs" depending on your folder structure
+publishDir = "../docs" 
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
@@ -61,8 +62,8 @@ summaryLength = 70
     show = true # Set to true to show the hero section on the homepage
     title = "Explore Theme"
     tagline = "A minimal, text-heavy theme for Hugo, designed for academic sites, personal blogs, and essays. Built with Gemini Code Assist"
-    buttonText = "Learn More"
-    buttonURL = "/posts/theme-features/"
+    buttonText = "Theme on Github"
+    buttonURL = "https://github.com/yogirk/explore"
 
   [params.list]
     showExcerpt = true

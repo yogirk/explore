@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on Explore Theme</title>
-    <link>https://yogirk.github.io/explore/categories/hugo/</link>
+    <link>http://localhost:1313/explore/categories/hugo/</link>
     <description>Recent content in Hugo on Explore Theme</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 20 Aug 2025 10:00:00 +0530</lastBuildDate>
-    <atom:link href="https://yogirk.github.io/explore/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/explore/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hello World: A Guide to Getting Started</title>
-      <link>https://yogirk.github.io/explore/posts/hello-world/</link>
+      <link>http://localhost:1313/explore/posts/hello-world/</link>
       <pubDate>Wed, 20 Aug 2025 10:00:00 +0530</pubDate>
-      <guid>https://yogirk.github.io/explore/posts/hello-world/</guid>
+      <guid>http://localhost:1313/explore/posts/hello-world/</guid>
       <description>This guide will walk you through the entire process of setting up a new Hugo site and installing the Explore theme. We&amp;rsquo;ll cover installing Hugo, creating a site, adding the theme, and basic configuration to get you up and running quickly.</description>
     </item>
   </channel>
