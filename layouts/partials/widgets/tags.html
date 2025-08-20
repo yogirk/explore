@@ -1,0 +1,10 @@
+<div class="widget widget-tags">
+  <h3 class="widget-title">{{ i18n "tags" }}</h3>
+  {{ if .Site.Taxonomies.tags }}
+  <ul>
+    {{ range .Site.Taxonomies.tags.ByCount }}
+    <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></li>
+    {{ end }}
+  </ul>
+  {{ end }}
+</div>

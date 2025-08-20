@@ -1,0 +1,43 @@
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" -}}
+{{- $caption := .Get "caption" -}}
+{{- $class := .Get "class" -}}
+{{- $sizes := .Get "sizes" | default "(min-width: 1024px) 75ch, 100vw" -}}
+
+{{- $image := "" -}}
+{{- if .Page.Resources.GetMatch $src -}}
+  {{- $image = .Page.Resources.GetMatch $src -}}
+{{- else -}}
+  {{- $image = resources.Get (printf "images/%s" $src) -}}
+{{- end -}}
+
+{{- if not $image -}}
+  {{- errorf "Image not found: %q. Ensure it is in /assets/images/ or co-located with your content." $src -}}
+  {{- return -}}
+{{- end -}}
+
+{{- with $image -}}
+
+{{- $lqip := $image.Resize "20x" -}}
+{{- $src_sm := $image.Resize "640x" -}}
+{{- $src_md := $image.Resize "960x" -}}
+{{- $src_lg := $image.Resize "1280x" -}}
+{{- $src_xl := $image.Resize "1920x" -}}
+
+{{- $webp_sm := $src_sm.Process "webp" -}}
+{{- $webp_md := $src_md.Process "webp" -}}
+{{- $webp_lg := $src_lg.Process "webp" -}}
+{{- $webp_xl := $src_xl.Process "webp" -}}
+
+<figure class="figure {{ with $class }}{{ . }}{{ end }}">
+  <div class="figure-image-wrapper" style="background-image: url('{{ $lqip.RelPermalink }}'); aspect-ratio: {{ $image.Width }} / {{ $image.Height }};">
+    <picture>
+      <source srcset="{{ $webp_sm.RelPermalink }} 640w, {{ $webp_md.RelPermalink }} 960w, {{ $webp_lg.RelPermalink }} 1280w, {{ $webp_xl.RelPermalink }} 1920w" sizes="{{ $sizes }}" type="image/webp">
+      <source srcset="{{ $src_sm.RelPermalink }} 640w, {{ $src_md.RelPermalink }} 960w, {{ $src_lg.RelPermalink }} 1280w, {{ $src_xl.RelPermalink }} 1920w" sizes="{{ $sizes }}" type="{{ $image.MediaType }}">
+      <img class="figure-image" src="{{ $src_lg.RelPermalink }}" alt="{{ $alt }}" width="{{ $image.Width }}" height="{{ $image.Height }}" loading="lazy" onload="this.parentElement.parentElement.classList.add('is-loaded')">
+    </picture>
+  </div>
+  {{ with $caption }}<figcaption>{{ . | $.Page.RenderString }}</figcaption>{{ end }}
+</figure>
+
+{{- end -}}

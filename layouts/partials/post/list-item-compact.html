@@ -1,0 +1,21 @@
+<article class="post-list-item post-list-item--compact">
+  <a href="{{ .RelPermalink }}" class="compact-post-link">
+    <span class="compact-post-title">{{ .Title }}</span>
+  </a>
+  <div class="compact-post-taxonomies">
+    {{ with .Params.categories }}
+      <div class="compact-post-categories">
+        {{ range . }}
+          <a href="{{ "categories/" | relLangURL }}{{ . | urlize }}/" class="compact-post-category">{{ . }}</a>
+        {{ end }}
+      </div>
+    {{ end }}
+    {{ with .Params.tags }}
+      <div class="compact-post-tags">
+        {{- range $i, $tag := . -}}
+          <a href="{{ "tags/" | relLangURL }}{{ . | urlize }}/" class="compact-post-tag">{{ . }}</a>{{ if lt (add $i 1) (len $.Params.tags) }}, {{ end }}
+        {{- end -}}
+      </div>
+    {{ end }}
+  </div>
+</article>

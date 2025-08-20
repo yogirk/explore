@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}" dir="{{ .Language.LanguageDirection | default "ltr" }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  {{ partial "header.html" . }}
+  <main class="site-main">
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "footer.html" . }}
+  {{ $js := resources.Get "js/minimal.js" | resources.Minify }}
+  <script src="{{ $js.RelPermalink }}" defer></script>
+  {{ partial "analytics.html" . }}
+</body>
+</html>

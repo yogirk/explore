@@ -1,0 +1,11 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{ .Site.Home.RelPermalink }}">{{ i18n "home" | default "Home" }}</a></li>
+    {{- range .Ancestors.Reverse -}}
+      {{- if ne .Permalink .Site.Home.Permalink -}}
+        <li class="breadcrumb-item"><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{- end -}}
+    {{- end -}}
+    <li class="breadcrumb-item" aria-current="page">{{ .Title }}</li>
+  </ol>
+</nav>

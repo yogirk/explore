@@ -1,0 +1,23 @@
+{{ $context := .context }}
+{{ $showToc := .showToc | default false }}
+{{ $tocPosition := .tocPosition | default "off" }}
+{{ $widgetSidebarPosition := .widgetSidebarPosition }}
+
+<aside class="sidebar">
+  {{/* Render ToC if its position is 'left' or 'right' */}}
+  {{ if and $showToc (or (eq $tocPosition "left") (eq $tocPosition "right")) }}
+    {{ partial "toc.html" $context }}
+  {{ end }}
+
+  {{/* Render widgets if the widget sidebar is active on the side */}}
+  {{ if or (eq $widgetSidebarPosition "left") (eq $widgetSidebarPosition "right") }}
+    {{ $widgets := $context.Site.Params.sidebar.widgets }}
+    {{ if $widgets }}
+      <div class="widget-area">
+        {{ range $widgets }}
+          {{ partial (printf "widgets/%s.html" .) $context }}
+        {{ end }}
+      </div>
+    {{ end }}
+  {{ end }}
+</aside>

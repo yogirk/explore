@@ -1,0 +1,45 @@
+{{ define "main" }}
+<div class="container">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Content }}
+      <div class="page-content">
+        {{ . }}
+      </div>
+    {{ end }}
+  </header>
+
+  <div class="post-list">
+    {{ $paginator := .Paginate .Pages }}
+    {{ range $paginator.Pages }}
+      <article class="post-list-item">
+        <header>
+          <h2 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+          <div class="post-meta">
+            {{ with .Date }}
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <time datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">{{ .Format ($.Site.Params.dateFormat | default "Jan 2, 2006") }}</time>
+              </span>
+            {{ end }}
+          </div>
+        </header>
+        {{ if $.Site.Params.list.showExcerpt | default true }}
+          <div class="post-excerpt">
+            {{ $summary := "" }}
+            {{ if .Summary }}
+              {{ $summary = .Summary }}
+            {{ else }}
+              {{ $summary = .Plain | truncate ( $.Site.Params.list.excerptLength | default 150 ) }}
+            {{ end }}
+            {{ $summary | safeHTML }}
+          </div>
+        {{ end }}
+        <a href="{{ .RelPermalink }}" class="read-more">{{ i18n "readMore" }} &rarr;</a>
+      </article>
+    {{ end }}
+  </div>
+
+  {{ partial "pagination.html" . }}
+</div>
+{{ end }}

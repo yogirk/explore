@@ -1,0 +1,35 @@
+{{ define "main" }}
+{{ $sidebarPosition := .Site.Params.sidebar.globalPosition | default "right" }}
+
+{{ if .Site.Params.hero.show | default false }}
+  {{ partial "hero.html" . }}
+{{ end }}
+
+<div class="container site-main">
+  {{ if .Content }}
+  <div class="page-content">
+    {{ .Content }}
+  </div>
+  {{ end }}
+  <div class="layout-grid {{ if or (eq $sidebarPosition "left") (eq $sidebarPosition "right") }}layout-grid--sidebar-{{ $sidebarPosition }}{{ end }}">
+    <div class="main-content {{ if eq $sidebarPosition "left" }}main-content--sidebar-left{{ end }}">
+      <div class="post-list">
+        {{ $paginator := .Paginate (where .Site.RegularPages.ByDate.Reverse "Type" "in" (.Site.Params.mainSections | default (slice "posts"))) }}
+        {{ $homeView := .Site.Params.ui.homeView | default "default" }}
+        {{ range $paginator.Pages }}
+          {{ if eq $homeView "compact" }}
+            {{ partial "post/list-item-compact.html" . }}
+          {{ else }}
+            {{ partial "post/list-item-default.html" . }}
+          {{ end }}
+        {{ end }}
+      </div>
+      {{ partial "pagination.html" . }}
+    </div>
+
+    {{ if or (eq $sidebarPosition "left") (eq $sidebarPosition "right") }}
+      {{ partial "sidebar.html" (dict "context" . "widgetSidebarPosition" $sidebarPosition) }}
+    {{ end }}
+  </div>
+</div>
+{{ end }}

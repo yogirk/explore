@@ -1,0 +1,91 @@
+baseURL = "https://example.org/"
+languageCode = "en-us"
+title = "Explore Theme"
+theme = "explore"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[build]
+  writeStats = true
+# Default length of generated summaries (in words).
+summaryLength = 70
+[pagination]
+  pagerSize = 5
+
+# Enable Hugo's related content feature
+[related]
+  includeNewer = true
+  threshold = 80
+  toLower = true
+  [[related.indices]]
+    name = "tags"
+    weight = 100
+  [[related.indices]]
+    name = "categories"
+    weight = 80
+  [[related.indices]]
+    name = "date"
+    weight = 10
+
+[params]
+  author = "Rain Doctor"
+  description = "A minimal, text-heavy theme for Hugo."
+  logo = "images/logo.svg" # Path to your logo in the static folder. Leave empty to use site title.
+  tagline = "A minimal, text-heavy theme for Hugo" # Appears under the site title/logo
+
+  # --- UI Settings ---
+  [params.ui]
+    stickyHeader = true
+    showSearch = true # Show search icon in header
+    searchEngine = "fuse" # options: fuse, pagefind
+    homeView = "default" # options: "default", "compact"
+
+  # --- Style Settings ---
+  [params.style]
+    primary = "#6C3DBF"
+    accent  = "#5FA8A3"
+    # max-width for the overall page container. Use any valid CSS unit (e.g., "1280px", "80rem").
+    containerMaxWidth = "1280px"
+    # max-width for the readable content (like posts). Uses 'ch' unit, which is roughly the width of the '0' character.
+    maxWidthCh = 75
+
+  # --- Widgets & Sidebar ---
+  [params.sidebar]
+    globalPosition = "left" # Options: "left", "right", "bottom", "off"
+    widgets = ["recent", "categories", "tags"]
+    recentCount = 5
+
+  [params.hero]
+    show = true # Set to true to show the hero section on the homepage
+    title = "Explore Theme"
+    tagline = "A minimal, text-heavy theme for Hugo, designed for academic sites, personal blogs, and essays. Built with Gemini Code Assist"
+    buttonText = "Learn More"
+    buttonURL = "/posts/theme-features/"
+
+  [params.list]
+    showExcerpt = true
+
+  [params.single]
+    showPrevNext = true
+    showRelated = true
+    relatedCount = 4
+    [params.single.toc]
+      enable = true # Enable the ToC. Can be disabled per-page with `toc: false`
+      position = "left" # Options: "inline", "left", "right", "off"
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 10
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/pages/about/"
+    weight = 20
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/pages/contact/"
+    weight = 30

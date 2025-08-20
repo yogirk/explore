@@ -1,0 +1,8 @@
+{{ define "main" }}
+<div class="container page-404">
+  <h1>404</h1>
+  <h2>{{ i18n "pageNotFound" }}</h2>
+  <p>{{ i18n "pageNotFoundMsg" }}</p>
+  <a href="{{ "/" | relLangURL }}" class="read-more">Go to Homepage</a>
+</div>
+{{ end }}

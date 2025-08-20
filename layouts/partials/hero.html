@@ -1,0 +1,13 @@
+{{ with .Site.Params.hero }}
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">{{ .title | markdownify }}</h1>
+      <p class="hero-tagline">{{ .tagline | markdownify }}</p>
+      {{ if and .buttonText .buttonURL }}
+        <a href="{{ .buttonURL | relLangURL }}" class="hero-button">{{ .buttonText }}</a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,90 @@
+{{ define "main" }}
+{{/* Determine sidebar position from front matter, then site config */}}
+{{ $widgetSidebarPosition := .Params.sidebar.position | default .Site.Params.sidebar.globalPosition }}
+
+{{/* Determine ToC settings */}}
+{{ $siteTocConfig := .Site.Params.single.toc | default dict }}
+{{ $pageTocConfig := .Params.toc }}
+
+{{/* Start with site-wide defaults */}}
+{{ $tocEnabled := $siteTocConfig.enable | default true }}
+{{ $tocPosition := $siteTocConfig.position | default "inline" }}
+
+{{/* Handle page-level overrides from front matter */}}
+{{ if isset .Params "toc" }}
+  {{ if reflect.IsMap $pageTocConfig }}
+    {{/* If toc is a map, check for 'enable' and 'position' keys */}}
+    {{ with $pageTocConfig.enable }}{{ $tocEnabled = . }}{{ end }}
+    {{ with $pageTocConfig.position }}{{ $tocPosition = . }}{{ end }}
+  {{ else }}
+    {{/* Otherwise, assume it's a boolean to just enable/disable */}}
+    {{ $tocEnabled = $pageTocConfig }}
+  {{ end }}
+{{ end }}
+
+{{ $showToc := and $tocEnabled (ne .TableOfContents "") (ne $tocPosition "off") }}
+
+{{/* Determine final layout based on ToC and widget sidebars */}}
+{{ $layoutPosition := "none" }}
+{{ if and $showToc (or (eq $tocPosition "left") (eq $tocPosition "right")) }}
+  {{ $layoutPosition = $tocPosition }}
+{{ else if or (eq $widgetSidebarPosition "left") (eq $widgetSidebarPosition "right") }}
+  {{ $layoutPosition = $widgetSidebarPosition }}
+{{ end }}
+
+<div class="container">
+  <div class="layout-grid {{ if ne $layoutPosition "none" }}layout-grid--sidebar-{{ $layoutPosition }}{{ end }}">
+    <article class="post-single main-content {{ if eq $layoutPosition "left" }}main-content--sidebar-left{{ end }}">
+      <header class="post-header">
+        {{ partial "breadcrumbs.html" . }}
+        <h1 class="post-title">{{ .Title }}</h1>
+        <div class="post-meta">
+          {{ with .Date }}
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              <time datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">{{ .Format ($.Site.Params.dateFormat | default "Jan 2, 2006") }}</time>
+            </span>
+          {{ end }}
+          {{ with .Params.author | default $.Site.Params.author }}
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              {{ . }}
+            </span>
+          {{ end }}
+        </div>
+      </header>
+
+      {{ if and $showToc (eq $tocPosition "inline") }}
+        {{ partial "toc.html" . }}
+      {{ end }}
+
+      <div class="post-content">
+        {{ .Content }}
+      </div>
+
+      <footer>
+        {{ with .Params.tags }}
+        <div class="post-tags">
+          {{ range . }}
+            <a href="{{ "tags/" | relLangURL }}{{ . | urlize }}/" class="tag-link">{{ . }}</a>
+          {{ end }}
+        </div>
+        {{ end }}
+      </footer>
+    </article>
+
+    {{/* Render sidebar if position is left or right */}}
+    {{ if ne $layoutPosition "none" }}
+      {{ partial "sidebar.html" (dict "context" . "showToc" $showToc "tocPosition" $tocPosition "widgetSidebarPosition" $widgetSidebarPosition) }}
+    {{ end }}
+  </div>
+
+  {{ if .Site.Params.single.showPrevNext | default true }}
+    {{ partial "post/prevnext.html" . }}
+  {{ end }}
+
+  {{ if .Site.Params.single.showRelated | default true }}
+    {{ partial "post/related.html" . }}
+  {{ end }}
+</div>
+{{ end }}
