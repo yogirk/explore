@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Typography on Explore Theme</title>
+    <link>https://yogirk.github.io/explore/tags/typography/</link>
+    <description>Recent content in Typography on Explore Theme</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 18 Aug 2025 10:00:00 +0530</lastBuildDate>
+    <atom:link href="https://yogirk.github.io/explore/tags/typography/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Markdown &amp; Typography Guide</title>
+      <link>https://yogirk.github.io/explore/posts/markdown-and-typography/</link>
+      <pubDate>Mon, 18 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://yogirk.github.io/explore/posts/markdown-and-typography/</guid>
+      <description>A demonstration of all the basic Markdown elements and typographic styles available in the Explore theme, including headings, lists, blockquotes, and more.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Markdown &amp; Typography Guide &middot; Explore Theme</title>
+
+<meta name="description" content="A demonstration of all the basic Markdown elements and typographic styles available in the Explore theme.">
+<meta name="author" content="Rain Doctor">
+<link rel="canonical" href="https://yogirk.github.io/explore/posts/markdown-and-typography/">
+
+
+<link rel="icon" href="/explore/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/explore/apple-touch-icon.png">
+<link rel="manifest" href="/explore/manifest.webmanifest">
+
+
+<meta property="og:title" content="Markdown &amp; Typography Guide">
+<meta property="og:description" content="A demonstration of all the basic Markdown elements and typographic styles available in the Explore theme.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yogirk.github.io/explore/posts/markdown-and-typography/">
+
+
+
+<meta property="article:section" content="posts">
+
+<meta property="article:tag" content="typography">
+
+<meta property="article:tag" content="markdown">
+
+<meta property="article:tag" content="style">
+
+
+<meta property="article:published_time" content="2025-08-18 10:00:00 &#43;0530 IST">
+
+
+<meta property="article:modified_time" content="2025-08-18 10:00:00 &#43;0530 IST">
+
+
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Markdown &amp; Typography Guide">
+<meta name="twitter:description" content="A demonstration of all the basic Markdown elements and typographic styles available in the Explore theme.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Markdown \u0026 Typography Guide",
+  "name": "Markdown \u0026 Typography Guide",
+  "description": "A demonstration of all the basic Markdown elements and typographic styles available in the Explore theme.",
+  "url": "https:\/\/yogirk.github.io\/explore\/posts\/markdown-and-typography\/",
+  
+  "datePublished": "2025-08-18T10:00:00\u002b05:30",
+  "dateModified": "2025-08-18T10:00:00\u002b05:30",
+  "author": {
+    "@type": "Person",
+    "name": "Rain Doctor"
+  },
+  
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/yogirk.github.io\/explore\/posts\/markdown-and-typography\/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Explore Theme",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/yogirk.github.io\/explore\/apple-touch-icon.png"
+    }
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="/explore/css/style.ddb56402bbafab7eb3f21a38318745ca95019f3cc57be028513f49cf1f192ef2.css" integrity="sha256-3bVkAruvq36z8ho4MYdFypUBnzzFe&#43;AoUT9Jzx8ZLvI=">
+
+
+
+
+</head>
+<body>
+  <header class="site-header is-sticky">
+  <div class="container header-inner">
+    <div class="site-identity">
+      <a href="/explore/" class="site-brand">
+        
+          <img src="/explore/images/logo.svg" alt="Explore Theme logo">
+        
+      </a>
+      
+        <p class="site-tagline">A minimal, text-heavy theme for Hugo</p>
+      
+    </div>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Menu" aria-controls="site-nav" aria-expanded="false">
+      <svg class="icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+    <nav id="site-nav" class="site-nav">
+      <div class="main-nav">
+        <ul>
+          
+          
+          <li>
+            <a href="/explore/posts/" class="">Posts</a>
+          </li>
+          
+          <li>
+            <a href="/explore/pages/about/" class="">About</a>
+          </li>
+          
+          <li>
+            <a href="/explore/pages/contact/" class="">Contact</a>
+          </li>
+          
+        </ul>
+      </div>
+      
+      <a href="/explore/search" class="nav-search" aria-label="Search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </a>
+      
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" aria-pressed="false">
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+  <main class="site-main">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+
+
+
+
+
+
+
+  
+
+
+<div class="container">
+  <div class="layout-grid layout-grid--sidebar-left">
+    <article class="post-single main-content main-content--sidebar-left">
+      <header class="post-header">
+        <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/explore/">Home</a></li><li class="breadcrumb-item"><a href="/explore/posts/">All Posts</a></li><li class="breadcrumb-item" aria-current="page">Markdown &amp; Typography Guide</li>
+  </ol>
+</nav>
+        <h1 class="post-title">Markdown &amp; Typography Guide</h1>
+        <div class="post-meta">
+          
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              <time datetime="2025-08-18T10:00:00&#43;05:30">Aug 18, 2025</time>
+            </span>
+          
+          
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              Rain Doctor
+            </span>
+          
+        </div>
+      </header>
+
+      
+
+      <div class="post-content">
+        <p>This post showcases the styling of all basic Markdown elements, which can be used to format your content.</p>
+<hr>
+<h2 id="headings">Headings</h2>
+<p>The following are the six levels of headings available. Although, If you ever have to reach heading 6, you are doing something serious or funny. Or something seriously funny!</p>
+<h1 id="heading-1">Heading 1</h1>
+<h2 id="heading-2">Heading 2</h2>
+<h3 id="heading-3">Heading 3</h3>
+<h4 id="heading-4">Heading 4</h4>
+<h5 id="heading-5">Heading 5</h5>
+<h6 id="heading-6">Heading 6</h6>
+<hr>
+<h2 id="paragraphs-and-text-styles">Paragraphs and Text Styles</h2>
+<p>This is a standard paragraph. It can contain <strong>bold text</strong>, <em>italic text</em>, and <code>inline code</code>. You can also create links to <a href="https://ravana.app/">other websites</a>.</p>
+<p>When you have to write a paragraph but you don&rsquo;t want to use <em>lorem ipsum</em>, for such a lifeless text is an insult to reader&rsquo;s intelligence - all you need to do is summon PG Wodehouse and imagine how Jeeves would explain AI to Wooster. Here is my take - &ldquo;One might think of it, sir, as an attempt to bottle my services, but with the most vital ingredients left out. This &lsquo;AI&rsquo; can retrieve information with the speed of a startled gazelle and construct a plan with terrifying logic, yet it lacks the critical faculty of, shall we say, judgement. It could devise a dozen ways to extricate you from a locked room, but would be utterly flummoxed if asked to tactfully dissuade your Aunt Agatha from wearing her new hat.&rdquo;</p>
+<hr>
+<h2 id="blockquotes">Blockquotes</h2>
+<p>Blockquotes are useful for highlighting sections of text. We can invoke someone more serious than Wodehouse, Mr Salinger.</p>
+<blockquote>
+<p>I&rsquo;m not afraid to compete. It&rsquo;s just the opposite. Don&rsquo;t you see that? I&rsquo;m afraid I will compete — that&rsquo;s what scares me. That&rsquo;s why I quit the Theatre Department. Just because I&rsquo;m so horribly conditioned to accept everybody else&rsquo;s values, and just because I like applause and people to rave about me, doesn&rsquo;t make it right. I&rsquo;m ashamed of it. I&rsquo;m sick of it. I&rsquo;m sick of not having the courage to be an absolute nobody. I&rsquo;m sick of myself and everybody else that wants to make some kind of a splash</p>
+<p>&ndash; J.D. Salinger, Franny and Zooey</p></blockquote>
+<hr>
+<h2 id="lists">Lists</h2>
+<h3 id="unordered-list">Unordered List</h3>
+<ul>
+<li>Dust Tomes</li>
+<li>Sniff Pages</li>
+<li>Whisper secrets
+<ul>
+<li>Misplace bookmark</li>
+<li>Reread footnote</li>
+</ul>
+</li>
+<li>Shush loudly</li>
+</ul>
+<h3 id="ordered-list">Ordered List</h3>
+<ol>
+<li>Chaos</li>
+<li>Reigns within
+<ol>
+<li>Reflect</li>
+<li>Repent</li>
+<li>Reboot</li>
+</ol>
+</li>
+<li>Order Shall Return</li>
+</ol>
+<h3 id="code-snippets">Code Snippets</h3>
+<p>The theme supports syntax highlighting for code blocks using Hugo&rsquo;s built-in Chroma highlighter.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Hello, Hugo!&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="shortcodes">Shortcodes</h2>
+<p>We&rsquo;ve included some useful shortcodes to enhance your content. When I say &ldquo;We&rdquo;, it is I and my good friend <strong>Gemini Code Assist</strong></p>
+<h3 id="figure">Figure</h3>
+<p>Use the <code>figure</code> shortcode for images with captions. It generates responsive images.</p>
+<figure class="figure ">
+  <div class="figure-image-wrapper" style="background-image: url('/explore/images/placeholder_hu_13449712e83b228.png'); aspect-ratio: 1024 / 1024;">
+    <picture>
+      <source srcset="/explore/images/placeholder_hu_b86fb105a1abddd0.webp 640w, /explore/images/placeholder_hu_a73b75b972013b17.webp 960w, /explore/images/placeholder_hu_ef9e056f58341ccb.webp 1280w, /explore/images/placeholder_hu_f80c6d3b5bcaaea5.webp 1920w" sizes="(min-width: 1024px) 75ch, 100vw" type="image/webp">
+      <source srcset="/explore/images/placeholder_hu_d61c7cd30ef141c1.png 640w, /explore/images/placeholder_hu_1a166fc8733c0513.png 960w, /explore/images/placeholder_hu_c18d1542f4f306b3.png 1280w, /explore/images/placeholder_hu_ffdceea14e1d48e3.png 1920w" sizes="(min-width: 1024px) 75ch, 100vw" type="image/png">
+      <img class="figure-image" src="/explore/images/placeholder_hu_c18d1542f4f306b3.png" alt="A placeholder image" width="1024" height="1024" loading="lazy" onload="this.parentElement.parentElement.classList.add('is-loaded')">
+    </picture>
+  </div>
+  <figcaption>This image is generated with ChatGPT.</figcaption>
+</figure>
+<h3 id="callout">Callout</h3>
+<p>Use the <code>callout</code> shortcode to draw attention to important information. If you want the prompt I used for generating this image, here you go.</p>
+<div class="callout info"><strong>Prompt:</strong> A majestic bald eagle flying low over a perfectly still, crystal-clear alpine lake, with its wings spread wide and just above the water&rsquo;s surface, creating a soft ripple. The lake reflects the eagle, the surrounding dense pine forest, and the distant snow-capped mountains. The scene is symmetrically framed with a vivid blue sky, serene and peaceful atmosphere, and cinematic depth of field. Shot from behind the eagle, centered in the frame, capturing the moment it glides gracefully into the wild.</div>
+<div class="callout warning"><strong>Warning:</strong> This is a warning callout. Use it for important caveats or warnings.</div>
+<p>That&rsquo;s a brief overview. Feel free to explore the <a href="/explore/posts/theme-features/">theme&rsquo;s features</a> and customize it to your liking.</p>
+
+      </div>
+
+      <footer>
+        
+        <div class="post-tags">
+          
+            <a href="/explore/tags/typography/" class="tag-link">typography</a>
+          
+            <a href="/explore/tags/markdown/" class="tag-link">markdown</a>
+          
+            <a href="/explore/tags/style/" class="tag-link">style</a>
+          
+        </div>
+        
+      </footer>
+    </article>
+
+    
+    
+      
+
+
+
+
+<aside class="sidebar">
+  
+  
+    <aside class="toc">
+  <h2 class="toc-title">Table of Contents</h2>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#headings">Headings</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#heading-2">Heading 2</a>
+      <ul>
+        <li><a href="#heading-3">Heading 3</a></li>
+      </ul>
+    </li>
+    <li><a href="#paragraphs-and-text-styles">Paragraphs and Text Styles</a></li>
+    <li><a href="#blockquotes">Blockquotes</a></li>
+    <li><a href="#lists">Lists</a>
+      <ul>
+        <li><a href="#unordered-list">Unordered List</a></li>
+        <li><a href="#ordered-list">Ordered List</a></li>
+        <li><a href="#code-snippets">Code Snippets</a></li>
+      </ul>
+    </li>
+    <li><a href="#shortcodes">Shortcodes</a>
+      <ul>
+        <li><a href="#figure">Figure</a></li>
+        <li><a href="#callout">Callout</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</aside>
+  
+
+  
+  
+    
+    
+      <div class="widget-area">
+        
+          <div class="widget widget-recent">
+  <h3 class="widget-title">Recent Posts</h3>
+  <ul>
+    
+    
+    <li><a href="/explore/posts/hello-world/">Hello World: A Guide to Getting Started</a></li>
+    
+    <li><a href="/explore/posts/theme-features/">Explore Theme Features</a></li>
+    
+    <li><a href="/explore/posts/markdown-and-typography/">Markdown &amp; Typography Guide</a></li>
+    
+    <li><a href="/explore/posts/post-with-widgets/">A Post with Widgets</a></li>
+    
+    <li><a href="/explore/pages/contact/">Contact Us</a></li>
+    
+  </ul>
+</div>
+        
+          <div class="widget widget-categories">
+  <h3 class="widget-title">Categories</h3>
+  
+  <ul>
+    
+    <li><a href="/explore/categories/demo-content/">Demo Content (1)</a></li>
+    
+    <li><a href="/explore/categories/features/">Features (1)</a></li>
+    
+    <li><a href="/explore/categories/getting-started/">Getting Started (1)</a></li>
+    
+    <li><a href="/explore/categories/hugo/">Hugo (1)</a></li>
+    
+    <li><a href="/explore/categories/layouts/">Layouts (1)</a></li>
+    
+    <li><a href="/explore/categories/theme-guide/">Theme Guide (1)</a></li>
+    
+  </ul>
+  
+</div>
+        
+          <div class="widget widget-tags">
+  <h3 class="widget-title">Tags</h3>
+  
+  <ul>
+    
+    <li><a href="/explore/tags/demo/">Demo</a></li>
+    
+    <li><a href="/explore/tags/hugo/">Hugo</a></li>
+    
+    <li><a href="/explore/tags/documentation/">Documentation</a></li>
+    
+    <li><a href="/explore/tags/features/">Features</a></li>
+    
+    <li><a href="/explore/tags/guide/">Guide</a></li>
+    
+    <li><a href="/explore/tags/markdown/">Markdown</a></li>
+    
+    <li><a href="/explore/tags/sidebar/">Sidebar</a></li>
+    
+    <li><a href="/explore/tags/style/">Style</a></li>
+    
+    <li><a href="/explore/tags/typography/">Typography</a></li>
+    
+    <li><a href="/explore/tags/welcome/">Welcome</a></li>
+    
+    <li><a href="/explore/tags/widgets/">Widgets</a></li>
+    
+  </ul>
+  
+</div>
+        
+      </div>
+    
+  
+</aside>
+
+    
+  </div>
+
+  
+    
+
+<nav class="post-nav">
+  
+  <a href="/explore/posts/post-with-widgets/" class="nav-prev">
+    <span class="nav-label">&larr; Previous Post</span>
+    <span class="nav-title">A Post with Widgets</span>
+  </a>
+  
+  
+  <a href="/explore/posts/theme-features/" class="nav-next">
+    <span class="nav-label">Next Post &rarr;</span>
+    <span class="nav-title">Explore Theme Features</span>
+  </a>
+  
+</nav>
+
+  
+
+  
+    
+
+  
+</div>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    
+    
+    <div class="copyright">
+      Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &amp; <a href="https://github.com/yogirk/explore" target="_blank" rel="noopener">Explore Theme</a>.
+      <br>
+      Built with <a href="https://codeassist.google/" target="_blank" rel="noopener">Gemini CodeAssist</a>.
+    </div>
+  </div>
+</footer>
+
+  
+  <script src="/explore/js/minimal.min.js" defer></script>
+  
+</body>
+</html>

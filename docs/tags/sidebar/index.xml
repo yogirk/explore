@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sidebar on Explore Theme</title>
+    <link>https://yogirk.github.io/explore/tags/sidebar/</link>
+    <description>Recent content in Sidebar on Explore Theme</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 14 Aug 2025 11:00:00 +0530</lastBuildDate>
+    <atom:link href="https://yogirk.github.io/explore/tags/sidebar/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Post with Widgets</title>
+      <link>https://yogirk.github.io/explore/posts/post-with-widgets/</link>
+      <pubDate>Thu, 14 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://yogirk.github.io/explore/posts/post-with-widgets/</guid>
+      <description>&lt;p&gt;This post demonstrates a page with a widget sidebar but no Table of Contents in the sidebar.&lt;/p&gt;&#xA;&lt;p&gt;The theme&amp;rsquo;s logic first checks if the Table of Contents is configured to display in the &lt;code&gt;left&lt;/code&gt; or &lt;code&gt;right&lt;/code&gt; sidebar. If it is, the ToC takes precedence.&lt;/p&gt;&#xA;&lt;p&gt;If the ToC is set to &lt;code&gt;inline&lt;/code&gt; or is disabled (like on this page with &lt;code&gt;toc: false&lt;/code&gt;), the theme will then check for the &lt;code&gt;sidebar.position&lt;/code&gt; setting. If that is set to &lt;code&gt;left&lt;/code&gt; or &lt;code&gt;right&lt;/code&gt;, the widget area will be displayed.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

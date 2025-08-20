@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Theme Guide on Explore Theme</title>
+    <link>https://yogirk.github.io/explore/categories/theme-guide/</link>
+    <description>Recent content in Theme Guide on Explore Theme</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Aug 2025 10:00:00 +0530</lastBuildDate>
+    <atom:link href="https://yogirk.github.io/explore/categories/theme-guide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Explore Theme Features</title>
+      <link>https://yogirk.github.io/explore/posts/theme-features/</link>
+      <pubDate>Tue, 19 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://yogirk.github.io/explore/posts/theme-features/</guid>
+      <description>Explore is a minimal, text-heavy theme for Hugo, designed for academic sites, personal blogs, and essays. This post provides a detailed overview of its features and configuration.</description>
+    </item>
+  </channel>
+</rss>

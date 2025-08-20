@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explore Theme Features &middot; Explore Theme</title>
+
+<meta name="description" content="A detailed overview of the features and configuration options of the Explore theme for Hugo.">
+<meta name="author" content="Rain Doctor">
+<link rel="canonical" href="https://yogirk.github.io/explore/posts/theme-features/">
+
+
+<link rel="icon" href="/explore/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/explore/apple-touch-icon.png">
+<link rel="manifest" href="/explore/manifest.webmanifest">
+
+
+<meta property="og:title" content="Explore Theme Features">
+<meta property="og:description" content="A detailed overview of the features and configuration options of the Explore theme for Hugo.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yogirk.github.io/explore/posts/theme-features/">
+
+
+
+<meta property="article:section" content="posts">
+
+<meta property="article:tag" content="features">
+
+<meta property="article:tag" content="documentation">
+
+<meta property="article:tag" content="hugo">
+
+
+<meta property="article:published_time" content="2025-08-19 10:00:00 &#43;0530 IST">
+
+
+<meta property="article:modified_time" content="2025-08-19 10:00:00 &#43;0530 IST">
+
+
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Explore Theme Features">
+<meta name="twitter:description" content="A detailed overview of the features and configuration options of the Explore theme for Hugo.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Explore Theme Features",
+  "name": "Explore Theme Features",
+  "description": "A detailed overview of the features and configuration options of the Explore theme for Hugo.",
+  "url": "https:\/\/yogirk.github.io\/explore\/posts\/theme-features\/",
+  
+  "datePublished": "2025-08-19T10:00:00\u002b05:30",
+  "dateModified": "2025-08-19T10:00:00\u002b05:30",
+  "author": {
+    "@type": "Person",
+    "name": "Rain Doctor"
+  },
+  
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/yogirk.github.io\/explore\/posts\/theme-features\/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Explore Theme",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/yogirk.github.io\/explore\/apple-touch-icon.png"
+    }
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="/explore/css/style.ddb56402bbafab7eb3f21a38318745ca95019f3cc57be028513f49cf1f192ef2.css" integrity="sha256-3bVkAruvq36z8ho4MYdFypUBnzzFe&#43;AoUT9Jzx8ZLvI=">
+
+
+
+
+</head>
+<body>
+  <header class="site-header is-sticky">
+  <div class="container header-inner">
+    <div class="site-identity">
+      <a href="/explore/" class="site-brand">
+        
+          <img src="/explore/images/logo.svg" alt="Explore Theme logo">
+        
+      </a>
+      
+        <p class="site-tagline">A minimal, text-heavy theme for Hugo</p>
+      
+    </div>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Menu" aria-controls="site-nav" aria-expanded="false">
+      <svg class="icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+    <nav id="site-nav" class="site-nav">
+      <div class="main-nav">
+        <ul>
+          
+          
+          <li>
+            <a href="/explore/posts/" class="">Posts</a>
+          </li>
+          
+          <li>
+            <a href="/explore/pages/about/" class="">About</a>
+          </li>
+          
+          <li>
+            <a href="/explore/pages/contact/" class="">Contact</a>
+          </li>
+          
+        </ul>
+      </div>
+      
+      <a href="/explore/search" class="nav-search" aria-label="Search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </a>
+      
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" aria-pressed="false">
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+  <main class="site-main">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+
+
+
+
+
+
+
+  
+
+
+<div class="container">
+  <div class="layout-grid layout-grid--sidebar-left">
+    <article class="post-single main-content main-content--sidebar-left">
+      <header class="post-header">
+        <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/explore/">Home</a></li><li class="breadcrumb-item"><a href="/explore/posts/">All Posts</a></li><li class="breadcrumb-item" aria-current="page">Explore Theme Features</li>
+  </ol>
+</nav>
+        <h1 class="post-title">Explore Theme Features</h1>
+        <div class="post-meta">
+          
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              <time datetime="2025-08-19T10:00:00&#43;05:30">Aug 19, 2025</time>
+            </span>
+          
+          
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              Rain Doctor
+            </span>
+          
+        </div>
+      </header>
+
+      
+
+      <div class="post-content">
+        <p><strong>Explore</strong> is a minimal, text-heavy theme for Hugo, designed for academic sites, personal blogs, and essays. It prioritizes readability, performance, accessibility, and maintainability. Explore is built with Gemini Code Assist.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>High Performance:</strong> Minimal CSS and JS, with performance budgets in mind.</li>
+<li><strong>Accessible:</strong> WCAG 2.1 AA compliant, with full keyboard navigation and screen-reader support.</li>
+<li><strong>Responsive &amp; Modern:</strong> Looks great on all devices, with a clean, modern aesthetic.</li>
+<li><strong>Dark Mode:</strong> Automatic and manual dark mode switching.</li>
+<li><strong>Configurable Search:</strong> Choose between client-side search with Fuse.js or Pagefind.</li>
+<li><strong>Widgets:</strong> Server-rendered widgets for recent posts, categories, and tags.</li>
+<li><strong>SEO Optimized:</strong> Includes JSON-LD, OpenGraph, and Twitter Card metadata.</li>
+<li><strong>Hugo Pipes:</strong> Uses Hugo&rsquo;s asset pipeline for CSS processing.</li>
+</ul>
+<h2 id="configuration">Configuration</h2>
+<p>All theme options are configured in your site&rsquo;s <code>config.toml</code> under the <code>[params]</code> section. Below is a breakdown of the available parameters, matching the <code>exampleSite/config.toml</code>.</p>
+<h3 id="ui-parameters">UI Parameters</h3>
+<p>These settings control the behavior of user interface elements.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">ui</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">stickyHeader</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">showSearch</span> = <span style="color:#66d9ef">true</span> <span style="color:#75715e"># Show search icon in header</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">searchEngine</span> = <span style="color:#e6db74">&#34;fuse&#34;</span> <span style="color:#75715e"># options: fuse, pagefind</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">homeView</span> = <span style="color:#e6db74">&#34;default&#34;</span> <span style="color:#75715e"># options: &#34;default&#34;, &#34;compact&#34;</span>
+</span></span></code></pre></div><h3 id="style-parameters">Style Parameters</h3>
+<p>These settings control the visual appearance of the theme.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">style</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">primary</span> = <span style="color:#e6db74">&#34;#6C3DBF&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">accent</span>  = <span style="color:#e6db74">&#34;#5FA8A3&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">containerMaxWidth</span> = <span style="color:#e6db74">&#34;1280px&#34;</span>  <span style="color:#75715e"># Max width of the site container</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">maxWidthCh</span> = <span style="color:#ae81ff">75</span>               <span style="color:#75715e"># Max width of readable content in &#39;ch&#39; units</span>
+</span></span></code></pre></div><h3 id="sidebar--widgets">Sidebar &amp; Widgets</h3>
+<p>Control the global sidebar position and which widgets are displayed.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">sidebar</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">globalPosition</span> = <span style="color:#e6db74">&#34;right&#34;</span> <span style="color:#75715e"># Options: &#34;left&#34;, &#34;right&#34;, &#34;bottom&#34;, &#34;off&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">widgets</span> = [<span style="color:#e6db74">&#34;recent&#34;</span>, <span style="color:#e6db74">&#34;categories&#34;</span>, <span style="color:#e6db74">&#34;tags&#34;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">recentCount</span> = <span style="color:#ae81ff">5</span>
+</span></span></code></pre></div><h3 id="homepage-hero">Homepage Hero</h3>
+<p>Configure the hero section that can be displayed at the top of the homepage.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">hero</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">show</span> = <span style="color:#66d9ef">false</span> <span style="color:#75715e"># Set to true to show the hero section</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;Explore Theme&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">tagline</span> = <span style="color:#e6db74">&#34;A minimal, text-heavy theme for Hugo, designed for academic sites, personal blogs, and essays.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">buttonText</span> = <span style="color:#e6db74">&#34;Learn More&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">buttonURL</span> = <span style="color:#e6db74">&#34;/pages/about/&#34;</span>
+</span></span></code></pre></div><h3 id="single-page--toc-parameters">Single Page &amp; ToC Parameters</h3>
+<p>Control elements on single post pages.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">single</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">showPrevNext</span> = <span style="color:#66d9ef">true</span>   <span style="color:#75715e"># Show previous/next post navigation</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">showRelated</span> = <span style="color:#66d9ef">true</span>    <span style="color:#75715e"># Show related posts</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">relatedCount</span> = <span style="color:#ae81ff">4</span>      <span style="color:#75715e"># Number of related posts to show</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">single</span>.<span style="color:#a6e22e">toc</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">enable</span> = <span style="color:#66d9ef">true</span>       <span style="color:#75715e"># Enable the ToC. Can be disabled per-page with `toc: false`</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">position</span> = <span style="color:#e6db74">&#34;right&#34;</span> <span style="color:#75715e"># ToC position. Options: &#34;inline&#34;, &#34;left&#34;, &#34;right&#34;, &#34;off&#34;</span>
+</span></span></code></pre></div>
+      </div>
+
+      <footer>
+        
+        <div class="post-tags">
+          
+            <a href="/explore/tags/features/" class="tag-link">features</a>
+          
+            <a href="/explore/tags/documentation/" class="tag-link">documentation</a>
+          
+            <a href="/explore/tags/hugo/" class="tag-link">hugo</a>
+          
+        </div>
+        
+      </footer>
+    </article>
+
+    
+    
+      
+
+
+
+
+<aside class="sidebar">
+  
+  
+    <aside class="toc">
+  <h2 class="toc-title">Table of Contents</h2>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#configuration">Configuration</a>
+      <ul>
+        <li><a href="#ui-parameters">UI Parameters</a></li>
+        <li><a href="#style-parameters">Style Parameters</a></li>
+        <li><a href="#sidebar--widgets">Sidebar &amp; Widgets</a></li>
+        <li><a href="#homepage-hero">Homepage Hero</a></li>
+        <li><a href="#single-page--toc-parameters">Single Page &amp; ToC Parameters</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</aside>
+  
+
+  
+  
+    
+    
+      <div class="widget-area">
+        
+          <div class="widget widget-recent">
+  <h3 class="widget-title">Recent Posts</h3>
+  <ul>
+    
+    
+    <li><a href="/explore/posts/hello-world/">Hello World: A Guide to Getting Started</a></li>
+    
+    <li><a href="/explore/posts/theme-features/">Explore Theme Features</a></li>
+    
+    <li><a href="/explore/posts/markdown-and-typography/">Markdown &amp; Typography Guide</a></li>
+    
+    <li><a href="/explore/posts/post-with-widgets/">A Post with Widgets</a></li>
+    
+    <li><a href="/explore/pages/contact/">Contact Us</a></li>
+    
+  </ul>
+</div>
+        
+          <div class="widget widget-categories">
+  <h3 class="widget-title">Categories</h3>
+  
+  <ul>
+    
+    <li><a href="/explore/categories/demo-content/">Demo Content (1)</a></li>
+    
+    <li><a href="/explore/categories/features/">Features (1)</a></li>
+    
+    <li><a href="/explore/categories/getting-started/">Getting Started (1)</a></li>
+    
+    <li><a href="/explore/categories/hugo/">Hugo (1)</a></li>
+    
+    <li><a href="/explore/categories/layouts/">Layouts (1)</a></li>
+    
+    <li><a href="/explore/categories/theme-guide/">Theme Guide (1)</a></li>
+    
+  </ul>
+  
+</div>
+        
+          <div class="widget widget-tags">
+  <h3 class="widget-title">Tags</h3>
+  
+  <ul>
+    
+    <li><a href="/explore/tags/demo/">Demo</a></li>
+    
+    <li><a href="/explore/tags/hugo/">Hugo</a></li>
+    
+    <li><a href="/explore/tags/documentation/">Documentation</a></li>
+    
+    <li><a href="/explore/tags/features/">Features</a></li>
+    
+    <li><a href="/explore/tags/guide/">Guide</a></li>
+    
+    <li><a href="/explore/tags/markdown/">Markdown</a></li>
+    
+    <li><a href="/explore/tags/sidebar/">Sidebar</a></li>
+    
+    <li><a href="/explore/tags/style/">Style</a></li>
+    
+    <li><a href="/explore/tags/typography/">Typography</a></li>
+    
+    <li><a href="/explore/tags/welcome/">Welcome</a></li>
+    
+    <li><a href="/explore/tags/widgets/">Widgets</a></li>
+    
+  </ul>
+  
+</div>
+        
+      </div>
+    
+  
+</aside>
+
+    
+  </div>
+
+  
+    
+
+<nav class="post-nav">
+  
+  <a href="/explore/posts/markdown-and-typography/" class="nav-prev">
+    <span class="nav-label">&larr; Previous Post</span>
+    <span class="nav-title">Markdown &amp; Typography Guide</span>
+  </a>
+  
+  
+  <a href="/explore/posts/hello-world/" class="nav-next">
+    <span class="nav-label">Next Post &rarr;</span>
+    <span class="nav-title">Hello World: A Guide to Getting Started</span>
+  </a>
+  
+</nav>
+
+  
+
+  
+    
+
+<section class="related-posts">
+  <h3 class="related-title">Related Posts</h3>
+  <div class="related-grid">
+    
+    <div class="related-card">
+      <a href="/explore/posts/hello-world/">
+        <h4 class="related-card-title">Hello World: A Guide to Getting Started</h4>
+        <time class="related-card-date" datetime="2025-08-20">Aug 20, 2025</time>
+      </a>
+    </div>
+    
+  </div>
+</section>
+
+  
+</div>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    
+    
+    <div class="copyright">
+      Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &amp; <a href="https://github.com/yogirk/explore" target="_blank" rel="noopener">Explore Theme</a>.
+      <br>
+      Built with <a href="https://codeassist.google/" target="_blank" rel="noopener">Gemini CodeAssist</a>.
+    </div>
+  </div>
+</footer>
+
+  
+  <script src="/explore/js/minimal.min.js" defer></script>
+  
+</body>
+</html>

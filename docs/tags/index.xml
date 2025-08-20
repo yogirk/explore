@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Explore Theme</title>
+    <link>https://yogirk.github.io/explore/tags/</link>
+    <description>Recent content in Tags on Explore Theme</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Aug 2025 10:00:00 +0530</lastBuildDate>
+    <atom:link href="https://yogirk.github.io/explore/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Demo</title>
+      <link>https://yogirk.github.io/explore/tags/demo/</link>
+      <pubDate>Wed, 20 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://yogirk.github.io/explore/tags/demo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Guide</title>
+      <link>https://yogirk.github.io/explore/tags/guide/</link>
+      <pubDate>Wed, 20 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://yogirk.github.io/explore/tags/guide/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>https://yogirk.github.io/explore/tags/hugo/</link>
+      <pubDate>Wed, 20 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://yogirk.github.io/explore/tags/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Welcome</title>
+      <link>https://yogirk.github.io/explore/tags/welcome/</link>
+      <pubDate>Wed, 20 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://yogirk.github.io/explore/tags/welcome/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Documentation</title>
+      <link>https://yogirk.github.io/explore/tags/documentation/</link>
+      <pubDate>Tue, 19 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://yogirk.github.io/explore/tags/documentation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Features</title>
+      <link>https://yogirk.github.io/explore/tags/features/</link>
+      <pubDate>Tue, 19 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://yogirk.github.io/explore/tags/features/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Markdown</title>
+      <link>https://yogirk.github.io/explore/tags/markdown/</link>
+      <pubDate>Mon, 18 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://yogirk.github.io/explore/tags/markdown/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Style</title>
+      <link>https://yogirk.github.io/explore/tags/style/</link>
+      <pubDate>Mon, 18 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://yogirk.github.io/explore/tags/style/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Typography</title>
+      <link>https://yogirk.github.io/explore/tags/typography/</link>
+      <pubDate>Mon, 18 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://yogirk.github.io/explore/tags/typography/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sidebar</title>
+      <link>https://yogirk.github.io/explore/tags/sidebar/</link>
+      <pubDate>Thu, 14 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://yogirk.github.io/explore/tags/sidebar/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Widgets</title>
+      <link>https://yogirk.github.io/explore/tags/widgets/</link>
+      <pubDate>Thu, 14 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://yogirk.github.io/explore/tags/widgets/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

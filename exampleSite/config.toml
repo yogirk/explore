@@ -1,7 +1,8 @@
-baseURL = "https://example.org/"
+baseURL = "https://yogirk.github.io/explore/"
 languageCode = "en-us"
 title = "Explore Theme"
 theme = "explore"
+publishDir = "docs"
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
