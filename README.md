@@ -1,9 +1,9 @@
 # Explore - A Hugo Theme
 
-**Explore** is a minimal, text-heavy theme for [Hugo](https://gohugo.io/), designed for academic sites, personal blogs, and essays. It prioritizes readability, performance, accessibility, and maintainability.
+**Explore** is a minimal, text-heavy theme for [Hugo](https://gohugo.io/), built with [Gemini Code Assist](https://codeassist.google/). Explore is designed for academic sites, personal blogs, and essays. It prioritizes readability, performance, accessibility, and maintainability.
 
-![Explore Theme Light Mode](exampleSite/static/screenshots/light.png)
-![Explore Theme Dark Mode](exampleSite/static/screenshots/dark.png)
+![Explore Theme Light Mode](explore-light-mode.png)
+![Explore Theme Dark Mode](explore-dark-mode.png)
 
 ## Features
 
