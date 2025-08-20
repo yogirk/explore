@@ -2,8 +2,10 @@
 
 **Explore** is a minimal, text-heavy theme for [Hugo](https://gohugo.io/), built with [Gemini Code Assist](https://codeassist.google/). Explore is designed for academic sites, personal blogs, and essays. It prioritizes readability, performance, accessibility, and maintainability.
 
-![Explore Theme Light Mode](explore-light-mode.png)
-![Explore Theme Dark Mode](explore-dark-mode.png)
+<p align="center">
+  <img src="explore-light-mode.png" alt="Explore Theme Light Mode" width="49%">
+  <img src="explore-dark-mode.png" alt="Explore Theme Dark Mode" width="49%">
+</p>
 
 ## Features
 
