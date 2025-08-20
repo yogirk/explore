@@ -955,6 +955,7 @@ figcaption {
 /* Syntax Highlighting (Chroma) */
 .highlight {
   position: relative;
+  max-width: 100%;
 }
 /* You can add more specific Chroma styles here if needed */
 .chroma {
