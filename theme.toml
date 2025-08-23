@@ -1,0 +1,11 @@
+name = "Explore"
+license = "MIT"
+licenselink = "https://github.com/yogirk/explore/blob/main/LICENSE"
+description = "Minimal, text-heavy Hugo theme for academic sites, blogs, and essays"
+homepage = "https://github.com/yogirk/explore"
+demosite = "https://yogirk.github.io/explore/"
+tags = ["minimal", "blog", "accessible", "dark-mode"]
+features = ["Performance", "Accessibility", "Dark mode", "Search"]
+[author]
+  name = "RK Kuppala"
+  homepage = "https://github.com/yogirk"
