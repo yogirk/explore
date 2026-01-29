@@ -162,7 +162,7 @@ html.is-menu-open {
 }
 
 body {
-  font-family: var(--font-serif);
+  font-family: var(--font-body);
   color: var(--color-text);
   background-color: var(--color-background);
   margin: 0;
@@ -197,7 +197,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-sans);
+  font-family: var(--font-heading);
   font-weight: 700;
   line-height: 1.2;
   margin-top: 2em;
@@ -237,7 +237,7 @@ hr {
 }
 
 code, pre {
-  font-family: var(--font-mono);
+  font-family: var(--font-code);
   font-size: 0.9em;
 }
 
@@ -321,8 +321,8 @@ pre {
 
 /* Header */
 .site-header {
-  background-color: var(--color-background);
-  border-bottom: var(--border-width) solid var(--color-border);
+  background-color: var(--header-bg);
+  border-bottom: var(--border-width) solid var(--header-border);
   padding: var(--space-s) 0;
   transition: box-shadow var(--transition-duration) ease;
 }
@@ -334,7 +334,7 @@ pre {
 }
 
 .site-header.has-shadow {
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--header-shadow);
 }
 
 .header-inner {
@@ -349,7 +349,7 @@ pre {
 }
 
 .site-brand {
-  font-family: var(--font-sans);
+  font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1.25rem;
   color: var(--color-text);
@@ -413,7 +413,7 @@ pre {
 }
 
 .main-nav a {
-  font-family: var(--font-sans);
+  font-family: var(--font-heading);
   color: var(--color-text-offset);
   text-decoration: none;
   font-weight: 500;
@@ -475,8 +475,8 @@ pre {
 
 /* Footer */
 .site-footer {
-  background-color: var(--color-background-offset);
-  border-top: var(--border-width) solid var(--color-border);
+  background-color: var(--footer-bg);
+  border-top: var(--border-width) solid var(--footer-border);
   padding: var(--space-l) 0;
   font-size: 0.9rem;
   color: var(--color-text-offset);
@@ -504,11 +504,11 @@ pre {
 }
 
 .widget-title {
-  font-family: var(--font-sans);
+  font-family: var(--font-heading);
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: var(--space-m);
-  border-bottom: var(--border-width) solid var(--color-border);
+  border-bottom: var(--border-width) solid var(--widget-title-border);
   padding-bottom: var(--space-s);
 }
 
@@ -632,7 +632,7 @@ pre {
 }
 
 .compact-post-title {
-  font-family: var(--font-sans);
+  font-family: var(--font-heading);
   font-weight: 600;
   color: var(--color-text);
   font-size: 1.1rem;
@@ -738,7 +738,7 @@ pre {
 }
 
 .toc-title {
-  font-family: var(--font-sans);
+  font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1.2rem;
   margin-top: 0;
@@ -812,7 +812,7 @@ pre {
 }
 
 .related-title {
-  font-family: var(--font-sans);
+  font-family: var(--font-heading);
   font-size: 1.5rem;
   margin-top: 0;
   margin-bottom: var(--space-l);
@@ -856,7 +856,7 @@ pre {
   align-items: center;
   gap: var(--space-s);
   margin-top: var(--space-l);
-  font-family: var(--font-sans);
+  font-family: var(--font-heading);
 }
 
 .pagination a, .pagination span {
@@ -892,12 +892,12 @@ pre {
   border-left: 4px solid;
 }
 .callout.info {
-  background-color: rgba(52, 81, 255, 0.1);
-  border-color: var(--color-primary);
+  background-color: var(--callout-info-bg);
+  border-color: var(--callout-info-border);
 }
 .callout.warning {
-  background-color: rgba(255, 106, 61, 0.1);
-  border-color: var(--color-accent);
+  background-color: var(--callout-warning-bg);
+  border-color: var(--callout-warning-border);
 }
 
 figure {
@@ -988,7 +988,7 @@ figcaption {
 
 /* Hero Section */
 .hero-section {
-  background-color: var(--color-background-offset);
+  background-color: var(--hero-bg);
   padding: var(--space-xl) 0;
   text-align: center;
 }
@@ -1018,7 +1018,7 @@ figcaption {
   padding: var(--space-s) var(--space-l);
   border-radius: var(--radius);
   text-decoration: none;
-  font-family: var(--font-sans);
+  font-family: var(--font-heading);
   font-weight: 600;
   transition: background-color var(--transition-duration) ease;
 }
@@ -1036,7 +1036,7 @@ figcaption {
 }
 /* You can add more specific Chroma styles here if needed */
 .chroma {
-  background-color: var(--color-code-bg) !important;
+  background-color: var(--chroma-bg) !important;
   color: var(--color-text) !important;
   border-radius: var(--radius);
   padding: var(--space-m);
