@@ -6,19 +6,21 @@ document.addEventListener('DOMContentLoaded', async () => {
   const searchContainer = document.getElementById('pagefind-search');
   if (searchContainer) {
     try {
-      // The Pagefind UI entrypoint is at /pagefind/pagefind-ui.js
-      const { PagefindUI } = await import('/pagefind/pagefind-ui.js');
+      const baseUrl = searchContainer.dataset.baseUrl || '/';
+      const pagefindPath = baseUrl + 'pagefind/pagefind-ui.js';
+      const { PagefindUI } = await import(pagefindPath);
       if (PagefindUI) {
         new PagefindUI({
           element: "#pagefind-search",
           showSubResults: true,
-          // You can customize Pagefind options here
-          // See: https://pagefind.app/docs/ui/
         });
       }
     } catch (e) {
       console.error("Failed to load Pagefind UI:", e);
-      searchContainer.innerHTML = '<p>Search is currently unavailable.</p>';
+      searchContainer.replaceChildren();
+      const errorMsg = document.createElement('p');
+      errorMsg.textContent = 'Search is currently unavailable.';
+      searchContainer.appendChild(errorMsg);
     }
   }
 });
