@@ -9,8 +9,8 @@
     {{ block "main" . }}{{ end }}
   </main>
   {{ partial "footer.html" . }}
-  {{ $js := resources.Get "js/minimal.js" | resources.Minify }}
-  <script src="{{ $js.RelPermalink }}" defer></script>
+  {{ $js := resources.Get "js/minimal.js" | resources.Minify | fingerprint }}
+  <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous" defer></script>
   {{ partial "analytics.html" . }}
 </body>
 </html>
