@@ -152,7 +152,6 @@ html {
   font-size: var(--base-font-size);
   line-height: var(--line-height);
   -webkit-text-size-adjust: 100%;
-  -moz-tab-size: 4;
   tab-size: 4;
 }
 
@@ -319,7 +318,7 @@ pre {
 # 4.0 COMPONENTS
 #--------------------------------------------------------------*/
 
-/* Header */
+/* 4.1 Header */
 .site-header {
   background-color: var(--header-bg);
   border-bottom: var(--border-width) solid var(--header-border);
@@ -473,7 +472,7 @@ pre {
   display: none;
 }
 
-/* Footer */
+/* 4.2 Footer */
 .site-footer {
   background-color: var(--footer-bg);
   border-top: var(--border-width) solid var(--footer-border);
@@ -494,7 +493,7 @@ pre {
   margin-top: var(--space-l);
 }
 
-/* Widgets & Sidebar */
+/* 4.3 Widgets & Sidebar */
 .sidebar .widget:last-child {
   margin-bottom: 0;
 }
@@ -560,7 +559,7 @@ pre {
   text-decoration: none;
 }
 
-/* Post List */
+/* 4.4 Post List */
 .post-list-item {
   margin-bottom: var(--space-s);
   padding-bottom: var(--space-m);
@@ -707,7 +706,7 @@ pre {
   transition: color var(--transition-duration) ease;
 }
 
-/* Single Post */
+/* 4.5 Single Post */
 .post-single .post-header {
   margin-bottom: var(--space-l);
 }
@@ -724,11 +723,11 @@ pre {
   margin-top: var(--space-l);
 }
 
-.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
-  max-width: 100%; /* override max-width for headings if needed */
+.post-content :is(h1, h2, h3, h4, h5, h6) {
+  max-width: 100%;
 }
 
-/* Table of Contents */
+/* 4.6 Table of Contents */
 .toc {
   background: var(--color-background-offset);
   border: var(--border-width) solid var(--color-border);
@@ -765,7 +764,7 @@ pre {
   text-decoration: none;
 }
 
-/* Prev/Next Navigation */
+/* 4.7 Navigation (Prev/Next) */
 .post-nav {
   display: flex;
   justify-content: space-between;
@@ -804,7 +803,7 @@ pre {
   margin-left: auto;
 }
 
-/* Related Posts */
+/* 4.8 Related Posts */
 .related-posts {
   margin-top: var(--space-xl);
   border-top: var(--border-width) solid var(--color-border);
@@ -849,7 +848,7 @@ pre {
   color: var(--color-text-offset);
 }
 
-/* Pagination */
+/* 4.9 Pagination */
 .pagination {
   display: flex;
   justify-content: center;
@@ -884,7 +883,7 @@ pre {
   cursor: not-allowed;
 }
 
-/* Shortcodes */
+/* 4.10 Shortcodes */
 .callout {
   padding: var(--space-m);
   margin-bottom: var(--space-m);
@@ -931,7 +930,7 @@ figcaption {
   margin-top: var(--space-s);
 }
 
-/* Breadcrumbs */
+/* 4.11 Breadcrumbs */
 .breadcrumb {
   list-style: none;
   display: flex;
@@ -948,7 +947,7 @@ figcaption {
   color: var(--color-text-offset);
 }
 
-/* 404 Page */
+/* 4.12 404 Page */
 .page-404 {
   text-align: center;
   padding: var(--space-xl) var(--space-m);
@@ -958,7 +957,7 @@ figcaption {
   display: inline-block;
 }
 
-/* Search page */
+/* 4.13 Search */
 .search-input {
   width: 100%;
   padding: var(--space-m);
@@ -986,7 +985,7 @@ figcaption {
   font-size: 0.9rem;
 }
 
-/* Hero Section */
+/* 4.14 Hero */
 .hero-section {
   background-color: var(--hero-bg);
   padding: var(--space-xl) 0;
@@ -1028,6 +1027,10 @@ figcaption {
   color: var(--color-background);
   text-decoration: none;
 }
+
+/*--------------------------------------------------------------
+# 5.0 VENDOR OVERRIDES
+#--------------------------------------------------------------*/
 
 /* Syntax Highlighting (Chroma) */
 .highlight {
