@@ -24,11 +24,14 @@
 
   {{ else if eq $searchEngine "pagefind" }}
     {{/* Pagefind Search UI */}}
-    <div id="pagefind-search"></div>
+    <div id="pagefind-search" data-base-url="{{ "" | relURL }}"></div>
 
     {{ $js := resources.Get "js/search-pagefind.js" | resources.Minify }}
     <script src="{{ $js.RelPermalink }}" defer></script>
-    <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+    <link href="{{ "pagefind/pagefind-ui.css" | relURL }}" rel="stylesheet">
+
+  {{ else }}
+    <p>Invalid search engine configured. Use "fuse" or "pagefind".</p>
   {{ end }}
 </div>
 {{ end }}
