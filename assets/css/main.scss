@@ -323,8 +323,17 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   line-height: 1.2;
-  margin-top: 2em;
-  margin-bottom: 0.8em;
+  margin-top: var(--space-l);
+  margin-bottom: var(--space-s);
+}
+
+h1, h2 {
+  margin-top: var(--space-xl);
+}
+
+.post-content > :first-child,
+.page-content > :first-child {
+  margin-top: 0;
 }
 
 h1 { font-size: var(--font-size-h1); }
@@ -539,10 +548,10 @@ kbd {
 
 @media (min-width: 960px) {
   .layout-grid--sidebar-right {
-    grid-template-columns: minmax(0, 3fr) minmax(280px, 1fr);
+    grid-template-columns: 1fr minmax(220px, 280px);
   }
   .layout-grid--sidebar-left {
-    grid-template-columns: minmax(280px, 1fr) minmax(0, 3fr);
+    grid-template-columns: minmax(220px, 280px) 1fr;
   }
   .main-content--sidebar-left {
     order: 2;
