@@ -117,12 +117,12 @@
   --font-mono: 'JetBrains Mono', "Menlo", "Consolas", "Monaco", monospace;
   {{ end }}
 
-  // Spacing - raw scale
+  // Spacing - fluid scale (768px to 1440px viewport)
   --space-1: 0.25rem;
   --space-2: 0.5rem;
-  --space-4: 1rem;
-  --space-8: 2rem;
-  --space-16: 4rem;
+  --space-4: clamp(0.875rem, 0.69rem + 0.37vw, 1rem);
+  --space-8: clamp(1.5rem, 0.98rem + 1.12vw, 2rem);
+  --space-16: clamp(2.5rem, 0.93rem + 3.35vw, 4rem);
 
   // Type scale - Minor Third (1.2 ratio)
   --text-xs: 0.694rem;
@@ -275,6 +275,8 @@ html {
   line-height: var(--line-height);
   -webkit-text-size-adjust: 100%;
   tab-size: 4;
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
 }
 
 /* Prevent body scroll when mobile menu is open */
