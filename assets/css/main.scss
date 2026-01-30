@@ -181,19 +181,25 @@
 
 /* 1.4 Dark Mode - Override semantic tokens */
 [data-theme="dark"] {
-  // Semantic color overrides
-  --color-primary: var(--color-blue-600);
-  --color-accent: var(--color-teal-500);
-  --color-text: var(--color-dark-100);
-  --color-text-offset: var(--color-dark-400);
+  // Brighten primary/accent for dark background contrast
+  --color-primary: #8ab4f8;
+  --color-accent: #81c995;
+  --color-yellow-700: #fdd663;
+
+  // Semantic color overrides - layered surfaces
+  --color-text: var(--color-dark-50);
+  --color-text-offset: var(--color-dark-200);
   --color-background: var(--color-dark-900);
   --color-background-offset: var(--color-dark-800);
-  --color-border: var(--color-dark-700);
-  --color-code-bg: var(--color-dark-800);
+  --color-border: var(--color-dark-500);
+  --color-code-bg: var(--color-dark-700);
 
   // Component token overrides for dark mode
-  --callout-info-bg: rgba(52, 81, 255, 0.15);
-  --callout-warning-bg: rgba(255, 106, 61, 0.15);
+  --callout-info-bg: rgba(138, 180, 248, 0.1);
+  --callout-warning-bg: rgba(253, 214, 99, 0.1);
+
+  // Chroma syntax highlighting adjustments
+  --chroma-bg: var(--color-dark-700);
 }
 
 /*--------------------------------------------------------------
@@ -1126,3 +1132,13 @@ figcaption {
 
 /* Comments */
 .chroma .c, .chroma .c1, .chroma .cm, .chroma .cp, .chroma .cs { color: var(--color-text-offset) !important; font-style: italic; }
+
+/* Dark mode Chroma overrides */
+[data-theme="dark"] {
+  .chroma .err { color: #fca5a5; background-color: transparent; }
+  .chroma .k, .chroma .kc, .chroma .kd, .chroma .kn, .chroma .kp, .chroma .kr, .chroma .kt { color: #8ab4f8 !important; }
+  .chroma .s, .chroma .s1, .chroma .s2, .chroma .sb, .chroma .sc, .chroma .sd, .chroma .se, .chroma .sh, .chroma .si, .chroma .sx, .chroma .sr { color: #81c995 !important; }
+  .chroma .m, .chroma .mf, .chroma .mh, .chroma .mi, .chroma .mo, .chroma .il { color: #81c995; }
+  .chroma .o, .chroma .ow { color: #8ab4f8; }
+  .chroma .c, .chroma .c1, .chroma .cm, .chroma .cp, .chroma .cs { color: var(--color-dark-300) !important; }
+}
