@@ -8,6 +8,29 @@
 # 1.0 DESIGN TOKENS
 #--------------------------------------------------------------*/
 
+/* 1.0a Font Faces */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('{{ "fonts/inter-regular.woff2" | relURL }}') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('{{ "fonts/inter-bold.woff2" | relURL }}') format('woff2');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('{{ "fonts/jetbrains-mono-regular.woff2" | relURL }}') format('woff2');
+}
+
 /* 1.1 Primitive Tokens - Raw palette values, no context */
 :root {
   // Colors - injected from Hugo config
@@ -28,13 +51,10 @@
   --color-dark-900: #1c1c1c;
 
   // Typography - primitives
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-    "Helvetica Neue", sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
   --font-serif: "Iowan Old Style", "Apple Garamond", "Baskerville",
     "Times New Roman", "Droid Serif", "Times", "Source Serif Pro", serif;
-  --font-mono: "Menlo", "Consolas", "Monaco", "Liberation Mono",
-    "Lucida Console", monospace;
+  --font-mono: 'JetBrains Mono', "Menlo", "Consolas", "Monaco", monospace;
 
   // Spacing - raw scale
   --space-1: 0.25rem;
@@ -71,7 +91,7 @@
   --color-code-bg: var(--color-gray-50);
 
   // Typography roles
-  --font-body: var(--font-serif);
+  --font-body: var(--font-sans);
   --font-heading: var(--font-sans);
   --font-code: var(--font-mono);
   --base-font-size: 1.125rem;

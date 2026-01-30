@@ -21,12 +21,12 @@
   {{ end }}
 {{ end }}
 
+<!-- Preload fonts -->
+<link rel="preload" href="{{ "fonts/inter-regular.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ "fonts/inter-bold.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ "fonts/jetbrains-mono-regular.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+
 <!-- CSS -->
 {{ $cssOptions := (dict "targetPath" "css/style.css" "outputStyle" "compressed") }}
 {{ $style := resources.Get "css/main.scss" | resources.ExecuteAsTemplate "style.main.scss" . | css.Sass $cssOptions | fingerprint }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
-
-<!-- Preload fonts if you self-host them -->
-<!--
-<link rel="preload" href="/fonts/your-font.woff2" as="font" type="font/woff2" crossorigin>
--->
