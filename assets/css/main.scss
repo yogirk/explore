@@ -359,9 +359,13 @@ code, pre {
 }
 
 :not(pre) > code {
+  font-family: var(--font-code);
+  font-size: var(--font-size-code);
   background-color: var(--color-code-bg);
-  padding: 0.2em 0.4em;
+  padding: 0.15em 0.4em;
   border-radius: var(--radius);
+  border: var(--border-width) solid var(--color-border);
+  word-break: break-word;
 }
 
 pre {
@@ -369,7 +373,59 @@ pre {
   padding: var(--space-m);
   border-radius: var(--radius);
   overflow-x: auto;
-  margin-bottom: var(--space-m);
+  margin-bottom: var(--space-l);
+  border: var(--border-width) solid var(--color-border);
+  line-height: 1.5;
+}
+
+pre code {
+  font-size: var(--font-size-code);
+  background: none;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+}
+
+.footnotes {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-l);
+  border-top: var(--border-width) solid var(--color-border);
+  font-size: var(--text-sm);
+  color: var(--color-text-offset);
+}
+
+.footnotes ol {
+  padding-left: var(--space-l);
+}
+
+.footnotes li {
+  margin-bottom: var(--space-s);
+}
+
+.footnotes p {
+  margin-bottom: var(--space-xs);
+}
+
+.footnote-ref {
+  font-size: var(--text-xs);
+  vertical-align: super;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.footnote-backref {
+  text-decoration: none;
+  font-size: var(--text-xs);
+}
+
+kbd {
+  font-family: var(--font-code);
+  font-size: var(--font-size-code);
+  background-color: var(--color-background-offset);
+  border: var(--border-width) solid var(--color-border);
+  border-bottom-width: 2px;
+  border-radius: var(--radius);
+  padding: 0.1em 0.4em;
 }
 
 /* Accessibility */
@@ -1154,7 +1210,13 @@ figcaption {
 .highlight {
   position: relative;
   max-width: 100%;
+  margin-bottom: var(--space-l);
 }
+
+.highlight pre {
+  margin-bottom: 0;
+}
+
 /* You can add more specific Chroma styles here if needed */
 .chroma {
   background-color: var(--chroma-bg) !important;
