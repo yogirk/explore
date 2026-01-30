@@ -47,6 +47,11 @@ summaryLength = 70
   [params.style]
     primary = "#6C3DBF"
     accent  = "#5FA8A3"
+    # Font preset: "inter" (default) or "google-sans"
+    fontPreset = "inter"
+    # Named color palette: "ocean", "forest", "slate", or omit for default.
+    # When set, overrides primary and accent values above.
+    # palette = "ocean"
     # max-width for the overall page container. Use any valid CSS unit (e.g., "1280px", "80rem").
     containerMaxWidth = "1280px"
     # max-width for the readable content (like posts). Uses 'ch' unit, which is roughly the width of the '0' character.
