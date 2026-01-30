@@ -59,9 +59,21 @@
 
 /* 1.1 Primitive Tokens - Raw palette values, no context */
 :root {
-  // Colors - injected from Hugo config
+  // Colors - injected from Hugo config (palette-aware)
+  {{ $palette := .Site.Params.style.palette | default "default" }}
+  {{ if eq $palette "ocean" }}
+  --color-blue-600: #0077b6;
+  --color-green-600: #00838f;
+  {{ else if eq $palette "forest" }}
+  --color-blue-600: #2d6a4f;
+  --color-green-600: #52b788;
+  {{ else if eq $palette "slate" }}
+  --color-blue-600: #475569;
+  --color-green-600: #64748b;
+  {{ else }}
   --color-blue-600: {{ .Site.Params.style.primary | default "#1a73e8" }};
   --color-green-600: {{ .Site.Params.style.accent | default "#1e8e3e" }};
+  {{ end }}
 
   // Colors - cool gray palette (blue undertone)
   --color-gray-900: #202124;
