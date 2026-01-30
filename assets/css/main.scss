@@ -285,17 +285,72 @@ ul, ol {
 
 blockquote {
   margin: var(--space-l) 0;
-  padding: var(--space-m);
-  padding-left: var(--space-l);
-  border-left: 4px solid var(--color-primary);
+  padding: var(--space-m) var(--space-l);
+  border-left: 3px solid var(--color-primary);
   background-color: var(--color-background-offset);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  color: var(--color-text);
+  font-style: normal;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+blockquote cite,
+blockquote footer {
+  display: block;
+  margin-top: var(--space-s);
+  font-size: var(--text-sm);
+  color: var(--color-text-offset);
+  font-style: italic;
+}
+
+blockquote cite::before,
+blockquote footer::before {
+  content: "\2014\00a0";
+}
+
+strong, b {
+  font-weight: 700;
+}
+
+em, i {
   font-style: italic;
 }
 
 hr {
   border: 0;
   border-top: var(--border-width) solid var(--color-border);
-  margin: var(--space-l) 0;
+  margin: var(--space-xl) auto;
+  max-width: 5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--space-l);
+  font-size: var(--text-sm);
+}
+
+th, td {
+  padding: var(--space-s) var(--space-m);
+  text-align: left;
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+th {
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--color-text);
+}
+
+thead th {
+  border-bottom-width: 2px;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
 }
 
 code, pre {
