@@ -63,6 +63,17 @@
   --space-8: 2rem;
   --space-16: 4rem;
 
+  // Type scale - Minor Third (1.2 ratio)
+  --text-xs: 0.694rem;
+  --text-sm: 0.833rem;
+  --text-base: 1rem;
+  --text-lg: 1.2rem;
+  --text-xl: 1.44rem;
+  --text-2xl: 1.728rem;
+  --text-3xl: 2.074rem;
+  --text-4xl: 2.488rem;
+  --text-5xl: 2.986rem;
+
   // Borders & Shadows - primitives
   --radius: 4px;
   --border-width: 1px;
@@ -94,8 +105,20 @@
   --font-body: var(--font-sans);
   --font-heading: var(--font-sans);
   --font-code: var(--font-mono);
-  --base-font-size: 1.125rem;
-  --line-height: 1.7;
+  --base-font-size: 1rem;
+  --line-height: 1.6;
+
+  // Type scale roles
+  --font-size-body: var(--text-base);
+  --font-size-small: var(--text-sm);
+  --font-size-caption: var(--text-xs);
+  --font-size-code: 0.875em;
+  --font-size-h1: var(--text-5xl);
+  --font-size-h2: var(--text-4xl);
+  --font-size-h3: var(--text-3xl);
+  --font-size-h4: var(--text-2xl);
+  --font-size-h5: var(--text-xl);
+  --font-size-h6: var(--text-lg);
 
   // Layout
   --max-width-ch: {{ .Site.Params.style.maxWidthCh | default 75 }}ch;
@@ -223,12 +246,12 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.8em;
 }
 
-h1 { font-size: 2.2rem; }
-h2 { font-size: 1.8rem; }
-h3 { font-size: 1.5rem; }
-h4 { font-size: 1.25rem; }
-h5 { font-size: 1.1rem; }
-h6 { font-size: 1rem; }
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); }
+h4 { font-size: var(--font-size-h4); }
+h5 { font-size: var(--font-size-h5); }
+h6 { font-size: var(--font-size-h6); }
 
 p {
   margin-top: 0;
@@ -257,7 +280,7 @@ hr {
 
 code, pre {
   font-family: var(--font-code);
-  font-size: 0.9em;
+  font-size: var(--font-size-code);
 }
 
 :not(pre) > code {
@@ -313,7 +336,7 @@ pre {
   margin-right: auto;
   margin-bottom: var(--space-l);
   text-align: center;
-  font-size: 1.1rem;
+  font-size: var(--text-lg);
 }
 
 .layout-grid {
@@ -370,7 +393,7 @@ pre {
 .site-brand {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: var(--text-lg);
   color: var(--color-text);
   text-decoration: none;
 }
@@ -386,7 +409,7 @@ pre {
 }
 
 .site-tagline {
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
   margin: 0;
   color: var(--color-text-offset);
 }
@@ -467,7 +490,7 @@ pre {
     gap: var(--space-l);
   }
   .main-nav a {
-    font-size: 1.5rem;
+    font-size: var(--text-3xl);
   }
 }
 
@@ -497,7 +520,7 @@ pre {
   background-color: var(--footer-bg);
   border-top: var(--border-width) solid var(--footer-border);
   padding: var(--space-l) 0;
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   color: var(--color-text-offset);
 }
 
@@ -524,7 +547,7 @@ pre {
 
 .widget-title {
   font-family: var(--font-heading);
-  font-size: 1.1rem;
+  font-size: var(--text-lg);
   font-weight: 700;
   margin-bottom: var(--space-m);
   border-bottom: var(--border-width) solid var(--widget-title-border);
@@ -567,7 +590,7 @@ pre {
   border: var(--border-width) solid var(--color-border);
   padding: var(--space-xs) var(--space-s);
   border-radius: var(--radius);
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
   color: var(--color-text-offset);
 }
 
@@ -612,7 +635,7 @@ pre {
 }
 
 .post-meta {
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   color: var(--color-text-offset);
   margin-bottom: var(--space-m);
   display: flex;
@@ -654,7 +677,7 @@ pre {
   font-family: var(--font-heading);
   font-weight: 600;
   color: var(--color-text);
-  font-size: 1.1rem;
+  font-size: var(--text-lg);
 }
 
 .compact-post-link:hover .compact-post-title {
@@ -666,7 +689,7 @@ pre {
   align-items: baseline;
   flex-wrap: wrap;
   gap: var(--space-s);
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   flex-shrink: 0;
 }
 
@@ -682,7 +705,7 @@ pre {
   border: var(--border-width) solid var(--color-border);
   padding: 0 var(--space-s);
   border-radius: var(--radius);
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
   color: var(--color-text-offset);
   text-decoration: none;
   transition: all var(--transition-duration) ease;
@@ -759,7 +782,7 @@ pre {
 .toc-title {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: var(--text-lg);
   margin-top: 0;
   margin-bottom: var(--space-m);
 }
@@ -767,7 +790,7 @@ pre {
 .toc nav ul {
   list-style: none;
   padding-left: 0;
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
 }
 .toc nav ul ul {
   padding-left: var(--space-m);
@@ -808,7 +831,7 @@ pre {
 }
 
 .post-nav .nav-label {
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   color: var(--color-text-offset);
   display: block;
   margin-bottom: var(--space-xs);
@@ -832,7 +855,7 @@ pre {
 
 .related-title {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: var(--text-3xl);
   margin-top: 0;
   margin-bottom: var(--space-l);
 }
@@ -864,7 +887,7 @@ pre {
 }
 
 .related-card-date {
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
   color: var(--color-text-offset);
 }
 
@@ -944,7 +967,7 @@ figure {
 }
 
 figcaption {
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   color: var(--color-text-offset);
   text-align: center;
   margin-top: var(--space-s);
@@ -957,7 +980,7 @@ figcaption {
   gap: var(--space-s);
   padding: 0;
   margin: 0 0 var(--space-m) 0;
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   color: var(--color-text-offset);
 }
 
@@ -981,7 +1004,7 @@ figcaption {
 .search-input {
   width: 100%;
   padding: var(--space-m);
-  font-size: 1.2rem;
+  font-size: var(--text-lg);
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius);
   margin-bottom: var(--space-l);
@@ -996,13 +1019,13 @@ figcaption {
 }
 
 .search-results .result-title {
-  font-size: 1.25rem;
+  font-size: var(--text-xl);
   margin: 0 0 var(--space-xs) 0;
 }
 
 .search-results .result-snippet {
   color: var(--color-text-offset);
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
 }
 
 /* 4.14 Hero */
@@ -1018,14 +1041,14 @@ figcaption {
 }
 
 .hero-title {
-  font-size: 2.8rem;
+  font-size: var(--text-5xl);
   margin-top: 0;
   margin-bottom: var(--space-m);
   line-height: 1.1;
 }
 
 .hero-tagline {
-  font-size: 1.2rem;
+  font-size: var(--text-lg);
   color: var(--color-text-offset);
   margin-bottom: var(--space-l);
 }
