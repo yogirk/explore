@@ -228,9 +228,21 @@
 
 /* 1.4 Dark Mode - Override semantic tokens */
 [data-theme="dark"] {
-  // Brighten primary/accent for dark background contrast
+  // Brighten primary/accent for dark background contrast (palette-aware)
+  {{ $palette := .Site.Params.style.palette | default "default" }}
+  {{ if eq $palette "ocean" }}
+  --color-primary: #90e0ef;
+  --color-accent: #48cae4;
+  {{ else if eq $palette "forest" }}
+  --color-primary: #95d5b2;
+  --color-accent: #b7e4c7;
+  {{ else if eq $palette "slate" }}
+  --color-primary: #94a3b8;
+  --color-accent: #cbd5e1;
+  {{ else }}
   --color-primary: #8ab4f8;
   --color-accent: #81c995;
+  {{ end }}
   --color-yellow-700: #fdd663;
 
   // Semantic color overrides - layered surfaces
