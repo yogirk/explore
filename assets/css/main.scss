@@ -9,6 +9,31 @@
 #--------------------------------------------------------------*/
 
 /* 1.0a Font Faces */
+{{ $fontPreset := .Site.Params.style.fontPreset | default "inter" }}
+
+{{ if eq $fontPreset "google-sans" }}
+@font-face {
+  font-family: 'Google Sans Flex';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('{{ "fonts/google-sans-flex-regular.woff2" | relURL }}') format('woff2');
+}
+@font-face {
+  font-family: 'Google Sans Flex';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('{{ "fonts/google-sans-flex-bold.woff2" | relURL }}') format('woff2');
+}
+@font-face {
+  font-family: 'Google Sans Code';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('{{ "fonts/google-sans-code-regular.woff2" | relURL }}') format('woff2');
+}
+{{ else }}
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -30,6 +55,7 @@
   font-display: swap;
   src: url('{{ "fonts/jetbrains-mono-regular.woff2" | relURL }}') format('woff2');
 }
+{{ end }}
 
 /* 1.1 Primitive Tokens - Raw palette values, no context */
 :root {
@@ -65,10 +91,19 @@
   --color-dark-900: #171717;
 
   // Typography - primitives
+  {{ $fontPreset := .Site.Params.style.fontPreset | default "inter" }}
+  {{ if eq $fontPreset "google-sans" }}
+  --font-sans: 'Google Sans Flex', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+  {{ else }}
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+  {{ end }}
   --font-serif: "Iowan Old Style", "Apple Garamond", "Baskerville",
     "Times New Roman", "Droid Serif", "Times", "Source Serif Pro", serif;
+  {{ if eq $fontPreset "google-sans" }}
+  --font-mono: 'Google Sans Code', "Menlo", "Consolas", "Monaco", monospace;
+  {{ else }}
   --font-mono: 'JetBrains Mono', "Menlo", "Consolas", "Monaco", monospace;
+  {{ end }}
 
   // Spacing - raw scale
   --space-1: 0.25rem;
