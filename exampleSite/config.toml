@@ -1,21 +1,38 @@
+# ============================================================
+# Site Basics
+# ============================================================
+
 baseURL = "https://yogirk.github.io/explore/"
 languageCode = "en-us"
 title = "Explore Theme"
 theme = "explore"
-# Change this to "docs" depending on your folder structure
-publishDir = "../docs" 
+
+# Where Hugo writes the generated site. Change to "public" if not using GitHub Pages.
+publishDir = "../docs"
+
+# Default length of generated summaries (in words).
+summaryLength = 70
+
+# ============================================================
+# Outputs & Build
+# ============================================================
 
 [outputs]
+  # JSON output is required for Fuse.js search.
   home = ["HTML", "RSS", "JSON"]
 
 [build]
+  # Required for Hugo's CSS purging and asset pipeline.
   writeStats = true
-# Default length of generated summaries (in words).
-summaryLength = 70
+
 [pagination]
   pagerSize = 5
 
-# Enable Hugo's related content feature
+# ============================================================
+# Related Content
+# ============================================================
+# Hugo's built-in related-content engine. Powers the "Related Posts" section.
+
 [related]
   includeNewer = true
   threshold = 80
@@ -30,56 +47,107 @@ summaryLength = 70
     name = "date"
     weight = 10
 
+# ============================================================
+# Theme Parameters
+# ============================================================
+# All theme-specific settings live under [params].
+# Any key you omit will use the theme's built-in default
+# (see layouts/partials/func/defaults.html for the full list).
+
+# ---- Site Identity ----
+
 [params]
+  # Author name shown in post meta and SEO tags.
   author = "Rain Doctor"
+  # Site-wide meta description for SEO.
   description = "A minimal, text-heavy theme for Hugo."
-  logo = "images/logo.svg" # Path to your logo in the static folder. Leave empty to use site title.
-  tagline = "A minimal, text-heavy theme for Hugo" # Appears under the site title/logo
+  # Path to logo image in the static/ folder. Leave empty to show the site title as text.
+  logo = "images/logo.svg"
+  # Short tagline displayed under the site title/logo in the header.
+  tagline = "A minimal, text-heavy theme for Hugo"
+  # Date format used across all templates (Go reference time layout).
+  # dateFormat = "Jan 2, 2006"
+  # Which content sections appear on the homepage. Default: ["posts"]
+  # mainSections = ["posts"]
 
-  # --- UI Settings ---
+# ---- UI Behavior ----
+
   [params.ui]
+    # Keep the header fixed at the top when scrolling. Default: true
     stickyHeader = true
-    showSearch = true # Show search icon in header
-    searchEngine = "fuse" # options: fuse, pagefind
-    homeView = "default" # options: "default", "compact"
+    # Show the search icon in the navigation bar. Default: true
+    showSearch = true
+    # Search engine to use. Options: "fuse" (client-side), "pagefind" (static). Default: "fuse"
+    searchEngine = "fuse"
+    # Homepage post listing style. Options: "default" (cards with excerpts), "compact" (titles only). Default: "default"
+    homeView = "default"
 
-  # --- Style Settings ---
+# ---- Visual Style ----
+
   [params.style]
+    # Primary brand color (links, buttons, accents). Default: "#1a73e8"
     primary = "#6C3DBF"
+    # Secondary accent color (hover states, highlights). Default: "#1e8e3e"
     accent  = "#5FA8A3"
-    # Font preset: "inter" (default) or "google-sans"
+    # Font preset. Options: "inter" (default system-like), "google-sans". Default: "inter"
     fontPreset = "inter"
-    # Named color palette: "ocean", "forest", "slate", or omit for default.
-    # When set, overrides primary and accent values above.
+    # Named color palette. Options: "ocean", "forest", "slate", or omit for custom primary/accent.
+    # When set, overrides primary and accent values above. Default: "default"
     # palette = "ocean"
-    # max-width for the overall page container. Use any valid CSS unit (e.g., "1280px", "80rem").
+    # Max-width for the overall page container. Any valid CSS value. Default: "1280px"
     containerMaxWidth = "1280px"
-    # max-width for the readable content (like posts). Uses 'ch' unit, which is roughly the width of the '0' character.
+    # Max-width for readable content columns, in 'ch' units (approx. width of '0'). Default: 75
     maxWidthCh = 75
 
-  # --- Widgets & Sidebar ---
+# ---- Sidebar & Widgets ----
+
   [params.sidebar]
-    globalPosition = "left" # Options: "left", "right", "bottom", "off"
+    # Where to place the widget sidebar. Options: "left", "right", "bottom", "off". Default: "right"
+    globalPosition = "left"
+    # Which widgets to show, in order. Available: "recent", "categories", "tags". Default: ["recent", "categories", "tags"]
     widgets = ["recent", "categories", "tags"]
+    # Number of posts in the Recent Posts widget. Default: 5
     recentCount = 5
 
+# ---- Homepage Hero ----
+
   [params.hero]
-    show = true # Set to true to show the hero section on the homepage
+    # Show the hero banner on the homepage. Default: false
+    show = true
+    # Hero headline (supports Markdown).
     title = "Explore Theme"
+    # Hero subtitle (supports Markdown).
     tagline = "A minimal, text-heavy theme for Hugo, designed for academic sites, personal blogs, and essays. Built with Gemini Code Assist"
+    # Optional call-to-action button.
     buttonText = "Theme on Github"
     buttonURL = "https://github.com/yogirk/explore"
 
+# ---- Post Lists ----
+
   [params.list]
+    # Show post excerpts in list views. Default: true
     showExcerpt = true
 
+# ---- Single Posts ----
+
   [params.single]
+    # Show previous/next post navigation at the bottom. Default: true
     showPrevNext = true
+    # Show related posts section at the bottom. Default: true
     showRelated = true
+    # Number of related posts to display. Default: 4
     relatedCount = 4
+
     [params.single.toc]
-      enable = true # Enable the ToC. Can be disabled per-page with `toc: false`
-      position = "left" # Options: "inline", "left", "right", "off"
+      # Enable the Table of Contents. Can be overridden per-page with front matter `toc: false`. Default: true
+      enable = true
+      # ToC placement. Options: "inline" (within content), "left", "right", "off". Default: "inline"
+      position = "left"
+
+# ============================================================
+# Navigation Menu
+# ============================================================
+
 [menu]
   [[menu.main]]
     identifier = "posts"
