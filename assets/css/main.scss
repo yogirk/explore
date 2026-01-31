@@ -656,21 +656,40 @@ kbd {
 }
 
 .main-nav a {
+  position: relative;
   font-family: var(--font-heading);
   color: var(--color-text-offset);
   text-decoration: none;
   font-weight: 500;
-  padding: var(--space-s) 0;
+  padding: var(--space-xs) 0;
+  transition: color var(--transition-duration) ease;
+}
+
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--color-primary);
+  transition: all var(--transition-duration) ease;
+}
+
+.main-nav a:hover::after,
+.main-nav .active::after {
+  width: 100%;
+  left: 0;
 }
 
 .main-nav a:hover,
 .main-nav .active {
   color: var(--color-primary);
+  text-decoration: none;
 }
 
 @media (max-width: 768px) {
   .site-nav {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -681,15 +700,27 @@ kbd {
     justify-content: center;
     align-items: center;
     z-index: var(--z-header);
+
+    /* Smooth transition states */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all var(--transition-duration) ease-in-out;
+    display: flex; /* Maintain flex for layout, but hide via opacity/visibility */
   }
-  .site-nav.is-active {
-    display: flex;
+
+  .site-nav.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
+
   .main-nav ul {
     flex-direction: column;
     text-align: center;
     gap: var(--space-l);
   }
+
   .main-nav a {
     font-size: var(--text-3xl);
   }
@@ -805,14 +836,38 @@ kbd {
 
 /* 4.4 Post List */
 .post-list-item {
-  margin-bottom: var(--space-s);
-  padding-bottom: var(--space-m);
-  border-bottom: var(--border-width) solid var(--color-border);
+  position: relative;
+  margin-bottom: var(--space-m);
+  padding: var(--space-l);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius);
+  transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
+  background-color: var(--color-background);
+}
+
+.post-list-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
 }
 
 .post-list-item:last-child {
-  border-bottom: none;
   margin-bottom: 0;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+/* Ensure links inside the card are above the overlay */
+.post-list-item a:not(.card-link) {
+  position: relative;
+  z-index: 2;
 }
 
 /* On pages with a sidebar, constrain the post list for readability */
@@ -980,6 +1035,13 @@ kbd {
   margin-bottom: var(--space-l);
 }
 
+.sidebar .toc {
+  position: sticky;
+  top: 5rem; /* Header height + buffer */
+  max-height: calc(100vh - 6rem);
+  overflow-y: auto;
+}
+
 .toc-title {
   font-family: var(--font-heading);
   font-weight: 700;
@@ -1001,11 +1063,21 @@ kbd {
   color: var(--color-text-offset);
   display: block;
   padding: var(--space-xs) 0;
+  transition: all var(--transition-duration) ease;
+  border-left: 2px solid transparent;
+  padding-left: var(--space-s);
 }
 
 .toc nav a:hover {
   color: var(--color-primary);
   text-decoration: none;
+}
+
+.toc nav a.active {
+  color: var(--color-primary);
+  border-left-color: var(--color-primary);
+  font-weight: 600;
+  background-color: rgba(26, 115, 232, 0.04);
 }
 
 /* 4.7 Navigation (Prev/Next) */
@@ -1285,6 +1357,53 @@ figcaption {
 
 .highlight pre {
   margin-bottom: 0;
+}
+
+.code-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-xs) var(--space-m);
+  background-color: var(--chroma-bg);
+  border-bottom: 1px solid var(--color-border);
+  border-radius: var(--radius) var(--radius) 0 0;
+  font-size: var(--font-size-small);
+}
+
+.code-lang {
+  color: var(--color-text-offset);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.copy-code {
+  appearance: none;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg, var(--color-background));
+  color: var(--color-text-offset);
+  padding: 2px 10px;
+  border-radius: var(--radius);
+  font-size: var(--font-size-small);
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  margin-left: auto;
+}
+
+.copy-code:hover {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.copy-code.is-copied {
+  background-color: var(--color-accent);
+  color: #fff;
+  border-color: var(--color-accent);
+}
+
+.code-header + pre .chroma,
+.code-header + .chroma {
+  border-radius: 0 0 var(--radius) var(--radius);
 }
 
 /* You can add more specific Chroma styles here if needed */
