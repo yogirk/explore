@@ -169,6 +169,31 @@
     });
   }
 
+  /**
+   * Reading Progress Bar
+   * Shows a thin progress bar at the top of the viewport on single posts,
+   * filling from 0% to 100% as the user scrolls through the article.
+   */
+  function initReadingProgress() {
+    var progressBar = document.getElementById('reading-progress');
+    if (!progressBar) return;
+
+    var ticking = false;
+
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        requestAnimationFrame(function() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.body.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? Math.min((scrollTop / docHeight) * 100, 100) : 0;
+          progressBar.style.width = pct + '%';
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  }
+
   // Initialize all modules when DOM is ready
   document.addEventListener('DOMContentLoaded', function() {
     initThemeToggle();
@@ -176,5 +201,6 @@
     initStickyHeader();
     initScrollSpy();
     initCodeCopy();
+    initReadingProgress();
   });
 })();

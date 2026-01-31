@@ -562,6 +562,19 @@ kbd {
 # 4.0 COMPONENTS
 #--------------------------------------------------------------*/
 
+/* 4.0a Reading Progress Bar */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--color-primary);
+  z-index: calc(var(--z-header, 100) + 1);
+  transition: width 0.1s linear;
+  pointer-events: none;
+}
+
 /* 4.1 Header */
 .site-header {
   background-color: var(--header-bg);

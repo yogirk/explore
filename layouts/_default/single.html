@@ -1,4 +1,5 @@
 {{ define "main" }}
+<div id="reading-progress" class="reading-progress" aria-hidden="true"></div>
 {{/* Determine sidebar position from front matter, then site config */}}
 {{ $widgetSidebarPosition := .Params.sidebar.position | default .Site.Params.sidebar.globalPosition }}
 
@@ -45,6 +46,17 @@
               <time datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">{{ .Format ($.Site.Params.dateFormat | default "Jan 2, 2006") }}</time>
             </span>
           {{ end }}
+
+          {{ with .Params.categories }}
+            <span class="post-categories">
+              {{ partial "icons/folder.html" }}
+              {{ range $i, $cat := . }}
+                {{ if gt $i 0 }}, {{ end }}
+                <a href="{{ "categories/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>
+              {{ end }}
+            </span>
+          {{ end }}
+
           {{ with .Params.author | default $.Site.Params.author }}
             <span>
               {{ partial "icons/user.html" }}
