@@ -1,15 +1,16 @@
 {{ define "main" }}
+{{ $cfg := partial "func/defaults" . }}
 <div id="reading-progress" class="reading-progress" aria-hidden="true"></div>
 {{/* Determine sidebar position from front matter, then site config */}}
-{{ $widgetSidebarPosition := .Params.sidebar.position | default .Site.Params.sidebar.globalPosition }}
+{{ $widgetSidebarPosition := .Params.sidebar.position | default $cfg.sidebar.globalPosition }}
 
 {{/* Determine ToC settings */}}
-{{ $siteTocConfig := .Site.Params.single.toc | default dict }}
+{{ $siteTocConfig := $cfg.single.toc }}
 {{ $pageTocConfig := .Params.toc }}
 
 {{/* Start with site-wide defaults */}}
-{{ $tocEnabled := $siteTocConfig.enable | default true }}
-{{ $tocPosition := $siteTocConfig.position | default "inline" }}
+{{ $tocEnabled := $siteTocConfig.enable }}
+{{ $tocPosition := $siteTocConfig.position }}
 
 {{/* Handle page-level overrides from front matter */}}
 {{ if isset .Params "toc" }}
@@ -43,7 +44,7 @@
           {{ with .Date }}
             <span>
               {{ partial "icons/calendar.html" }}
-              <time datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">{{ .Format ($.Site.Params.dateFormat | default "Jan 2, 2006") }}</time>
+              <time datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">{{ .Format $cfg.dateFormat }}</time>
             </span>
           {{ end }}
 
@@ -91,11 +92,11 @@
     {{ end }}
   </div>
 
-  {{ if .Site.Params.single.showPrevNext | default true }}
+  {{ if $cfg.single.showPrevNext }}
     {{ partial "post/prevnext.html" . }}
   {{ end }}
 
-  {{ if .Site.Params.single.showRelated | default true }}
+  {{ if $cfg.single.showRelated }}
     {{ partial "post/related.html" . }}
   {{ end }}
 </div>

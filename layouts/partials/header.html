@@ -1,4 +1,5 @@
-<header class="site-header {{ if .Site.Params.ui.stickyHeader }}is-sticky{{ end }}">
+{{ $cfg := partial "func/defaults" . }}
+<header class="site-header {{ if $cfg.ui.stickyHeader }}is-sticky{{ end }}">
   <div class="container header-inner">
     <div class="site-identity">
       <a href="{{ .Site.Home.RelPermalink }}" class="site-brand">
@@ -27,7 +28,7 @@
           {{ end }}
         </ul>
       </div>
-      {{ if .Site.Params.ui.showSearch | default true }}
+      {{ if $cfg.ui.showSearch }}
       <a href="{{ "search" | relLangURL }}" class="nav-search" aria-label="Search">
         {{ partial "icons/search.html" }}
       </a>

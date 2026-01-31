@@ -1,6 +1,7 @@
+{{ $cfg := partial "func/defaults" . }}
 <footer class="site-footer">
   <div class="container">
-    {{ $sidebarPosition := .Params.sidebar.position | default .Site.Params.sidebar.globalPosition }}
+    {{ $sidebarPosition := .Params.sidebar.position | default $cfg.sidebar.globalPosition }}
     {{ if eq $sidebarPosition "bottom" }}
       <div class="footer-widgets">
         {{ partial "sidebar.html" . }}

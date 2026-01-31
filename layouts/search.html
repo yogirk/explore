@@ -1,4 +1,5 @@
 {{ define "main" }}
+{{ $cfg := partial "func/defaults" . }}
 <div class="container">
   <header class="page-header">
     <h1>{{ .Title | default "Search" }}</h1>
@@ -10,7 +11,7 @@
     </div>
   {{ end }}
 
-  {{ $searchEngine := .Site.Params.ui.searchEngine | default "fuse" }}
+  {{ $searchEngine := $cfg.ui.searchEngine }}
 
   {{ if eq $searchEngine "fuse" }}
     {{/* Fuse.js Search UI */}}
