@@ -295,6 +295,29 @@ body {
   transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease;
 }
 
+/* Theme transition: smooth color changes when toggling light/dark */
+.site-header,
+.site-footer,
+.post-list-item,
+.post-single,
+.sidebar,
+.toc,
+.hero-section,
+.chroma,
+.code-header,
+.copy-code,
+.reading-progress,
+input,
+.callout,
+blockquote,
+pre,
+:not(pre) > code,
+.widget-tags a,
+.tag-link,
+.post-nav a {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
 main {
   flex-grow: 1;
 }
@@ -580,7 +603,7 @@ kbd {
   background-color: var(--header-bg);
   border-bottom: var(--border-width) solid var(--header-border);
   padding: var(--space-s) 0;
-  transition: box-shadow var(--transition-duration) ease;
+  transition: box-shadow var(--transition-duration) ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .site-header.is-sticky {
@@ -854,7 +877,7 @@ kbd {
   padding: var(--space-l);
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius);
-  transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
+  transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   background-color: var(--color-background);
 }
 
