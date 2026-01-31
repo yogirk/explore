@@ -1,0 +1,82 @@
+{{/* layouts/partials/func/defaults.html
+     Returns theme config with defaults applied.
+     Usage: {{ $cfg := partial "func/defaults" . }} */}}
+
+{{/* 1. Define theme defaults */}}
+{{ $defaults := dict
+  "dateFormat" "Jan 2, 2006"
+  "mainSections" (slice "posts")
+  "ui" (dict
+    "stickyHeader" true
+    "showSearch" true
+    "searchEngine" "fuse"
+    "homeView" "default"
+  )
+  "style" (dict
+    "primary" "#1a73e8"
+    "accent" "#1e8e3e"
+    "fontPreset" "inter"
+    "palette" "default"
+    "maxWidthCh" 75
+    "containerMaxWidth" "1280px"
+  )
+  "sidebar" (dict
+    "globalPosition" "right"
+    "widgets" (slice "recent" "categories" "tags")
+    "recentCount" 5
+  )
+  "single" (dict
+    "showPrevNext" true
+    "showRelated" true
+    "relatedCount" 4
+    "toc" (dict
+      "enable" true
+      "position" "inline"
+    )
+  )
+  "list" (dict
+    "showExcerpt" true
+  )
+  "hero" (dict
+    "show" false
+  )
+}}
+
+{{/* 2. Deprecated key migration with warnings */}}
+{{ with .Site.Params.ui }}
+  {{ if isset . "recentCount" }}
+    {{ warnf "Config deprecated: params.ui.recentCount has moved to params.sidebar.recentCount. Please update your config.toml." }}
+    {{/* Migrate the value if sidebar.recentCount is not explicitly set */}}
+    {{ if not (and $.Site.Params.sidebar (isset $.Site.Params.sidebar "recentCount")) }}
+      {{ $sidebarOverride := dict "recentCount" .recentCount }}
+      {{ $currentSidebar := $.Site.Params.sidebar | default dict }}
+      {{ $mergedSidebar := merge $currentSidebar $sidebarOverride }}
+      {{ $defaults = merge $defaults (dict "sidebar" $mergedSidebar) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* 3. Merge user params over defaults (user wins) */}}
+{{ $merged := merge $defaults (.Site.Params | default dict) }}
+
+{{/* 4. Deep merge nested maps that Hugo's merge doesn't handle recursively */}}
+{{ with .Site.Params.ui }}
+  {{ $merged = merge $merged (dict "ui" (merge (index $defaults "ui") .)) }}
+{{ end }}
+{{ with .Site.Params.style }}
+  {{ $merged = merge $merged (dict "style" (merge (index $defaults "style") .)) }}
+{{ end }}
+{{ with .Site.Params.sidebar }}
+  {{ $merged = merge $merged (dict "sidebar" (merge (index $defaults "sidebar") .)) }}
+{{ end }}
+{{ with .Site.Params.single }}
+  {{ $merged = merge $merged (dict "single" (merge (index $defaults "single") .)) }}
+{{ end }}
+{{ with .Site.Params.list }}
+  {{ $merged = merge $merged (dict "list" (merge (index $defaults "list") .)) }}
+{{ end }}
+{{ with .Site.Params.hero }}
+  {{ $merged = merge $merged (dict "hero" (merge (index $defaults "hero") .)) }}
+{{ end }}
+
+{{ return $merged }}
