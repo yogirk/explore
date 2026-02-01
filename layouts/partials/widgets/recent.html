@@ -1,7 +1,8 @@
+{{ $cfg := partial "func/defaults" . }}
 <div class="widget widget-recent">
   <h3 class="widget-title">{{ i18n "recentPosts" }}</h3>
   <ul>
-    {{ $recentCount := .Site.Params.ui.recentCount | default 5 }}
+    {{ $recentCount := $cfg.sidebar.recentCount }}
     {{ range first $recentCount .Site.RegularPages.ByDate.Reverse }}
     <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
     {{ end }}

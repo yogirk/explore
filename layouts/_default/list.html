@@ -1,5 +1,6 @@
 {{ define "main" }}
-{{ $sidebarPosition := .Params.sidebar.position | default .Site.Params.sidebar.globalPosition | default "right" }}
+{{ $cfg := partial "func/defaults" . }}
+{{ $sidebarPosition := .Params.sidebar.position | default $cfg.sidebar.globalPosition }}
 
 <div class="container site-main">
   <header class="page-header">

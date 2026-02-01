@@ -1,27 +1,29 @@
+{{ $cfg := partial "func/defaults" $ }}
 <article class="post-list-item">
+  <a class="card-link" href="{{ .RelPermalink }}" aria-hidden="true"></a>
   <header>
     <h2 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
     <div class="post-meta">
       {{ with .Date }}
         <span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-          <time datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">{{ .Format ($.Site.Params.dateFormat | default "Jan 2, 2006") }}</time>
+          {{ partial "icons/calendar.html" }}
+          <time datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">{{ .Format $cfg.dateFormat }}</time>
         </span>
       {{ end }}
       {{ with .Params.author | default $.Site.Params.author }}
         <span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          {{ partial "icons/user.html" }}
           {{ . }}
         </span>
       {{ end }}
     </div>
   </header>
-  {{ if $.Site.Params.list.showExcerpt | default true }}
+  {{ if $cfg.list.showExcerpt }}
     <div class="post-excerpt">
-      <a href="{{ .RelPermalink }}" class="post-excerpt-link">
-        {{ .Summary }}
-        <span class="excerpt-ellipsis">&nbsp;(...)</span>
-      </a>
+      {{ .Summary }}
     </div>
+    {{ if .Truncated }}
+      <a href="{{ .RelPermalink }}" class="read-more">{{ i18n "readMore" }} &rarr;</a>
+    {{ end }}
   {{ end }}
 </article>

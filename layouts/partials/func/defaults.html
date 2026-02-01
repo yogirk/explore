@@ -1,0 +1,115 @@
+{{/* layouts/partials/func/defaults.html
+     Returns theme config with defaults applied.
+     Usage: {{ $cfg := partial "func/defaults" . }} */}}
+
+{{/* 1. Deprecated key migration with warnings */}}
+{{ $deprecatedRecentCount := 0 }}
+{{ $hasDeprecatedRecentCount := false }}
+{{ with .Site.Params.ui }}
+  {{ if isset . "recentcount" }}
+    {{ warnf "Config deprecated: params.ui.recentCount has moved to params.sidebar.recentCount. Please update your config.toml." }}
+    {{ $deprecatedRecentCount = .recentCount }}
+    {{ $hasDeprecatedRecentCount = true }}
+  {{ end }}
+{{ end }}
+
+{{/* Helper: for booleans, use isset to respect explicit false values */}}
+
+{{/* 2. Build config with defaults for each group */}}
+
+{{/* -- Top-level scalars -- */}}
+{{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+{{ $mainSections := .Site.Params.mainSections | default (slice "posts") }}
+
+{{/* -- UI group -- */}}
+{{ $uiParams := .Site.Params.ui | default dict }}
+{{ $stickyHeader := true }}
+{{ if isset $uiParams "stickyheader" }}{{ $stickyHeader = $uiParams.stickyHeader }}{{ end }}
+{{ $showSearch := true }}
+{{ if isset $uiParams "showsearch" }}{{ $showSearch = $uiParams.showSearch }}{{ end }}
+{{ $ui := dict
+  "stickyHeader" $stickyHeader
+  "showSearch"   $showSearch
+  "searchEngine" ($uiParams.searchEngine | default "fuse")
+  "homeView"     ($uiParams.homeView | default "default")
+}}
+
+{{/* -- Style group -- */}}
+{{ $styleParams := .Site.Params.style | default dict }}
+{{ $style := dict
+  "primary"           ($styleParams.primary | default "#1a73e8")
+  "accent"            ($styleParams.accent | default "#1e8e3e")
+  "fontPreset"        ($styleParams.fontPreset | default "inter")
+  "palette"           ($styleParams.palette | default "default")
+  "maxWidthCh"        ($styleParams.maxWidthCh | default 75)
+  "containerMaxWidth" ($styleParams.containerMaxWidth | default "1280px")
+}}
+
+{{/* -- Sidebar group -- */}}
+{{ $sidebarParams := .Site.Params.sidebar | default dict }}
+{{ $recentCount := $sidebarParams.recentCount | default 5 }}
+{{/* Apply deprecated ui.recentCount migration if sidebar.recentCount was not explicitly set */}}
+{{ if $hasDeprecatedRecentCount }}
+  {{ if not (isset $sidebarParams "recentcount") }}
+    {{ $recentCount = $deprecatedRecentCount }}
+  {{ end }}
+{{ end }}
+{{ $sidebar := dict
+  "globalPosition" ($sidebarParams.globalPosition | default "right")
+  "widgets"        ($sidebarParams.widgets | default (slice "recent" "categories" "tags"))
+  "recentCount"    $recentCount
+}}
+
+{{/* -- Single group -- */}}
+{{ $singleParams := .Site.Params.single | default dict }}
+{{ $tocParams := $singleParams.toc | default dict }}
+{{ $tocEnabled := true }}
+{{ if isset $tocParams "enable" }}{{ $tocEnabled = $tocParams.enable }}{{ end }}{{/* "enable" is already lowercase */}}
+{{ $toc := dict
+  "enable"   $tocEnabled
+  "position" ($tocParams.position | default "inline")
+}}
+{{ $showPrevNext := true }}
+{{ if isset $singleParams "showprevnext" }}{{ $showPrevNext = $singleParams.showPrevNext }}{{ end }}
+{{ $showRelated := true }}
+{{ if isset $singleParams "showrelated" }}{{ $showRelated = $singleParams.showRelated }}{{ end }}
+{{ $single := dict
+  "showPrevNext" $showPrevNext
+  "showRelated"  $showRelated
+  "relatedCount" ($singleParams.relatedCount | default 4)
+  "toc"          $toc
+}}
+
+{{/* -- List group -- */}}
+{{ $listParams := .Site.Params.list | default dict }}
+{{ $showExcerpt := true }}
+{{ if isset $listParams "showexcerpt" }}{{ $showExcerpt = $listParams.showExcerpt }}{{ end }}
+{{ $list := dict
+  "showExcerpt" $showExcerpt
+}}
+
+{{/* -- Hero group -- */}}
+{{ $heroParams := .Site.Params.hero | default dict }}
+{{ $heroShow := false }}
+{{ if isset $heroParams "show" }}{{ $heroShow = $heroParams.show }}{{ end }}{{/* "show" is already lowercase */}}
+{{ $hero := dict
+  "show"       $heroShow
+  "title"      ($heroParams.title | default "")
+  "tagline"    ($heroParams.tagline | default "")
+  "buttonText" ($heroParams.buttonText | default "")
+  "buttonURL"  ($heroParams.buttonURL | default "")
+}}
+
+{{/* 3. Assemble final config dict */}}
+{{ $cfg := dict
+  "dateFormat"   $dateFormat
+  "mainSections" $mainSections
+  "ui"           $ui
+  "style"        $style
+  "sidebar"      $sidebar
+  "single"       $single
+  "list"         $list
+  "hero"         $hero
+}}
+
+{{ return $cfg }}

@@ -21,12 +21,19 @@
   {{ end }}
 {{ end }}
 
+<!-- Preload fonts -->
+{{ $fontPreset := .Site.Params.style.fontPreset | default "inter" }}
+{{ if eq $fontPreset "google-sans" }}
+<link rel="preload" href="{{ "fonts/google-sans-flex-regular.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ "fonts/google-sans-flex-bold.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ "fonts/google-sans-code-regular.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+{{ else }}
+<link rel="preload" href="{{ "fonts/inter-regular.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ "fonts/inter-bold.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ "fonts/jetbrains-mono-regular.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+{{ end }}
+
 <!-- CSS -->
 {{ $cssOptions := (dict "targetPath" "css/style.css" "outputStyle" "compressed") }}
-{{ $style := resources.Get "css/main.scss" | resources.ExecuteAsTemplate "style.main.scss" . | toCSS $cssOptions | fingerprint }}
+{{ $style := resources.Get "css/main.scss" | resources.ExecuteAsTemplate "style.main.scss" . | css.Sass $cssOptions | fingerprint }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
-
-<!-- Preload fonts if you self-host them -->
-<!--
-<link rel="preload" href="/fonts/your-font.woff2" as="font" type="font/woff2" crossorigin>
--->

@@ -1,14 +1,16 @@
 {{ define "main" }}
+{{ $cfg := partial "func/defaults" . }}
+<div id="reading-progress" class="reading-progress" aria-hidden="true"></div>
 {{/* Determine sidebar position from front matter, then site config */}}
-{{ $widgetSidebarPosition := .Params.sidebar.position | default .Site.Params.sidebar.globalPosition }}
+{{ $widgetSidebarPosition := .Params.sidebar.position | default $cfg.sidebar.globalPosition }}
 
 {{/* Determine ToC settings */}}
-{{ $siteTocConfig := .Site.Params.single.toc | default dict }}
+{{ $siteTocConfig := $cfg.single.toc }}
 {{ $pageTocConfig := .Params.toc }}
 
 {{/* Start with site-wide defaults */}}
-{{ $tocEnabled := $siteTocConfig.enable | default true }}
-{{ $tocPosition := $siteTocConfig.position | default "inline" }}
+{{ $tocEnabled := $siteTocConfig.enable }}
+{{ $tocPosition := $siteTocConfig.position }}
 
 {{/* Handle page-level overrides from front matter */}}
 {{ if isset .Params "toc" }}
@@ -41,13 +43,24 @@
         <div class="post-meta">
           {{ with .Date }}
             <span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-              <time datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">{{ .Format ($.Site.Params.dateFormat | default "Jan 2, 2006") }}</time>
+              {{ partial "icons/calendar.html" }}
+              <time datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">{{ .Format $cfg.dateFormat }}</time>
             </span>
           {{ end }}
+
+          {{ with .Params.categories }}
+            <span class="post-categories">
+              {{ partial "icons/folder.html" }}
+              {{ range $i, $cat := . }}
+                {{ if gt $i 0 }}, {{ end }}
+                <a href="{{ "categories/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>
+              {{ end }}
+            </span>
+          {{ end }}
+
           {{ with .Params.author | default $.Site.Params.author }}
             <span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              {{ partial "icons/user.html" }}
               {{ . }}
             </span>
           {{ end }}
@@ -79,11 +92,11 @@
     {{ end }}
   </div>
 
-  {{ if .Site.Params.single.showPrevNext | default true }}
+  {{ if $cfg.single.showPrevNext }}
     {{ partial "post/prevnext.html" . }}
   {{ end }}
 
-  {{ if .Site.Params.single.showRelated | default true }}
+  {{ if $cfg.single.showRelated }}
     {{ partial "post/related.html" . }}
   {{ end }}
 </div>

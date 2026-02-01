@@ -1,4 +1,5 @@
 {{ define "main" }}
+{{ $cfg := partial "func/defaults" . }}
 <div class="container">
   <header class="page-header">
     <h1>{{ .Title | default "Search" }}</h1>
@@ -10,24 +11,28 @@
     </div>
   {{ end }}
 
-  {{ $searchEngine := .Site.Params.ui.searchEngine | default "fuse" }}
+  {{ $searchEngine := $cfg.ui.searchEngine }}
 
   {{ if eq $searchEngine "fuse" }}
     {{/* Fuse.js Search UI */}}
-    <input type="search" id="fuse-search-input" placeholder="Search for articles..." class="search-input">
+    <input type="search" id="fuse-search-input" placeholder="Search for articles..." class="search-input" data-base-url="{{ "" | relURL }}">
     <div id="fuse-search-results" class="search-results"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6/dist/fuse.min.js" defer></script>
-    {{ $fuseJS := resources.Get "js/search-fuse.js" | resources.Minify }}
-    <script src="{{ $fuseJS.RelPermalink }}" defer></script>
+    {{ $fuseLib := resources.Get "vendor/fuse.min.js" | fingerprint }}
+    <script src="{{ $fuseLib.RelPermalink }}" integrity="{{ $fuseLib.Data.Integrity }}" crossorigin="anonymous" defer></script>
+    {{ $fuseJS := resources.Get "js/search-fuse.js" | resources.Minify | fingerprint }}
+    <script src="{{ $fuseJS.RelPermalink }}" integrity="{{ $fuseJS.Data.Integrity }}" crossorigin="anonymous" defer></script>
 
   {{ else if eq $searchEngine "pagefind" }}
     {{/* Pagefind Search UI */}}
-    <div id="pagefind-search"></div>
+    <div id="pagefind-search" data-base-url="{{ "" | relURL }}"></div>
 
     {{ $js := resources.Get "js/search-pagefind.js" | resources.Minify }}
     <script src="{{ $js.RelPermalink }}" defer></script>
-    <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+    <link href="{{ "pagefind/pagefind-ui.css" | relURL }}" rel="stylesheet">
+
+  {{ else }}
+    <p>Invalid search engine configured. Use "fuse" or "pagefind".</p>
   {{ end }}
 </div>
 {{ end }}
