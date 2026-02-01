@@ -1369,9 +1369,43 @@ figcaption {
 
 /* 4.12 404 Page */
 .page-404 {
-  text-align: center;
+  max-width: var(--max-width-ch);
+  margin-left: auto;
+  margin-right: auto;
   padding: var(--space-xl) var(--space-m);
 }
+
+.page-404 h1 {
+  font-size: var(--text-5xl);
+  margin-bottom: var(--space-xs);
+}
+
+.page-404-msg {
+  color: var(--color-text-offset);
+  margin-bottom: var(--space-l);
+}
+
+.page-404-search {
+  margin-bottom: var(--space-xl);
+}
+
+.page-404-recent {
+  margin-top: var(--space-l);
+  border-top: var(--border-width) solid var(--color-border);
+  padding-top: var(--space-l);
+}
+
+.page-404-section-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-text-offset);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0;
+  margin-bottom: var(--space-m);
+}
+
 .page-404-link {
   display: inline-block;
   margin-top: var(--space-l);
@@ -1382,6 +1416,7 @@ figcaption {
 
 .page-404-link:hover {
   color: var(--color-accent);
+  text-decoration: none;
 }
 
 /* 4.13 Search */
