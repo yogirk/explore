@@ -1166,7 +1166,7 @@ kbd {
   color: var(--color-primary);
   border-left-color: var(--color-primary);
   font-weight: 600;
-  background-color: rgba(26, 115, 232, 0.04);
+  background-color: color-mix(in srgb, var(--color-primary) 4%, transparent);
 }
 
 /* 4.7 Navigation (Prev/Next) */
