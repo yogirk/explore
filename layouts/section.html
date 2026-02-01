@@ -13,31 +13,7 @@
   <div class="post-list">
     {{ $paginator := .Paginate .Pages }}
     {{ range $paginator.Pages }}
-      <article class="post-list-item">
-        <header>
-          <h2 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-          <div class="post-meta">
-            {{ with .Date }}
-              <span>
-                {{ partial "icons/calendar.html" }}
-                <time datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">{{ .Format $cfg.dateFormat }}</time>
-              </span>
-            {{ end }}
-          </div>
-        </header>
-        {{ if $cfg.list.showExcerpt }}
-          <div class="post-excerpt">
-            {{ $summary := "" }}
-            {{ if .Summary }}
-              {{ $summary = .Summary }}
-            {{ else }}
-              {{ $summary = .Plain | truncate 150 }}
-            {{ end }}
-            {{ $summary | safeHTML }}
-          </div>
-        {{ end }}
-        <a href="{{ .RelPermalink }}" class="read-more">{{ i18n "readMore" }} &rarr;</a>
-      </article>
+      {{ partial "post/list-item-default.html" . }}
     {{ end }}
   </div>
 

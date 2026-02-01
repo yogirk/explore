@@ -1020,25 +1020,19 @@ kbd {
   text-decoration: none;
 }
 
-.post-excerpt-link {
-  color: var(--color-text);
-  text-decoration: none;
-  transition: color var(--transition-duration) ease;
-}
-
-.post-excerpt-link:hover {
-  color: var(--color-text-offset);
-  text-decoration: none;
-}
-
-.post-excerpt-link:hover .excerpt-ellipsis {
-  color: inherit;
-}
-
-.excerpt-ellipsis {
-  color: var(--color-primary);
+.post-list-item .read-more {
+  display: inline-block;
+  margin-top: var(--space-s);
+  font-size: var(--text-sm);
   font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
   transition: color var(--transition-duration) ease;
+}
+
+.post-list-item .read-more:hover {
+  color: var(--color-accent);
+  text-decoration: none;
 }
 
 /* 4.5 Single Post */
