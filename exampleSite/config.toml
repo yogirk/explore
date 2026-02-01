@@ -90,7 +90,7 @@ summaryLength = 70
     # Secondary accent color (hover states, highlights). Default: "#1e8e3e"
     accent  = "#5FA8A3"
     # Font preset. Options: "inter" (default system-like), "google-sans". Default: "inter"
-    fontPreset = "inter"
+    fontPreset = "google-sans"
     # Named color palette. Options: "ocean", "forest", "slate", or omit for custom primary/accent.
     # When set, overrides primary and accent values above. Default: "default"
     # palette = "ocean"
