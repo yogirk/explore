@@ -6,9 +6,14 @@
   </header>
 
   <div class="post-list">
+    {{ $listView := $cfg.list.listView }}
     {{ $paginator := .Paginate .Pages }}
     {{ range $paginator.Pages }}
-      {{ partial "post/list-item-default.html" . }}
+      {{ if eq $listView "compact" }}
+        {{ partial "post/list-item-compact.html" . }}
+      {{ else }}
+        {{ partial "post/list-item-default.html" . }}
+      {{ end }}
     {{ end }}
   </div>
 

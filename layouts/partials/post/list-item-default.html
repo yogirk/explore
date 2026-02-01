@@ -23,4 +23,22 @@
       {{ .Summary }}
     </div>
   {{ end }}
+  {{ if or .Params.categories .Params.tags }}
+  <footer class="card-footer">
+    {{ with .Params.categories }}
+      <div class="compact-post-categories">
+        {{ range . }}
+          <a href="{{ "categories/" | relLangURL }}{{ . | urlize }}/" class="compact-post-category">{{ . }}</a>
+        {{ end }}
+      </div>
+    {{ end }}
+    {{ with .Params.tags }}
+      <div class="card-tags">
+        {{- range . -}}
+          <a href="{{ "tags/" | relLangURL }}{{ . | urlize }}/" class="compact-post-tag">{{ . }}</a>
+        {{- end -}}
+      </div>
+    {{ end }}
+  </footer>
+  {{ end }}
 </article>

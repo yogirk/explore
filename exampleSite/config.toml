@@ -79,8 +79,6 @@ summaryLength = 70
     showSearch = true
     # Search engine to use. Options: "fuse" (client-side), "pagefind" (static). Default: "fuse"
     searchEngine = "fuse"
-    # Homepage post listing style. Options: "default" (cards with excerpts), "compact" (titles only). Default: "default"
-    homeView = "default"
 
 # ---- Visual Style ----
 
@@ -125,7 +123,11 @@ summaryLength = 70
 # ---- Post Lists ----
 
   [params.list]
-    # Show post excerpts in list views. Default: true
+    # Post listing style across homepage and section pages.
+    # Options: "default" (cards with excerpts), "compact" (titles with categories/tags).
+    # Default: "default"
+    listView = "default"
+    # Show post excerpts in default list view. Default: true
     showExcerpt = true
 
 # ---- Single Posts ----

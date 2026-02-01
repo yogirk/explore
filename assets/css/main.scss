@@ -951,13 +951,47 @@ kbd {
   margin-bottom: 0;
 }
 
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-m);
+  margin-top: var(--space-m);
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 1.5;
+  max-height: 1.5em;
+  overflow: hidden;
+  font-size: var(--text-sm);
+  flex-shrink: 1;
+  min-width: 0;
+  justify-content: flex-end;
+}
+
+.card-tags a + a::before {
+  content: ",\00a0";
+}
+
 .post-list-item--compact {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
-  gap: var(--space-m);
-  padding-bottom: var(--space-m);
+  gap: var(--space-s) var(--space-m);
+  padding: var(--space-m) 0;
+  margin-bottom: 0;
+  border: none;
+  border-bottom: var(--border-width) solid var(--color-border);
+  border-radius: 0;
+  background: none;
+}
+
+.post-list-item--compact:hover {
+  transform: none;
+  box-shadow: none;
 }
 
 .compact-post-link {

@@ -16,9 +16,9 @@
     <div class="main-content {{ if eq $sidebarPosition "left" }}main-content--sidebar-left{{ end }}">
       <div class="post-list">
         {{ $paginator := .Paginate (where .Site.RegularPages.ByDate.Reverse "Type" "in" $cfg.mainSections) }}
-        {{ $homeView := $cfg.ui.homeView }}
+        {{ $listView := $cfg.list.listView }}
         {{ range $paginator.Pages }}
-          {{ if eq $homeView "compact" }}
+          {{ if eq $listView "compact" }}
             {{ partial "post/list-item-compact.html" . }}
           {{ else }}
             {{ partial "post/list-item-default.html" . }}

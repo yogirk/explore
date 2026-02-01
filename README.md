@@ -82,7 +82,6 @@ summaryLength = 70
     stickyHeader = true
     showSearch = true
     searchEngine = "fuse"         # "fuse" or "pagefind"
-    homeView = "default"          # "default" or "compact"
 
   [params.style]
     fontPreset = "inter"          # "inter" or "google-sans"
@@ -105,6 +104,7 @@ summaryLength = 70
     # buttonURL = ""
 
   [params.list]
+    listView = "default"          # "default" or "compact"
     showExcerpt = true
 
   [params.single]

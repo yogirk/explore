@@ -120,7 +120,6 @@ All theme options live in your site's `config.toml` under `[params]`. Below is a
   stickyHeader = true
   showSearch = true       # Show search icon in header
   searchEngine = "fuse"   # Options: "fuse", "pagefind"
-  homeView = "default"    # Options: "default", "compact"
 ```
 
 ### Style Parameters
