@@ -49,10 +49,11 @@ summary: "Explore is a minimal, text-heavy theme for Hugo, designed for academic
 
 ### Content & SEO
 
-- **Client-Side Search:** Fuse.js (zero-config) or Pagefind (for large sites).
-- **Server-Rendered Widgets:** Sidebar widgets for recent posts, categories, and tags.
+- **Client-Side Search:** Fuse.js (zero-config) or Pagefind (for large sites). Search bar on list pages redirects to the search page with pre-filled results.
+- **Server-Rendered Widgets:** Sidebar widgets for recent posts, categories, and tags with separators and metadata.
 - **Responsive Figure Shortcode:** WebP with LQIP blur-up and `srcset`.
 - **SEO Metadata:** JSON-LD, OpenGraph, and Twitter Card tags.
+- **Helpful 404 Page:** Inline search and recent posts for easy recovery.
 - **Centralized Config Defaults:** Override only what you need.
 
 ## Font Presets
@@ -141,17 +142,6 @@ All theme options live in your site's `config.toml` under `[params]`. Below is a
   globalPosition = "right"  # Options: "left", "right", "bottom", "off"
   widgets = ["recent", "categories", "tags"]
   recentCount = 5
-```
-
-### Homepage Hero
-
-```toml
-[params.hero]
-  show = false
-  title = "Explore Theme"
-  tagline = "A minimal, text-heavy theme for Hugo."
-  buttonText = "Learn More"
-  buttonURL = "/pages/about/"
 ```
 
 ### Single Page & ToC Parameters

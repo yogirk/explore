@@ -96,13 +96,6 @@ summaryLength = 70
     widgets = ["recent", "categories", "tags"]
     recentCount = 5
 
-  [params.hero]
-    show = false
-    # title = ""
-    # tagline = ""
-    # buttonText = ""
-    # buttonURL = ""
-
   [params.list]
     listView = "default"          # "default" or "compact"
     showExcerpt = true

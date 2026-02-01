@@ -250,10 +250,11 @@
 </ul>
 <h3 id="content--seo">Content &amp; SEO</h3>
 <ul>
-<li><strong>Client-Side Search:</strong> Fuse.js (zero-config) or Pagefind (for large sites).</li>
-<li><strong>Server-Rendered Widgets:</strong> Sidebar widgets for recent posts, categories, and tags.</li>
+<li><strong>Client-Side Search:</strong> Fuse.js (zero-config) or Pagefind (for large sites). Search bar on list pages redirects to the search page with pre-filled results.</li>
+<li><strong>Server-Rendered Widgets:</strong> Sidebar widgets for recent posts, categories, and tags with separators and metadata.</li>
 <li><strong>Responsive Figure Shortcode:</strong> WebP with LQIP blur-up and <code>srcset</code>.</li>
 <li><strong>SEO Metadata:</strong> JSON-LD, OpenGraph, and Twitter Card tags.</li>
+<li><strong>Helpful 404 Page:</strong> Inline search and recent posts for easy recovery.</li>
 <li><strong>Centralized Config Defaults:</strong> Override only what you need.</li>
 </ul>
 <h2 id="font-presets">Font Presets</h2>
@@ -361,13 +362,6 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">globalPosition</span> = <span style="color:#e6db74">&#34;right&#34;</span>  <span style="color:#75715e"># Options: &#34;left&#34;, &#34;right&#34;, &#34;bottom&#34;, &#34;off&#34;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">widgets</span> = [<span style="color:#e6db74">&#34;recent&#34;</span>, <span style="color:#e6db74">&#34;categories&#34;</span>, <span style="color:#e6db74">&#34;tags&#34;</span>]
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">recentCount</span> = <span style="color:#ae81ff">5</span>
-</span></span></code></pre></div><h3 id="homepage-hero">Homepage Hero</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">hero</span>]
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">show</span> = <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;Explore Theme&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">tagline</span> = <span style="color:#e6db74">&#34;A minimal, text-heavy theme for Hugo.&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">buttonText</span> = <span style="color:#e6db74">&#34;Learn More&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">buttonURL</span> = <span style="color:#e6db74">&#34;/pages/about/&#34;</span>
 </span></span></code></pre></div><h3 id="single-page--toc-parameters">Single Page &amp; ToC Parameters</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">single</span>]
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">showPrevNext</span> = <span style="color:#66d9ef">true</span>    <span style="color:#75715e"># Previous/next post navigation</span>
@@ -427,7 +421,6 @@
         <li><a href="#ui-parameters">UI Parameters</a></li>
         <li><a href="#style-parameters">Style Parameters</a></li>
         <li><a href="#sidebar--widgets">Sidebar &amp; Widgets</a></li>
-        <li><a href="#homepage-hero">Homepage Hero</a></li>
         <li><a href="#single-page--toc-parameters">Single Page &amp; ToC Parameters</a></li>
       </ul>
     </li>
