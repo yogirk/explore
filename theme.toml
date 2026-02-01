@@ -2,6 +2,7 @@ name = "Explore"
 license = "MIT"
 licenselink = "https://github.com/yogirk/explore/blob/main/LICENSE"
 description = "Minimal, text-heavy Hugo theme for academic sites, blogs, and essays"
+min_version = "0.128.0"
 homepage = "https://github.com/yogirk/explore"
 demosite = "https://yogirk.github.io/explore/"
 tags = ["minimal", "blog", "accessible", "dark-mode", "responsive", "search", "widgets", "seo", "font-presets", "color-palettes", "design-tokens", "reading-progress", "code-copy", "breadcrumbs"]
