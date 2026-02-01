@@ -835,10 +835,19 @@ kbd {
   margin: 0;
 }
 
-/* Reduce spacing for list-based widgets */
+/* List-based widget items: spacing + separators */
 .widget-recent li,
 .widget-categories li {
-  margin-bottom: var(--space-xs);
+  padding-bottom: var(--space-s);
+  margin-bottom: var(--space-s);
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.widget-recent li:last-child,
+.widget-categories li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .widget-recent li a,
@@ -850,6 +859,26 @@ kbd {
 .widget-recent li a:hover,
 .widget-categories li a:hover {
   color: var(--color-primary);
+}
+
+/* Categories: name left, count right */
+.widget-categories li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+/* Recent posts: date below title */
+.widget-recent time {
+  display: block;
+  font-size: var(--text-xs);
+  color: var(--color-text-offset);
+}
+
+/* Category count badge */
+.widget-count {
+  font-size: var(--text-sm);
+  color: var(--color-text-offset);
 }
 
 .widget-tags ul {
