@@ -71,8 +71,8 @@
   --color-blue-600: #475569;
   --color-green-600: #64748b;
   {{ else }}
-  --color-blue-600: {{ .Site.Params.style.primary | default "#1a73e8" }};
-  --color-green-600: {{ .Site.Params.style.accent | default "#1e8e3e" }};
+  --color-blue-600: {{ .Site.Params.style.primary | default "#3451FF" }};
+  --color-green-600: {{ .Site.Params.style.accent | default "#1a3299" }};
   {{ end }}
 
   // Colors - cool gray palette (blue undertone)
@@ -240,8 +240,8 @@
   --color-primary: #94a3b8;
   --color-accent: #cbd5e1;
   {{ else }}
-  --color-primary: #8ab4f8;
-  --color-accent: #81c995;
+  --color-primary: #809bff;
+  --color-accent: #5b6eff;
   {{ end }}
   --color-yellow-700: #fdd663;
 
@@ -292,6 +292,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
   transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease;
 }
 
@@ -424,6 +425,9 @@ table {
   border-collapse: collapse;
   margin-bottom: var(--space-l);
   font-size: var(--text-sm);
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 th, td {
