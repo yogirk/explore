@@ -1,8 +1,48 @@
 {{ define "main" }}
+{{ $cfg := partial "func/defaults" . }}
 <div class="container page-404">
   <h1>404</h1>
-  <h2>{{ i18n "pageNotFound" }}</h2>
-  <p>{{ i18n "pageNotFoundMsg" }}</p>
-  <a href="{{ "/" | relLangURL }}" class="page-404-link">{{ i18n "home" }}</a>
+  <p class="page-404-msg">{{ i18n "pageNotFoundMsg" }}</p>
+
+  {{/* Search */}}
+  {{ $searchEngine := $cfg.ui.searchEngine }}
+  {{ if and $cfg.ui.showSearch (eq $searchEngine "fuse") }}
+  <div class="page-404-search">
+    <input type="search" id="fuse-search-input" placeholder="{{ i18n "search" }}..." class="search-input" data-base-url="{{ "" | relURL }}">
+    <div id="fuse-search-results" class="search-results"></div>
+  </div>
+  {{ $fuseLib := resources.Get "vendor/fuse.min.js" | fingerprint }}
+  <script src="{{ $fuseLib.RelPermalink }}" integrity="{{ $fuseLib.Data.Integrity }}" crossorigin="anonymous" defer></script>
+  {{ $fuseJS := resources.Get "js/search-fuse.js" | resources.Minify | fingerprint }}
+  <script src="{{ $fuseJS.RelPermalink }}" integrity="{{ $fuseJS.Data.Integrity }}" crossorigin="anonymous" defer></script>
+  {{ else if and $cfg.ui.showSearch (eq $searchEngine "pagefind") }}
+  <div class="page-404-search">
+    <div id="pagefind-search" data-base-url="{{ "" | relURL }}"></div>
+  </div>
+  {{ $js := resources.Get "js/search-pagefind.js" | resources.Minify }}
+  <script src="{{ $js.RelPermalink }}" defer></script>
+  <link href="{{ "pagefind/pagefind-ui.css" | relURL }}" rel="stylesheet">
+  {{ end }}
+
+  {{/* Recent Posts */}}
+  {{ $mainSections := $cfg.mainSections }}
+  {{ $recent := where .Site.RegularPages "Section" "in" $mainSections | first 5 }}
+  {{ with $recent }}
+  <div class="page-404-recent">
+    <h2 class="page-404-section-title">{{ i18n "recentPosts" }}</h2>
+    <ul class="related-list">
+      {{ range . }}
+      <li class="related-item">
+        <a href="{{ .RelPermalink }}" class="related-link">
+          <span class="related-item-title">{{ .Title }}</span>
+          <time class="related-item-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+
+  <a href="{{ "/" | relLangURL }}" class="page-404-link">&larr; {{ i18n "home" }}</a>
 </div>
 {{ end }}

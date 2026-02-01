@@ -79,8 +79,6 @@ summaryLength = 70
     showSearch = true
     # Search engine to use. Options: "fuse" (client-side), "pagefind" (static). Default: "fuse"
     searchEngine = "fuse"
-    # Homepage post listing style. Options: "default" (cards with excerpts), "compact" (titles only). Default: "default"
-    homeView = "default"
 
 # ---- Visual Style ----
 
@@ -109,23 +107,14 @@ summaryLength = 70
     # Number of posts in the Recent Posts widget. Default: 5
     recentCount = 5
 
-# ---- Homepage Hero ----
-
-  [params.hero]
-    # Show the hero banner on the homepage. Default: false
-    show = true
-    # Hero headline (supports Markdown).
-    title = "Explore Theme"
-    # Hero subtitle (supports Markdown).
-    tagline = "A minimal, text-heavy theme for Hugo, designed for academic sites, personal blogs, and essays."
-    # Optional call-to-action button.
-    buttonText = "Theme on Github"
-    buttonURL = "https://github.com/yogirk/explore"
-
 # ---- Post Lists ----
 
   [params.list]
-    # Show post excerpts in list views. Default: true
+    # Post listing style across homepage and section pages.
+    # Options: "default" (cards with excerpts), "compact" (titles with categories/tags).
+    # Default: "default"
+    listView = "default"
+    # Show post excerpts in default list view. Default: true
     showExcerpt = true
 
 # ---- Single Posts ----

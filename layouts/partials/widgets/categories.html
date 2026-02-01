@@ -3,7 +3,7 @@
   {{ if .Site.Taxonomies.categories }}
   <ul>
     {{ range .Site.Taxonomies.categories.ByCount }}
-    <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }} ({{ .Count }})</a></li>
+    <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a><span class="widget-count">{{ .Count }}</span></li>
     {{ end }}
   </ul>
   {{ end }}

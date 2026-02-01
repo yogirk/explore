@@ -1,16 +1,15 @@
-{{ $page := . }}
 {{ if or .NextInSection .PrevInSection }}
 <nav class="post-nav">
   {{ with .PrevInSection }}
   <a href="{{ .RelPermalink }}" class="nav-prev">
-    <span class="nav-label">&larr; {{ i18n "prevPost" }}</span>
+    <span class="nav-arrow">&larr;</span>
     <span class="nav-title">{{ .Title }}</span>
   </a>
   {{ end }}
   {{ with .NextInSection }}
   <a href="{{ .RelPermalink }}" class="nav-next">
-    <span class="nav-label">{{ i18n "nextPost" }} &rarr;</span>
     <span class="nav-title">{{ .Title }}</span>
+    <span class="nav-arrow">&rarr;</span>
   </a>
   {{ end }}
 </nav>

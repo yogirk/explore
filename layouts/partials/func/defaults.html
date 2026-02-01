@@ -31,7 +31,6 @@
   "stickyHeader" $stickyHeader
   "showSearch"   $showSearch
   "searchEngine" ($uiParams.searchEngine | default "fuse")
-  "homeView"     ($uiParams.homeView | default "default")
 }}
 
 {{/* -- Style group -- */}}
@@ -84,20 +83,10 @@
 {{ $listParams := .Site.Params.list | default dict }}
 {{ $showExcerpt := true }}
 {{ if isset $listParams "showexcerpt" }}{{ $showExcerpt = $listParams.showExcerpt }}{{ end }}
+{{ $listView := $listParams.listView | default "default" }}
 {{ $list := dict
   "showExcerpt" $showExcerpt
-}}
-
-{{/* -- Hero group -- */}}
-{{ $heroParams := .Site.Params.hero | default dict }}
-{{ $heroShow := false }}
-{{ if isset $heroParams "show" }}{{ $heroShow = $heroParams.show }}{{ end }}{{/* "show" is already lowercase */}}
-{{ $hero := dict
-  "show"       $heroShow
-  "title"      ($heroParams.title | default "")
-  "tagline"    ($heroParams.tagline | default "")
-  "buttonText" ($heroParams.buttonText | default "")
-  "buttonURL"  ($heroParams.buttonURL | default "")
+  "listView"    $listView
 }}
 
 {{/* 3. Assemble final config dict */}}
@@ -109,7 +98,6 @@
   "sidebar"      $sidebar
   "single"       $single
   "list"         $list
-  "hero"         $hero
 }}
 
 {{ return $cfg }}
