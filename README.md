@@ -12,43 +12,16 @@
 
 ## Features
 
-### Performance & Security
-
-- **Subresource Integrity (SRI):** All generated CSS and JS include integrity hashes.
-- **IIFE JavaScript:** All scripts are wrapped in immediately-invoked function expressions to avoid global scope pollution.
-- **Self-Hosted Fonts:** Two font presets (Inter, Google Sans) are bundled locally — no external requests.
-- **Hugo Pipes:** CSS is processed, minified, and fingerprinted through Hugo's asset pipeline.
-
-### Design System
-
-- **Design Tokens:** Three-tier CSS custom property architecture (primitive, semantic, component).
-- **Font Presets:** Switch between `inter` and `google-sans` with a single config line.
-- **Color Palettes:** Four built-in palettes (`default`, `ocean`, `forest`, `slate`) with independent light/dark values.
-- **Fluid Spacing:** Clamp-based spacing scale that adapts between mobile and desktop.
-- **Type Scale:** Minor Third (1.2x) typographic scale from body to display sizes.
-
-### Accessibility & UX
-
-- **WCAG 2.1 AA:** Semantic HTML, ARIA landmarks, keyboard navigation, and sufficient contrast ratios.
-- **Dark Mode:** Automatic detection via `prefers-color-scheme` with manual toggle and localStorage persistence.
-- **Independent Dark Palettes:** Each color palette defines its own dark-mode overrides for optimal contrast.
-- **Smooth Toggle Transitions:** Theme switch applies CSS transitions to avoid flash of unstyled content.
-
-### Interactive Features
-
-- **Reading Progress Bar:** A thin progress indicator at the top of the viewport on single posts.
-- **Code Copy Button:** One-click copy with language label and "Copied!" confirmation on all code blocks.
-- **Card Hover Effects:** Post cards lift with shadow elevation and title color change on hover.
-- **ScrollSpy Table of Contents:** Active heading is highlighted in the sidebar ToC as you scroll.
-- **Breadcrumb Navigation:** Hierarchical breadcrumbs on all inner pages.
-
-### Content & SEO
-
-- **Client-Side Search:** Choose between Fuse.js (zero-config) or Pagefind (for large sites).
-- **Server-Rendered Widgets:** Sidebar widgets for recent posts, categories, and tags.
-- **Responsive Figure Shortcode:** Generates WebP with LQIP blur-up placeholders and `srcset` for responsive images.
-- **SEO Metadata:** JSON-LD structured data, OpenGraph, and Twitter Card tags on every page.
-- **Centralized Config Defaults:** Every parameter has a documented default in a single partial — override only what you need.
+- Dark mode with auto-detection, manual toggle, and per-palette dark overrides
+- Two self-hosted font presets (Inter, Google Sans) — no external requests
+- Four color palettes (`default`, `ocean`, `forest`, `slate`) or custom primary/accent
+- Three-tier design token architecture (primitive, semantic, component)
+- Client-side search via Fuse.js (zero-config) or Pagefind (large sites)
+- Reading progress bar, code copy, ScrollSpy ToC, breadcrumbs — all automatic
+- WCAG 2.1 AA: semantic HTML, ARIA landmarks, keyboard navigation
+- SEO: JSON-LD structured data, OpenGraph, Twitter Cards
+- SRI hashes, IIFE scripts, Hugo Pipes asset pipeline
+- Responsive figure shortcode with WebP and LQIP blur-up
 
 ## Quickstart
 
@@ -81,12 +54,12 @@ All theme options are configured in your site's `config.toml` file under the `[p
 # --- Site-level settings ---
 baseURL = "https://example.org/"
 languageCode = "en-us"
-title = "Explore Theme"
+title = "My Site"
 theme = "explore"
-summaryLength = 70 # Default length of auto-generated summaries
+summaryLength = 70
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"] # Required for Fuse.js search
+  home = ["HTML", "RSS", "JSON"] # JSON required for Fuse.js search
 
 [build]
   writeStats = true # Required for Hugo Pipes
@@ -95,54 +68,52 @@ summaryLength = 70 # Default length of auto-generated summaries
   pagerSize = 5
 
 # --- Theme Parameters ---
+# Every parameter below has a built-in default. Override only what you need.
+
 [params]
   author = "Your Name"
   description = "A description of your site."
-  logo = "images/logo.svg" # Path to logo in /static. Leave empty for text.
-  tagline = "Your site's tagline."
+  logo = ""                       # Path in /static, e.g. "images/logo.svg". Empty = text title.
+  tagline = ""
+  # dateFormat = "Jan 2, 2006"    # Go reference-time layout
+  # mainSections = ["posts"]      # Content sections shown on homepage
 
-  # --- UI Settings ---
   [params.ui]
     stickyHeader = true
     showSearch = true
-    searchEngine = "fuse" # "fuse" or "pagefind"
-    homeView = "default"  # "default" or "compact"
+    searchEngine = "fuse"         # "fuse" or "pagefind"
+    homeView = "default"          # "default" or "compact"
 
-  # --- Style Settings ---
   [params.style]
     fontPreset = "inter"          # "inter" or "google-sans"
     palette = "default"           # "default", "ocean", "forest", or "slate"
-    primary = "#6C3DBF"           # Custom primary (used when palette = "default")
-    accent  = "#5FA8A3"           # Custom accent (used when palette = "default")
+    # primary = "#1a73e8"         # Override primary color (only when palette = "default")
+    # accent  = "#1e8e3e"         # Override accent color  (only when palette = "default")
     containerMaxWidth = "1280px"
     maxWidthCh = 75
 
-  # --- Widgets & Sidebar ---
   [params.sidebar]
-    globalPosition = "right" # "left", "right", "bottom", or "off"
+    globalPosition = "right"      # "left", "right", "bottom", or "off"
     widgets = ["recent", "categories", "tags"]
     recentCount = 5
 
-  # --- Homepage Hero ---
   [params.hero]
     show = false
-    title = "Explore Theme"
-    tagline = "A minimal, text-heavy theme for Hugo."
-    buttonText = "Learn More"
-    buttonURL = "/pages/about/"
+    # title = ""
+    # tagline = ""
+    # buttonText = ""
+    # buttonURL = ""
 
-  # --- List Page Settings ---
   [params.list]
     showExcerpt = true
 
-  # --- Single Page Settings ---
   [params.single]
     showPrevNext = true
     showRelated = true
     relatedCount = 4
     [params.single.toc]
       enable = true
-      position = "right" # "inline", "left", "right", or "off"
+      position = "inline"         # "inline", "left", "right", or "off"
 ```
 
 ## Font & Color Customization
@@ -166,17 +137,6 @@ Set via `params.style.fontPreset` in your `config.toml`. Both presets are self-h
 | `slate` | `#475569` | `#64748b` | Understated gray — minimal, editorial |
 
 Each palette defines independent dark-mode overrides to maintain contrast and readability. When `palette` is set to anything other than `default`, the `primary` and `accent` values in your config are ignored in favor of the palette's built-in values.
-
-## Interactive Features
-
-The following features are enabled automatically with no configuration required:
-
-- **Reading progress bar** — visible on single post pages as you scroll
-- **Code copy button** — appears on every fenced code block with language detection
-- **Card hover effects** — post cards on list pages lift with shadow and title highlight
-- **ScrollSpy ToC** — active heading tracked in sidebar table of contents (when `toc.position` is `left` or `right`)
-- **Breadcrumbs** — hierarchical navigation shown on inner pages
-- **Smooth theme toggle** — light/dark switch with CSS transitions (no flash)
 
 ## Search Setup
 
