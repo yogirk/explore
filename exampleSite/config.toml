@@ -86,9 +86,9 @@ summaryLength = 70
 
   [params.style]
     # Primary brand color (links, buttons, accents). Default: "#1a73e8"
-    primary = "#6C3DBF"
+    # primary = "#1a73e8"
     # Secondary accent color (hover states, highlights). Default: "#1e8e3e"
-    accent  = "#5FA8A3"
+    # accent  = "#1e8e3e"
     # Font preset. Options: "inter" (default system-like), "google-sans". Default: "inter"
     fontPreset = "google-sans"
     # Named color palette. Options: "ocean", "forest", "slate", or omit for custom primary/accent.

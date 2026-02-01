@@ -5,9 +5,8 @@
       <a href="{{ .Site.Home.RelPermalink }}" class="site-brand">
         {{ if .Site.Params.logo }}
           <img src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Title }} logo">
-        {{ else }}
-          {{ .Site.Title }}
         {{ end }}
+        <span class="site-title">{{ .Site.Title }}</span>
       </a>
       {{ with .Site.Params.tagline }}
         <p class="site-tagline">{{ . }}</p>

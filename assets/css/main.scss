@@ -633,12 +633,19 @@ kbd {
   font-size: var(--text-lg);
   color: var(--color-text);
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
 }
 
 .site-brand img {
   max-height: 40px; /* Adjust this value to your logo's needs */
   width: auto;
   display: block;
+}
+
+[data-theme="dark"] .site-brand img {
+  filter: brightness(0) invert(1);
 }
 
 .site-brand:hover {
