@@ -62,7 +62,7 @@ summaryLength = 70
   # Site-wide meta description for SEO.
   description = "A minimal, text-heavy theme for Hugo."
   # Path to logo image in the static/ folder. Leave empty to show the site title as text.
-  logo = "images/logo.svg"
+  logo = "images/logo-v2.svg"
   # Short tagline displayed under the site title/logo in the header.
   tagline = "A minimal, text-heavy theme for Hugo"
   # Date format used across all templates (Go reference time layout).
