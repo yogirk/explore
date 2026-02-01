@@ -87,8 +87,7 @@
 
   /**
    * Code Copy Button
-   * Adds a copy button and language label to fenced code blocks.
-   * Injects a .code-header bar above each .highlight block.
+   * Adds an inline copy button and language label overlay to fenced code blocks.
    */
   function initCodeCopy() {
     var highlights = document.querySelectorAll('.highlight');
@@ -100,35 +99,32 @@
       var langMatch = codeEl.className.match(/language-(\w+)/);
       var lang = langMatch ? langMatch[1] : '';
 
-      // Create the header bar
-      var header = document.createElement('div');
-      header.className = 'code-header';
-
       // Language label (only if language is detected)
       if (lang) {
         var langSpan = document.createElement('span');
         langSpan.className = 'code-lang';
         langSpan.textContent = lang.toUpperCase();
-        header.appendChild(langSpan);
+        block.appendChild(langSpan);
       }
 
-      // Copy button
+      // Copy button with clipboard icon
+      var copyIcon = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="5.5" width="8" height="9" rx="1.5"/><path d="M5.5 10.5H3.25A1.25 1.25 0 0 1 2 9.25v-7A1.25 1.25 0 0 1 3.25 1h7A1.25 1.25 0 0 1 11.5 2.25V4.5"/></svg>';
+      var checkIcon = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3.5 8.5 6.5 11.5 12.5 4.5"/></svg>';
+
       var btn = document.createElement('button');
       btn.className = 'copy-code';
-      btn.textContent = 'Copy';
+      btn.innerHTML = copyIcon;
       btn.type = 'button';
-      header.appendChild(btn);
-
-      // Insert header as first child of .highlight
-      block.insertBefore(header, block.firstChild);
+      btn.setAttribute('aria-label', 'Copy to clipboard');
+      block.appendChild(btn);
 
       // Click handler
       btn.addEventListener('click', function() {
         navigator.clipboard.writeText(codeEl.textContent).then(function() {
-          btn.textContent = 'Copied!';
+          btn.innerHTML = checkIcon;
           btn.classList.add('is-copied');
           setTimeout(function() {
-            btn.textContent = 'Copy';
+            btn.innerHTML = copyIcon;
             btn.classList.remove('is-copied');
           }, 2000);
         });

@@ -22,8 +22,5 @@
     <div class="post-excerpt">
       {{ .Summary }}
     </div>
-    {{ if .Truncated }}
-      <a href="{{ .RelPermalink }}" class="read-more">{{ i18n "readMore" }} &rarr;</a>
-    {{ end }}
   {{ end }}
 </article>

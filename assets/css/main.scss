@@ -1026,20 +1026,6 @@ kbd {
   text-decoration: none;
 }
 
-.post-list-item .read-more {
-  display: inline-block;
-  margin-top: var(--space-s);
-  font-size: var(--text-sm);
-  font-weight: 600;
-  color: var(--color-primary);
-  text-decoration: none;
-  transition: color var(--transition-duration) ease;
-}
-
-.post-list-item .read-more:hover {
-  color: var(--color-accent);
-  text-decoration: none;
-}
 
 /* 4.5 Single Post */
 .post-single .post-header {
@@ -1304,9 +1290,16 @@ figcaption {
   text-align: center;
   padding: var(--space-xl) var(--space-m);
 }
-.page-404 .read-more {
-  margin-top: var(--space-l);
+.page-404-link {
   display: inline-block;
+  margin-top: var(--space-l);
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.page-404-link:hover {
+  color: var(--color-accent);
 }
 
 /* 4.13 Search */
@@ -1395,51 +1388,55 @@ figcaption {
   margin-bottom: 0;
 }
 
-.code-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--space-xs) var(--space-m);
-  background-color: var(--chroma-bg);
-  border-bottom: 1px solid var(--color-border);
-  border-radius: var(--radius) var(--radius) 0 0;
-  font-size: var(--font-size-small);
-}
-
 .code-lang {
-  color: var(--color-text-offset);
+  position: absolute;
+  top: var(--space-xs);
+  right: var(--space-s);
+  color: rgba(255, 255, 255, 0.45);
   font-family: var(--font-mono);
+  font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 1;
+  line-height: 1;
 }
 
 .copy-code {
+  position: absolute;
+  top: var(--space-xs);
+  right: var(--space-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   appearance: none;
-  border: 1px solid var(--color-border);
-  background: var(--color-bg, var(--color-background));
-  color: var(--color-text-offset);
-  padding: 2px 10px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 4px;
   border-radius: var(--radius);
-  font-size: var(--font-size-small);
   cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease;
-  margin-left: auto;
+  opacity: 0;
+  transition: opacity 0.2s ease, color 0.15s ease;
+  z-index: 2;
+}
+
+.highlight:hover .code-lang {
+  opacity: 0;
+}
+
+.highlight:hover .copy-code {
+  opacity: 1;
 }
 
 .copy-code:hover {
-  background-color: var(--color-primary);
   color: #fff;
 }
 
 .copy-code.is-copied {
-  background-color: var(--color-accent);
-  color: #fff;
-  border-color: var(--color-accent);
-}
-
-.code-header + pre .chroma,
-.code-header + .chroma {
-  border-radius: 0 0 var(--radius) var(--radius);
+  opacity: 1;
+  color: var(--color-accent);
 }
 
 /* You can add more specific Chroma styles here if needed */
