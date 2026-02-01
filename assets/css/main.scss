@@ -884,7 +884,6 @@ kbd {
 .post-list-item:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
-  border-color: var(--color-primary);
 }
 
 .post-list-item:last-child {
@@ -922,7 +921,7 @@ kbd {
   color: var(--color-text);
   text-decoration: none;
 }
-.post-title a:hover {
+.post-list-item:hover .post-title a {
   color: var(--color-primary);
 }
 

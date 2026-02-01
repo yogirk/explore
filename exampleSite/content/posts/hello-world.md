@@ -92,6 +92,7 @@ This will start a local server, usually at `http://localhost:1313/`. Open this U
 
 Congratulations! Your site is live locally. From here, you can:
 
-- Explore the `config.toml` file to customize the theme's features, colors, and layout.
+- Try a different look — switch `fontPreset` to `"google-sans"` or `palette` to `"forest"` in your `config.toml` and watch the site transform. See [Customizing Your Theme]({{< relref "customizing-your-theme.md" >}}) for details.
 - Read the [Markdown & Typography Guide]({{< relref "markdown-and-typography.md" >}}) to see how to style your content.
 - Check out the [Explore Theme Features]({{< relref "theme-features.md" >}}) post for a deep dive into all configuration options.
+- See the [Interactive Features]({{< relref "interactive-features.md" >}}) post for a hands-on tour of the reading progress bar, code copy button, ScrollSpy ToC, and more.

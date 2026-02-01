@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/explore/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=explore/livereload" data-no-instant defer></script>
+<head>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Explore Theme Features &middot; Explore Theme</title>
 
 <meta name="description" content="A detailed overview of the features and configuration options of the Explore theme for Hugo.">
 <meta name="author" content="Rain Doctor">
-<link rel="canonical" href="http://localhost:1313/explore/posts/theme-features/">
+<link rel="canonical" href="https://yogirk.github.io/explore/posts/theme-features/">
 
 
 <link rel="icon" href="/explore/favicon.svg" type="image/svg+xml">
@@ -18,7 +18,7 @@
 <meta property="og:title" content="Explore Theme Features">
 <meta property="og:description" content="A detailed overview of the features and configuration options of the Explore theme for Hugo.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="http://localhost:1313/explore/posts/theme-features/">
+<meta property="og:url" content="https://yogirk.github.io/explore/posts/theme-features/">
 
 
 
@@ -50,7 +50,7 @@
   "headline": "Explore Theme Features",
   "name": "Explore Theme Features",
   "description": "A detailed overview of the features and configuration options of the Explore theme for Hugo.",
-  "url": "http:\/\/localhost:1313\/explore\/posts\/theme-features\/",
+  "url": "https:\/\/yogirk.github.io\/explore\/posts\/theme-features\/",
   
   "datePublished": "2025-08-19T10:00:00\u002b05:30",
   "dateModified": "2025-08-19T10:00:00\u002b05:30",
@@ -61,14 +61,14 @@
   
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http:\/\/localhost:1313\/explore\/posts\/theme-features\/"
+    "@id": "https:\/\/yogirk.github.io\/explore\/posts\/theme-features\/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Explore Theme",
     "logo": {
       "@type": "ImageObject",
-      "url": "http:\/\/localhost:1313\/explore\/apple-touch-icon.png"
+      "url": "https:\/\/yogirk.github.io\/explore\/apple-touch-icon.png"
     }
   }
 }
@@ -78,14 +78,20 @@
 
 
 
-<link rel="stylesheet" href="/explore/css/style.bd2107a237cda4b7ff129ed4b736141d8a75a50a9ff39833b6bffcf70e982640.css" integrity="sha256-vSEHojfNpLf/Ep7UtzYUHYp1pQqf85gztr/89w6YJkA=">
+<link rel="preload" href="/explore/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/explore/fonts/inter-bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/explore/fonts/jetbrains-mono-regular.woff2" as="font" type="font/woff2" crossorigin>
 
 
 
+
+
+<link rel="stylesheet" href="/explore/css/style.f99ea9afe67ae37cf72ec9c68f61f5bd9705a95ba284f62035cb554a680b9f4b.css" integrity="sha256-&#43;Z6pr&#43;Z643z3LsnGj2H1vZcFqVuihPYgNctVSmgLn0s=">
 
 </head>
 <body>
-  <header class="site-header is-sticky">
+  
+<header class="site-header is-sticky">
   <div class="container header-inner">
     <div class="site-identity">
       <a href="/explore/" class="site-brand">
@@ -135,6 +141,8 @@
   <main class="site-main">
     
 
+<div id="reading-progress" class="reading-progress" aria-hidden="true"></div>
+
 
 
 
@@ -178,6 +186,18 @@
               <time datetime="2025-08-19T10:00:00&#43;05:30">Aug 19, 2025</time>
             </span>
           
+
+          
+            <span class="post-categories">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-folder"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+              
+                
+                <a href="/explore/categories/theme-guide/">Theme Guide</a>
+              
+            </span>
+          
+
           
             <span>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
@@ -190,59 +210,173 @@
       
 
       <div class="post-content">
-        <p><strong>Explore</strong> is a minimal, text-heavy theme for Hugo, designed for academic sites, personal blogs, and essays. It prioritizes readability, performance, accessibility, and maintainability. Explore is built with Gemini Code Assist.</p>
+        <p><strong>Explore</strong> is a minimal, text-heavy theme for Hugo, designed for academic sites, personal blogs, and essays. It prioritizes readability, performance, accessibility, and maintainability.</p>
+<blockquote>
+<p>&ldquo;Have nothing in your houses that you do not know to be useful or believe to be beautiful.&rdquo;</p>
+<p>&ndash; William Morris</p>
+</blockquote>
 <h2 id="features">Features</h2>
+<h3 id="performance--security">Performance &amp; Security</h3>
 <ul>
-<li><strong>High Performance:</strong> Minimal CSS and JS, with performance budgets in mind.</li>
-<li><strong>Accessible:</strong> WCAG 2.1 AA compliant, with full keyboard navigation and screen-reader support.</li>
-<li><strong>Responsive &amp; Modern:</strong> Looks great on all devices, with a clean, modern aesthetic.</li>
-<li><strong>Dark Mode:</strong> Automatic and manual dark mode switching.</li>
-<li><strong>Configurable Search:</strong> Choose between client-side search with Fuse.js or Pagefind.</li>
-<li><strong>Widgets:</strong> Server-rendered widgets for recent posts, categories, and tags.</li>
-<li><strong>SEO Optimized:</strong> Includes JSON-LD, OpenGraph, and Twitter Card metadata.</li>
-<li><strong>Hugo Pipes:</strong> Uses Hugo&rsquo;s asset pipeline for CSS processing.</li>
+<li><strong>Subresource Integrity (SRI):</strong> All generated CSS and JS include integrity hashes to prevent tampering.</li>
+<li><strong>IIFE JavaScript:</strong> Scripts are wrapped to avoid global scope pollution.</li>
+<li><strong>Self-Hosted Fonts:</strong> Both font presets are bundled locally — zero external requests.</li>
+<li><strong>Hugo Pipes:</strong> CSS is processed, minified, and fingerprinted through Hugo&rsquo;s asset pipeline.</li>
 </ul>
-<h2 id="configuration">Configuration</h2>
-<p>All theme options are configured in your site&rsquo;s <code>config.toml</code> under the <code>[params]</code> section. Below is a breakdown of the available parameters, matching the <code>exampleSite/config.toml</code>.</p>
-<h3 id="ui-parameters">UI Parameters</h3>
-<p>These settings control the behavior of user interface elements.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">ui</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">stickyHeader</span> = <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">showSearch</span> = <span style="color:#66d9ef">true</span> <span style="color:#75715e"># Show search icon in header</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">searchEngine</span> = <span style="color:#e6db74">&#34;fuse&#34;</span> <span style="color:#75715e"># options: fuse, pagefind</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">homeView</span> = <span style="color:#e6db74">&#34;default&#34;</span> <span style="color:#75715e"># options: &#34;default&#34;, &#34;compact&#34;</span>
-</span></span></code></pre></div><h3 id="style-parameters">Style Parameters</h3>
-<p>These settings control the visual appearance of the theme.</p>
+<h3 id="design-system">Design System</h3>
+<ul>
+<li><strong>Design Tokens:</strong> Three-tier CSS custom property architecture (primitive, semantic, component).</li>
+<li><strong>Font Presets:</strong> Switch between <code>inter</code> and <code>google-sans</code> with a single config line.</li>
+<li><strong>Color Palettes:</strong> Four built-in palettes with independent light and dark values.</li>
+<li><strong>Fluid Spacing:</strong> Clamp-based spacing scale that adapts between viewport sizes.</li>
+<li><strong>Type Scale:</strong> Minor Third (1.2x) typographic scale.</li>
+</ul>
+<h3 id="accessibility--ux">Accessibility &amp; UX</h3>
+<ul>
+<li><strong>WCAG 2.1 AA:</strong> Semantic HTML, ARIA landmarks, keyboard navigation, and sufficient contrast.</li>
+<li><strong>Dark Mode:</strong> Automatic detection via <code>prefers-color-scheme</code> with manual toggle and persistence.</li>
+<li><strong>Smooth Toggle Transitions:</strong> No flash of unstyled content when switching themes.</li>
+</ul>
+<h3 id="interactive-features">Interactive Features</h3>
+<ul>
+<li><strong>Reading Progress Bar:</strong> Thin indicator at the top of the viewport on single posts.</li>
+<li><strong>Code Copy Button:</strong> One-click copy on all code blocks with language label.</li>
+<li><strong>Card Hover Effects:</strong> Post cards lift with shadow and title color change.</li>
+<li><strong>ScrollSpy ToC:</strong> Active heading highlighted in the sidebar table of contents.</li>
+<li><strong>Breadcrumb Navigation:</strong> Hierarchical breadcrumbs on all inner pages.</li>
+</ul>
+<h3 id="content--seo">Content &amp; SEO</h3>
+<ul>
+<li><strong>Client-Side Search:</strong> Fuse.js (zero-config) or Pagefind (for large sites).</li>
+<li><strong>Server-Rendered Widgets:</strong> Sidebar widgets for recent posts, categories, and tags.</li>
+<li><strong>Responsive Figure Shortcode:</strong> WebP with LQIP blur-up and <code>srcset</code>.</li>
+<li><strong>SEO Metadata:</strong> JSON-LD, OpenGraph, and Twitter Card tags.</li>
+<li><strong>Centralized Config Defaults:</strong> Override only what you need.</li>
+</ul>
+<h2 id="font-presets">Font Presets</h2>
+<p>The theme ships with two self-hosted font presets. Set <code>params.style.fontPreset</code> in your <code>config.toml</code>:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Preset</th>
+          <th>Sans-Serif</th>
+          <th>Monospace</th>
+          <th>Character</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>inter</code> (default)</td>
+          <td>Inter</td>
+          <td>JetBrains Mono</td>
+          <td>Clean, neutral, highly legible</td>
+      </tr>
+      <tr>
+          <td><code>google-sans</code></td>
+          <td>Google Sans Flex</td>
+          <td>Google Sans Code</td>
+          <td>Friendly, geometric, modern</td>
+      </tr>
+  </tbody>
+</table>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">style</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">primary</span> = <span style="color:#e6db74">&#34;#6C3DBF&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">accent</span>  = <span style="color:#e6db74">&#34;#5FA8A3&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">containerMaxWidth</span> = <span style="color:#e6db74">&#34;1280px&#34;</span>  <span style="color:#75715e"># Max width of the site container</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">maxWidthCh</span> = <span style="color:#ae81ff">75</span>               <span style="color:#75715e"># Max width of readable content in &#39;ch&#39; units</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fontPreset</span> = <span style="color:#e6db74">&#34;google-sans&#34;</span>
+</span></span></code></pre></div><p>No external font requests are made — both presets are bundled in the theme&rsquo;s <code>static/fonts/</code> directory.</p>
+<h2 id="color-palettes">Color Palettes</h2>
+<p>Four named palettes are available. Each defines its own light and dark mode values:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Palette</th>
+          <th>Light Primary</th>
+          <th>Light Accent</th>
+          <th>Character</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>default</code></td>
+          <td><code>#1a73e8</code></td>
+          <td><code>#1e8e3e</code></td>
+          <td>Familiar blue/green — works everywhere</td>
+      </tr>
+      <tr>
+          <td><code>ocean</code></td>
+          <td><code>#0077b6</code></td>
+          <td><code>#00838f</code></td>
+          <td>Deep teal — calm, professional</td>
+      </tr>
+      <tr>
+          <td><code>forest</code></td>
+          <td><code>#2d6a4f</code></td>
+          <td><code>#52b788</code></td>
+          <td>Natural green — warm, organic</td>
+      </tr>
+      <tr>
+          <td><code>slate</code></td>
+          <td><code>#475569</code></td>
+          <td><code>#64748b</code></td>
+          <td>Understated gray — minimal, editorial</td>
+      </tr>
+  </tbody>
+</table>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">style</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">palette</span> = <span style="color:#e6db74">&#34;ocean&#34;</span>
+</span></span></code></pre></div><p>When using a named palette, the <code>primary</code> and <code>accent</code> fields in your config are ignored. To use custom colors instead, set <code>palette = &quot;default&quot;</code> and specify your own values:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">style</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">palette</span> = <span style="color:#e6db74">&#34;default&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">primary</span> = <span style="color:#e6db74">&#34;#6C3DBF&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">accent</span>  = <span style="color:#e6db74">&#34;#5FA8A3&#34;</span>
+</span></span></code></pre></div><h2 id="interactive-features-1">Interactive Features</h2>
+<p>All interactive features are enabled automatically. No configuration is needed.</p>
+<ul>
+<li><strong>Reading progress bar</strong> — visible as you scroll through any single post</li>
+<li><strong>Code copy button</strong> — appears on every fenced code block (try the examples on this page)</li>
+<li><strong>Card hover effects</strong> — post cards on list pages lift with shadow and title highlight</li>
+<li><strong>ScrollSpy ToC</strong> — the active heading is tracked in the sidebar table of contents</li>
+<li><strong>Breadcrumbs</strong> — hierarchical navigation at the top of inner pages</li>
+<li><strong>Smooth theme toggle</strong> — the light/dark switch transitions without a flash</li>
+</ul>
+<p>For a hands-on demonstration of each feature, see <a href="/explore/posts/interactive-features/">Interactive Features</a>.</p>
+<h2 id="configuration">Configuration</h2>
+<p>All theme options live in your site&rsquo;s <code>config.toml</code> under <code>[params]</code>. Below is a breakdown of the available sections.</p>
+<h3 id="ui-parameters">UI Parameters</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">ui</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">stickyHeader</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">showSearch</span> = <span style="color:#66d9ef">true</span>       <span style="color:#75715e"># Show search icon in header</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">searchEngine</span> = <span style="color:#e6db74">&#34;fuse&#34;</span>   <span style="color:#75715e"># Options: &#34;fuse&#34;, &#34;pagefind&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">homeView</span> = <span style="color:#e6db74">&#34;default&#34;</span>    <span style="color:#75715e"># Options: &#34;default&#34;, &#34;compact&#34;</span>
+</span></span></code></pre></div><h3 id="style-parameters">Style Parameters</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">style</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fontPreset</span> = <span style="color:#e6db74">&#34;inter&#34;</span>           <span style="color:#75715e"># &#34;inter&#34; or &#34;google-sans&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">palette</span> = <span style="color:#e6db74">&#34;default&#34;</span>            <span style="color:#75715e"># &#34;default&#34;, &#34;ocean&#34;, &#34;forest&#34;, &#34;slate&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">primary</span> = <span style="color:#e6db74">&#34;#6C3DBF&#34;</span>            <span style="color:#75715e"># Custom primary (when palette = &#34;default&#34;)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">accent</span>  = <span style="color:#e6db74">&#34;#5FA8A3&#34;</span>            <span style="color:#75715e"># Custom accent (when palette = &#34;default&#34;)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">containerMaxWidth</span> = <span style="color:#e6db74">&#34;1280px&#34;</span>   <span style="color:#75715e"># Max width of the site container</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">maxWidthCh</span> = <span style="color:#ae81ff">75</span>                <span style="color:#75715e"># Max width of readable content in &#39;ch&#39; units</span>
 </span></span></code></pre></div><h3 id="sidebar--widgets">Sidebar &amp; Widgets</h3>
-<p>Control the global sidebar position and which widgets are displayed.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">sidebar</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">globalPosition</span> = <span style="color:#e6db74">&#34;right&#34;</span> <span style="color:#75715e"># Options: &#34;left&#34;, &#34;right&#34;, &#34;bottom&#34;, &#34;off&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">widgets</span> = [<span style="color:#e6db74">&#34;recent&#34;</span>, <span style="color:#e6db74">&#34;categories&#34;</span>, <span style="color:#e6db74">&#34;tags&#34;</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">recentCount</span> = <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">globalPosition</span> = <span style="color:#e6db74">&#34;right&#34;</span>  <span style="color:#75715e"># Options: &#34;left&#34;, &#34;right&#34;, &#34;bottom&#34;, &#34;off&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">widgets</span> = [<span style="color:#e6db74">&#34;recent&#34;</span>, <span style="color:#e6db74">&#34;categories&#34;</span>, <span style="color:#e6db74">&#34;tags&#34;</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">recentCount</span> = <span style="color:#ae81ff">5</span>
 </span></span></code></pre></div><h3 id="homepage-hero">Homepage Hero</h3>
-<p>Configure the hero section that can be displayed at the top of the homepage.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">hero</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">show</span> = <span style="color:#66d9ef">false</span> <span style="color:#75715e"># Set to true to show the hero section</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;Explore Theme&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">tagline</span> = <span style="color:#e6db74">&#34;A minimal, text-heavy theme for Hugo, designed for academic sites, personal blogs, and essays.&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">buttonText</span> = <span style="color:#e6db74">&#34;Learn More&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">buttonURL</span> = <span style="color:#e6db74">&#34;/pages/about/&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">show</span> = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;Explore Theme&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">tagline</span> = <span style="color:#e6db74">&#34;A minimal, text-heavy theme for Hugo.&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">buttonText</span> = <span style="color:#e6db74">&#34;Learn More&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">buttonURL</span> = <span style="color:#e6db74">&#34;/pages/about/&#34;</span>
 </span></span></code></pre></div><h3 id="single-page--toc-parameters">Single Page &amp; ToC Parameters</h3>
-<p>Control elements on single post pages.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">single</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">showPrevNext</span> = <span style="color:#66d9ef">true</span>   <span style="color:#75715e"># Show previous/next post navigation</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">showRelated</span> = <span style="color:#66d9ef">true</span>    <span style="color:#75715e"># Show related posts</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">relatedCount</span> = <span style="color:#ae81ff">4</span>      <span style="color:#75715e"># Number of related posts to show</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">showPrevNext</span> = <span style="color:#66d9ef">true</span>    <span style="color:#75715e"># Previous/next post navigation</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">showRelated</span> = <span style="color:#66d9ef">true</span>     <span style="color:#75715e"># Related posts section</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">relatedCount</span> = <span style="color:#ae81ff">4</span>       <span style="color:#75715e"># Number of related posts</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">single</span>.<span style="color:#a6e22e">toc</span>]
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">enable</span> = <span style="color:#66d9ef">true</span>       <span style="color:#75715e"># Enable the ToC. Can be disabled per-page with `toc: false`</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">position</span> = <span style="color:#e6db74">&#34;right&#34;</span> <span style="color:#75715e"># ToC position. Options: &#34;inline&#34;, &#34;left&#34;, &#34;right&#34;, &#34;off&#34;</span>
-</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">enable</span> = <span style="color:#66d9ef">true</span>          <span style="color:#75715e"># Can be disabled per-page with `toc: false`</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">position</span> = <span style="color:#e6db74">&#34;right&#34;</span>     <span style="color:#75715e"># Options: &#34;inline&#34;, &#34;left&#34;, &#34;right&#34;, &#34;off&#34;</span>
+</span></span></code></pre></div><p>For a deeper guide on visual customization, see <a href="/explore/posts/customizing-your-theme/">Customizing Your Theme</a>.</p>
+
       </div>
 
       <footer>
@@ -274,7 +408,18 @@
   <h2 class="toc-title">Table of Contents</h2>
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#features">Features</a></li>
+    <li><a href="#features">Features</a>
+      <ul>
+        <li><a href="#performance--security">Performance &amp; Security</a></li>
+        <li><a href="#design-system">Design System</a></li>
+        <li><a href="#accessibility--ux">Accessibility &amp; UX</a></li>
+        <li><a href="#interactive-features">Interactive Features</a></li>
+        <li><a href="#content--seo">Content &amp; SEO</a></li>
+      </ul>
+    </li>
+    <li><a href="#font-presets">Font Presets</a></li>
+    <li><a href="#color-palettes">Color Palettes</a></li>
+    <li><a href="#interactive-features-1">Interactive Features</a></li>
     <li><a href="#configuration">Configuration</a>
       <ul>
         <li><a href="#ui-parameters">UI Parameters</a></li>
@@ -295,7 +440,8 @@
     
       <div class="widget-area">
         
-          <div class="widget widget-recent">
+          
+<div class="widget widget-recent">
   <h3 class="widget-title">Recent Posts</h3>
   <ul>
     
@@ -306,9 +452,9 @@
     
     <li><a href="/explore/posts/markdown-and-typography/">Markdown &amp; Typography Guide</a></li>
     
-    <li><a href="/explore/posts/post-with-widgets/">A Post with Widgets</a></li>
+    <li><a href="/explore/posts/customizing-your-theme/">Customizing Your Theme</a></li>
     
-    <li><a href="/explore/pages/contact/">Contact Us</a></li>
+    <li><a href="/explore/posts/interactive-features/">Interactive Features</a></li>
     
   </ul>
 </div>
@@ -318,17 +464,17 @@
   
   <ul>
     
+    <li><a href="/explore/categories/features/">Features (2)</a></li>
+    
+    <li><a href="/explore/categories/getting-started/">Getting Started (2)</a></li>
+    
+    <li><a href="/explore/categories/theme-guide/">Theme Guide (2)</a></li>
+    
     <li><a href="/explore/categories/demo-content/">Demo Content (1)</a></li>
-    
-    <li><a href="/explore/categories/features/">Features (1)</a></li>
-    
-    <li><a href="/explore/categories/getting-started/">Getting Started (1)</a></li>
     
     <li><a href="/explore/categories/hugo/">Hugo (1)</a></li>
     
     <li><a href="/explore/categories/layouts/">Layouts (1)</a></li>
-    
-    <li><a href="/explore/categories/theme-guide/">Theme Guide (1)</a></li>
     
   </ul>
   
@@ -341,21 +487,21 @@
     
     <li><a href="/explore/tags/demo/">Demo</a></li>
     
-    <li><a href="/explore/tags/hugo/">Hugo</a></li>
+    <li><a href="/explore/tags/features/">Features</a></li>
     
     <li><a href="/explore/tags/documentation/">Documentation</a></li>
     
-    <li><a href="/explore/tags/features/">Features</a></li>
-    
     <li><a href="/explore/tags/guide/">Guide</a></li>
     
-    <li><a href="/explore/tags/markdown/">Markdown</a></li>
-    
-    <li><a href="/explore/tags/sidebar/">Sidebar</a></li>
+    <li><a href="/explore/tags/hugo/">Hugo</a></li>
     
     <li><a href="/explore/tags/style/">Style</a></li>
     
     <li><a href="/explore/tags/typography/">Typography</a></li>
+    
+    <li><a href="/explore/tags/markdown/">Markdown</a></li>
+    
+    <li><a href="/explore/tags/sidebar/">Sidebar</a></li>
     
     <li><a href="/explore/tags/welcome/">Welcome</a></li>
     
@@ -396,9 +542,24 @@
   
     
 
+
 <section class="related-posts">
   <h3 class="related-title">Related Posts</h3>
   <div class="related-grid">
+    
+    <div class="related-card">
+      <a href="/explore/posts/interactive-features/">
+        <h4 class="related-card-title">Interactive Features</h4>
+        <time class="related-card-date" datetime="2025-08-16">Aug 16, 2025</time>
+      </a>
+    </div>
+    
+    <div class="related-card">
+      <a href="/explore/posts/customizing-your-theme/">
+        <h4 class="related-card-title">Customizing Your Theme</h4>
+        <time class="related-card-date" datetime="2025-08-17">Aug 17, 2025</time>
+      </a>
+    </div>
     
     <div class="related-card">
       <a href="/explore/posts/hello-world/">
@@ -414,20 +575,19 @@
 </div>
 
   </main>
-  <footer class="site-footer">
+  
+<footer class="site-footer">
   <div class="container">
     
     
     <div class="copyright">
       Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &amp; <a href="https://github.com/yogirk/explore" target="_blank" rel="noopener">Explore Theme</a>.
-      <br>
-      Built with <a href="https://codeassist.google/" target="_blank" rel="noopener">Gemini CodeAssist</a>.
     </div>
   </div>
 </footer>
 
   
-  <script src="/explore/js/minimal.min.js" defer></script>
+  <script src="/explore/js/minimal.min.cfddd884630c854f36e542e1833fb485cdeede4076d84605d6eb88872a9a29c4.js" integrity="sha256-z93YhGMMhU825ULhgz&#43;0hc3u3kB22EYF1uuIhyqaKcQ=" crossorigin="anonymous" defer></script>
   
 </body>
 </html>

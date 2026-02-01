@@ -4,8 +4,8 @@ licenselink = "https://github.com/yogirk/explore/blob/main/LICENSE"
 description = "Minimal, text-heavy Hugo theme for academic sites, blogs, and essays"
 homepage = "https://github.com/yogirk/explore"
 demosite = "https://yogirk.github.io/explore/"
-tags = ["minimal", "blog", "accessible", "dark-mode"]
-features = ["Performance", "Accessibility", "Dark mode", "Search"]
+tags = ["minimal", "blog", "accessible", "dark-mode", "responsive", "search", "widgets", "seo", "font-presets", "color-palettes", "design-tokens", "reading-progress", "code-copy", "breadcrumbs"]
+features = ["Performance", "Accessibility", "Dark mode", "Search", "SRI", "Self-hosted fonts", "Design tokens", "Font presets", "Color palettes", "Reading progress bar", "Code copy button", "ScrollSpy ToC", "Card hover effects", "Breadcrumbs", "SEO metadata", "Responsive images", "Widgets"]
 [author]
   name = "RK Kuppala"
   homepage = "https://github.com/yogirk"

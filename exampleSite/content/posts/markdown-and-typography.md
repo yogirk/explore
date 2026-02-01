@@ -79,9 +79,11 @@ func main() {
 }
 ```
 
+Hover over the code block above and you'll see a **Copy** button appear in the top-right corner. It detects the language automatically and copies the contents to your clipboard with a single click.
+
 ## Shortcodes
 
-We've included some useful shortcodes to enhance your content. When I say "We", it is I and my good friend **Gemini Code Assist**
+We've included some useful shortcodes to enhance your content.
 
 ### Figure
 

@@ -2,91 +2,97 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/explore/posts/</loc>
+    <loc>https://yogirk.github.io/explore/posts/</loc>
     <lastmod>2025-08-20T10:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/explore/categories/</loc>
+    <loc>https://yogirk.github.io/explore/categories/</loc>
     <lastmod>2025-08-20T10:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/explore/tags/demo/</loc>
+    <loc>https://yogirk.github.io/explore/tags/demo/</loc>
     <lastmod>2025-08-20T10:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/explore/categories/getting-started/</loc>
+    <loc>https://yogirk.github.io/explore/categories/getting-started/</loc>
     <lastmod>2025-08-20T10:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/explore/tags/guide/</loc>
+    <loc>https://yogirk.github.io/explore/tags/guide/</loc>
     <lastmod>2025-08-20T10:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/explore/posts/hello-world/</loc>
+    <loc>https://yogirk.github.io/explore/posts/hello-world/</loc>
     <lastmod>2025-08-20T10:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/explore/</loc>
+    <loc>https://yogirk.github.io/explore/</loc>
     <lastmod>2025-08-20T10:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/explore/categories/hugo/</loc>
+    <loc>https://yogirk.github.io/explore/categories/hugo/</loc>
     <lastmod>2025-08-20T10:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/explore/tags/hugo/</loc>
+    <loc>https://yogirk.github.io/explore/tags/hugo/</loc>
     <lastmod>2025-08-20T10:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/explore/tags/</loc>
+    <loc>https://yogirk.github.io/explore/tags/</loc>
     <lastmod>2025-08-20T10:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/explore/tags/welcome/</loc>
+    <loc>https://yogirk.github.io/explore/tags/welcome/</loc>
     <lastmod>2025-08-20T10:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/explore/tags/documentation/</loc>
+    <loc>https://yogirk.github.io/explore/tags/documentation/</loc>
     <lastmod>2025-08-19T10:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/explore/posts/theme-features/</loc>
+    <loc>https://yogirk.github.io/explore/posts/theme-features/</loc>
     <lastmod>2025-08-19T10:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/explore/tags/features/</loc>
+    <loc>https://yogirk.github.io/explore/tags/features/</loc>
     <lastmod>2025-08-19T10:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/explore/categories/theme-guide/</loc>
+    <loc>https://yogirk.github.io/explore/categories/theme-guide/</loc>
     <lastmod>2025-08-19T10:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/explore/categories/demo-content/</loc>
+    <loc>https://yogirk.github.io/explore/categories/demo-content/</loc>
     <lastmod>2025-08-18T10:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/explore/tags/markdown/</loc>
+    <loc>https://yogirk.github.io/explore/tags/markdown/</loc>
     <lastmod>2025-08-18T10:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/explore/posts/markdown-and-typography/</loc>
+    <loc>https://yogirk.github.io/explore/posts/markdown-and-typography/</loc>
     <lastmod>2025-08-18T10:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/explore/tags/style/</loc>
+    <loc>https://yogirk.github.io/explore/tags/style/</loc>
     <lastmod>2025-08-18T10:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/explore/tags/typography/</loc>
+    <loc>https://yogirk.github.io/explore/tags/typography/</loc>
     <lastmod>2025-08-18T10:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/explore/posts/post-with-widgets/</loc>
+    <loc>https://yogirk.github.io/explore/posts/customizing-your-theme/</loc>
+    <lastmod>2025-08-17T10:00:00+05:30</lastmod>
+  </url><url>
+    <loc>https://yogirk.github.io/explore/categories/features/</loc>
+    <lastmod>2025-08-16T10:00:00+05:30</lastmod>
+  </url><url>
+    <loc>https://yogirk.github.io/explore/posts/interactive-features/</loc>
+    <lastmod>2025-08-16T10:00:00+05:30</lastmod>
+  </url><url>
+    <loc>https://yogirk.github.io/explore/posts/post-with-widgets/</loc>
     <lastmod>2025-08-14T11:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/explore/categories/features/</loc>
+    <loc>https://yogirk.github.io/explore/categories/layouts/</loc>
     <lastmod>2025-08-14T11:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/explore/categories/layouts/</loc>
+    <loc>https://yogirk.github.io/explore/tags/sidebar/</loc>
     <lastmod>2025-08-14T11:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/explore/tags/sidebar/</loc>
+    <loc>https://yogirk.github.io/explore/tags/widgets/</loc>
     <lastmod>2025-08-14T11:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/explore/tags/widgets/</loc>
-    <lastmod>2025-08-14T11:00:00+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/explore/pages/contact/</loc>
+    <loc>https://yogirk.github.io/explore/pages/contact/</loc>
     <lastmod>2025-08-01T11:05:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/explore/pages/</loc>
+    <loc>https://yogirk.github.io/explore/pages/</loc>
     <lastmod>2025-08-01T11:05:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/explore/pages/about/</loc>
+    <loc>https://yogirk.github.io/explore/pages/about/</loc>
     <lastmod>2025-08-01T11:00:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/explore/search/</loc>
+    <loc>https://yogirk.github.io/explore/search/</loc>
     <priority>0.1</priority>
   </url>
 </urlset>

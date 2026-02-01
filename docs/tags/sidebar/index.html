@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/explore/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=explore/livereload" data-no-instant defer></script>
+<head>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sidebar &middot; Explore Theme</title>
 
 <meta name="description" content="A minimal, text-heavy theme for Hugo.">
 <meta name="author" content="Rain Doctor">
-<link rel="canonical" href="http://localhost:1313/explore/tags/sidebar/">
+<link rel="canonical" href="https://yogirk.github.io/explore/tags/sidebar/">
 
 
 <link rel="icon" href="/explore/favicon.svg" type="image/svg+xml">
@@ -18,7 +18,7 @@
 <meta property="og:title" content="Sidebar">
 <meta property="og:description" content="A minimal, text-heavy theme for Hugo.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="http://localhost:1313/explore/tags/sidebar/">
+<meta property="og:url" content="https://yogirk.github.io/explore/tags/sidebar/">
 
 
 
@@ -35,18 +35,18 @@
   "headline": "Sidebar",
   "name": "Sidebar",
   "description": "A minimal, text-heavy theme for Hugo.",
-  "url": "http:\/\/localhost:1313\/explore\/tags\/sidebar\/",
+  "url": "https:\/\/yogirk.github.io\/explore\/tags\/sidebar\/",
   
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http:\/\/localhost:1313\/explore\/tags\/sidebar\/"
+    "@id": "https:\/\/yogirk.github.io\/explore\/tags\/sidebar\/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Explore Theme",
     "logo": {
       "@type": "ImageObject",
-      "url": "http:\/\/localhost:1313\/explore\/apple-touch-icon.png"
+      "url": "https:\/\/yogirk.github.io\/explore\/apple-touch-icon.png"
     }
   }
 }
@@ -61,14 +61,20 @@
 
 
 
-<link rel="stylesheet" href="/explore/css/style.bd2107a237cda4b7ff129ed4b736141d8a75a50a9ff39833b6bffcf70e982640.css" integrity="sha256-vSEHojfNpLf/Ep7UtzYUHYp1pQqf85gztr/89w6YJkA=">
+<link rel="preload" href="/explore/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/explore/fonts/inter-bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/explore/fonts/jetbrains-mono-regular.woff2" as="font" type="font/woff2" crossorigin>
 
 
 
+
+
+<link rel="stylesheet" href="/explore/css/style.f99ea9afe67ae37cf72ec9c68f61f5bd9705a95ba284f62035cb554a680b9f4b.css" integrity="sha256-&#43;Z6pr&#43;Z643z3LsnGj2H1vZcFqVuihPYgNctVSmgLn0s=">
 
 </head>
 <body>
-  <header class="site-header is-sticky">
+  
+<header class="site-header is-sticky">
   <div class="container header-inner">
     <div class="site-identity">
       <a href="/explore/" class="site-brand">
@@ -119,6 +125,7 @@
     
 
 
+
 <div class="container site-main">
   <header class="page-header">
     <h1>Sidebar</h1>
@@ -130,7 +137,9 @@
       <div class="post-list">
         
         
-          <article class="post-list-item">
+          
+<article class="post-list-item">
+  <a class="card-link" href="/explore/posts/post-with-widgets/" aria-hidden="true"></a>
   <header>
     <h2 class="post-title"><a href="/explore/posts/post-with-widgets/">A Post with Widgets</a></h2>
     <div class="post-meta">
@@ -150,13 +159,13 @@
   </header>
   
     <div class="post-excerpt">
-      <a href="/explore/posts/post-with-widgets/" class="post-excerpt-link">
-        <p>This post demonstrates a page with a widget sidebar but no Table of Contents in the sidebar.</p>
+      <p>This post demonstrates a page with a widget sidebar but no Table of Contents in the sidebar.</p>
 <p>The theme&rsquo;s logic first checks if the Table of Contents is configured to display in the <code>left</code> or <code>right</code> sidebar. If it is, the ToC takes precedence.</p>
 <p>If the ToC is set to <code>inline</code> or is disabled (like on this page with <code>toc: false</code>), the theme will then check for the <code>sidebar.position</code> setting. If that is set to <code>left</code> or <code>right</code>, the widget area will be displayed.</p>
-        <span class="excerpt-ellipsis">&nbsp;(...)</span>
-      </a>
     </div>
+    
+      <a href="/explore/posts/post-with-widgets/" class="read-more">Read More &rarr;</a>
+    
   
 </article>
         
@@ -181,7 +190,8 @@
     
       <div class="widget-area">
         
-          <div class="widget widget-recent">
+          
+<div class="widget widget-recent">
   <h3 class="widget-title">Recent Posts</h3>
   <ul>
     
@@ -192,9 +202,9 @@
     
     <li><a href="/explore/posts/markdown-and-typography/">Markdown &amp; Typography Guide</a></li>
     
-    <li><a href="/explore/posts/post-with-widgets/">A Post with Widgets</a></li>
+    <li><a href="/explore/posts/customizing-your-theme/">Customizing Your Theme</a></li>
     
-    <li><a href="/explore/pages/contact/">Contact Us</a></li>
+    <li><a href="/explore/posts/interactive-features/">Interactive Features</a></li>
     
   </ul>
 </div>
@@ -204,17 +214,17 @@
   
   <ul>
     
+    <li><a href="/explore/categories/features/">Features (2)</a></li>
+    
+    <li><a href="/explore/categories/getting-started/">Getting Started (2)</a></li>
+    
+    <li><a href="/explore/categories/theme-guide/">Theme Guide (2)</a></li>
+    
     <li><a href="/explore/categories/demo-content/">Demo Content (1)</a></li>
-    
-    <li><a href="/explore/categories/features/">Features (1)</a></li>
-    
-    <li><a href="/explore/categories/getting-started/">Getting Started (1)</a></li>
     
     <li><a href="/explore/categories/hugo/">Hugo (1)</a></li>
     
     <li><a href="/explore/categories/layouts/">Layouts (1)</a></li>
-    
-    <li><a href="/explore/categories/theme-guide/">Theme Guide (1)</a></li>
     
   </ul>
   
@@ -227,21 +237,21 @@
     
     <li><a href="/explore/tags/demo/">Demo</a></li>
     
-    <li><a href="/explore/tags/hugo/">Hugo</a></li>
+    <li><a href="/explore/tags/features/">Features</a></li>
     
     <li><a href="/explore/tags/documentation/">Documentation</a></li>
     
-    <li><a href="/explore/tags/features/">Features</a></li>
-    
     <li><a href="/explore/tags/guide/">Guide</a></li>
     
-    <li><a href="/explore/tags/markdown/">Markdown</a></li>
-    
-    <li><a href="/explore/tags/sidebar/">Sidebar</a></li>
+    <li><a href="/explore/tags/hugo/">Hugo</a></li>
     
     <li><a href="/explore/tags/style/">Style</a></li>
     
     <li><a href="/explore/tags/typography/">Typography</a></li>
+    
+    <li><a href="/explore/tags/markdown/">Markdown</a></li>
+    
+    <li><a href="/explore/tags/sidebar/">Sidebar</a></li>
     
     <li><a href="/explore/tags/welcome/">Welcome</a></li>
     
@@ -261,20 +271,19 @@
 </div>
 
   </main>
-  <footer class="site-footer">
+  
+<footer class="site-footer">
   <div class="container">
     
     
     <div class="copyright">
       Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &amp; <a href="https://github.com/yogirk/explore" target="_blank" rel="noopener">Explore Theme</a>.
-      <br>
-      Built with <a href="https://codeassist.google/" target="_blank" rel="noopener">Gemini CodeAssist</a>.
     </div>
   </div>
 </footer>
 
   
-  <script src="/explore/js/minimal.min.js" defer></script>
+  <script src="/explore/js/minimal.min.cfddd884630c854f36e542e1833fb485cdeede4076d84605d6eb88872a9a29c4.js" integrity="sha256-z93YhGMMhU825ULhgz&#43;0hc3u3kB22EYF1uuIhyqaKcQ=" crossorigin="anonymous" defer></script>
   
 </body>
 </html>

@@ -117,7 +117,7 @@ summaryLength = 70
     # Hero headline (supports Markdown).
     title = "Explore Theme"
     # Hero subtitle (supports Markdown).
-    tagline = "A minimal, text-heavy theme for Hugo, designed for academic sites, personal blogs, and essays. Built with Gemini Code Assist"
+    tagline = "A minimal, text-heavy theme for Hugo, designed for academic sites, personal blogs, and essays."
     # Optional call-to-action button.
     buttonText = "Theme on Github"
     buttonURL = "https://github.com/yogirk/explore"
