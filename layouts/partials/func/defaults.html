@@ -89,18 +89,6 @@
   "listView"    $listView
 }}
 
-{{/* -- Hero group -- */}}
-{{ $heroParams := .Site.Params.hero | default dict }}
-{{ $heroShow := false }}
-{{ if isset $heroParams "show" }}{{ $heroShow = $heroParams.show }}{{ end }}{{/* "show" is already lowercase */}}
-{{ $hero := dict
-  "show"       $heroShow
-  "title"      ($heroParams.title | default "")
-  "tagline"    ($heroParams.tagline | default "")
-  "buttonText" ($heroParams.buttonText | default "")
-  "buttonURL"  ($heroParams.buttonURL | default "")
-}}
-
 {{/* 3. Assemble final config dict */}}
 {{ $cfg := dict
   "dateFormat"   $dateFormat
@@ -110,7 +98,6 @@
   "sidebar"      $sidebar
   "single"       $single
   "list"         $list
-  "hero"         $hero
 }}
 
 {{ return $cfg }}

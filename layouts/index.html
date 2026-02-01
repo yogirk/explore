@@ -2,10 +2,6 @@
 {{ $cfg := partial "func/defaults" . }}
 {{ $sidebarPosition := $cfg.sidebar.globalPosition }}
 
-{{ if $cfg.hero.show }}
-  {{ partial "hero.html" . }}
-{{ end }}
-
 <div class="container site-main">
   {{ if .Content }}
   <div class="page-content">

@@ -213,9 +213,6 @@
   // Widgets
   --widget-title-border: var(--color-border);
 
-  // Hero
-  --hero-bg: var(--color-background-offset);
-
   // Callouts
   --callout-info-bg: rgba(26, 115, 232, 0.08);
   --callout-info-border: var(--color-primary);
@@ -303,7 +300,6 @@ body {
 .post-single,
 .sidebar,
 .toc,
-.hero-section,
 .chroma,
 .code-header,
 .copy-code,
@@ -1395,49 +1391,6 @@ figcaption {
 .search-results .result-snippet {
   color: var(--color-text-offset);
   font-size: var(--text-sm);
-}
-
-/* 4.14 Hero */
-.hero-section {
-  background-color: var(--hero-bg);
-  padding: var(--space-xl) 0;
-  text-align: center;
-}
-
-.hero-content {
-  max-width: var(--max-width-ch);
-  margin: 0 auto;
-}
-
-.hero-title {
-  font-size: var(--text-5xl);
-  margin-top: 0;
-  margin-bottom: var(--space-m);
-  line-height: 1.1;
-}
-
-.hero-tagline {
-  font-size: var(--text-lg);
-  color: var(--color-text-offset);
-  margin-bottom: var(--space-l);
-}
-
-.hero-button {
-  display: inline-block;
-  background-color: var(--color-primary);
-  color: var(--color-background);
-  padding: var(--space-s) var(--space-l);
-  border-radius: var(--radius);
-  text-decoration: none;
-  font-family: var(--font-heading);
-  font-weight: 600;
-  transition: background-color var(--transition-duration) ease;
-}
-
-.hero-button:hover {
-  background-color: var(--color-accent);
-  color: var(--color-background);
-  text-decoration: none;
 }
 
 /*--------------------------------------------------------------
