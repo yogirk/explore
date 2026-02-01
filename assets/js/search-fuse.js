@@ -46,6 +46,16 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       searchInput.disabled = false;
       searchInput.placeholder = 'Search for articles...';
+
+      // If a ?q= param is present, pre-fill and run the search
+      const urlQuery = new URLSearchParams(window.location.search).get('q');
+      if (urlQuery) {
+        searchInput.value = urlQuery;
+        if (urlQuery.length >= 2) {
+          displayResults(fuse.search(urlQuery));
+        }
+      }
+
       searchInput.focus();
     })
     .catch(error => {

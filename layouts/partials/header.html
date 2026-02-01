@@ -27,15 +27,17 @@
           {{ end }}
         </ul>
       </div>
-      {{ if $cfg.ui.showSearch }}
-      <a href="{{ "search" | relLangURL }}" class="nav-search" aria-label="Search">
-        {{ partial "icons/search.html" }}
-      </a>
-      {{ end }}
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" aria-pressed="false">
-        {{ partial "icons/sun.html" }}
-        {{ partial "icons/moon.html" }}
-      </button>
+      <div class="nav-utils">
+        {{ if $cfg.ui.showSearch }}
+        <a href="{{ "search" | relLangURL }}" class="nav-search" aria-label="Search">
+          {{ partial "icons/search.html" }}
+        </a>
+        {{ end }}
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" aria-pressed="false">
+          {{ partial "icons/sun.html" }}
+          {{ partial "icons/moon.html" }}
+        </button>
+      </div>
     </nav>
   </div>
 </header>

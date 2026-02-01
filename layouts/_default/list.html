@@ -12,6 +12,12 @@
     {{ end }}
   </header>
 
+  {{ if $cfg.ui.showSearch }}
+  <form class="list-search" action="{{ "search" | relLangURL }}" method="get">
+    <input type="search" name="q" placeholder="{{ i18n "search" }}..." class="search-input">
+  </form>
+  {{ end }}
+
   <div class="layout-grid {{ if and (ne $sidebarPosition "off") (ne $sidebarPosition "bottom") }}layout-grid--sidebar-{{ $sidebarPosition }}{{ end }}">
     <div class="main-content {{ if eq $sidebarPosition "left" }}main-content--sidebar-left{{ end }}">
       <div class="post-list">

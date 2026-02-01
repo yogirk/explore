@@ -10,6 +10,12 @@
     {{ end }}
   </header>
 
+  {{ if $cfg.ui.showSearch }}
+  <form class="list-search" action="{{ "search" | relLangURL }}" method="get">
+    <input type="search" name="q" placeholder="{{ i18n "search" }}..." class="search-input">
+  </form>
+  {{ end }}
+
   <div class="post-list">
     {{ $listView := $cfg.list.listView }}
     {{ $paginator := .Paginate .Pages }}
