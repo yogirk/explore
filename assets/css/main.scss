@@ -174,12 +174,12 @@
   --font-size-small: var(--text-sm);
   --font-size-caption: var(--text-xs);
   --font-size-code: 0.875em;
-  --font-size-h1: var(--text-5xl);
-  --font-size-h2: var(--text-4xl);
-  --font-size-h3: var(--text-3xl);
-  --font-size-h4: var(--text-2xl);
-  --font-size-h5: var(--text-xl);
-  --font-size-h6: var(--text-lg);
+  --font-size-h1: var(--text-4xl);
+  --font-size-h2: var(--text-3xl);
+  --font-size-h3: var(--text-2xl);
+  --font-size-h4: var(--text-xl);
+  --font-size-h5: var(--text-lg);
+  --font-size-h6: var(--text-base);
 
   // Layout
   --max-width-ch: {{ .Site.Params.style.maxWidthCh | default 75 }}ch;
