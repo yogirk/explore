@@ -1,5 +1,68 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Explore Theme</title><link>https://yogirk.github.io/explore/</link><description>Recent content in Home on Explore Theme</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 20 Aug 2025 10:00:00 +0530</lastBuildDate><atom:link href="https://yogirk.github.io/explore/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello World: A Guide to Getting Started</title><link>https://yogirk.github.io/explore/posts/hello-world/</link><pubDate>Wed, 20 Aug 2025 10:00:00 +0530</pubDate><guid>https://yogirk.github.io/explore/posts/hello-world/</guid><description>This guide will walk you through the entire process of setting up a new Hugo site and installing the Explore theme. We&amp;rsquo;ll cover installing Hugo, creating a site, adding the theme, and basic configuration to get you up and running quickly.</description></item><item><title>Explore Theme Features</title><link>https://yogirk.github.io/explore/posts/theme-features/</link><pubDate>Tue, 19 Aug 2025 10:00:00 +0530</pubDate><guid>https://yogirk.github.io/explore/posts/theme-features/</guid><description>Explore is a minimal, text-heavy theme for Hugo, designed for academic sites, personal blogs, and essays. This post provides a detailed overview of its features and configuration.</description></item><item><title>Markdown &amp; Typography Guide</title><link>https://yogirk.github.io/explore/posts/markdown-and-typography/</link><pubDate>Mon, 18 Aug 2025 10:00:00 +0530</pubDate><guid>https://yogirk.github.io/explore/posts/markdown-and-typography/</guid><description>A demonstration of all the basic Markdown elements and typographic styles available in the Explore theme, including headings, lists, blockquotes, and more.</description></item><item><title>Customizing Your Theme</title><link>https://yogirk.github.io/explore/posts/customizing-your-theme/</link><pubDate>Sun, 17 Aug 2025 10:00:00 +0530</pubDate><guid>https://yogirk.github.io/explore/posts/customizing-your-theme/</guid><description>Everything you need to personalize the look and feel of Explore — font presets, color palettes, custom primary and accent colors, container width, and a brief tour of the design token system underneath.</description></item><item><title>Interactive Features</title><link>https://yogirk.github.io/explore/posts/interactive-features/</link><pubDate>Sat, 16 Aug 2025 10:00:00 +0530</pubDate><guid>https://yogirk.github.io/explore/posts/interactive-features/</guid><description>This post is a self-demonstrating showcase of Explore&amp;rsquo;s interactive features. Scroll to see the reading progress bar. Copy the code blocks. Watch the table of contents track your position. Every feature described here is active on this very page.</description></item><item><title>A Post with Widgets</title><link>https://yogirk.github.io/explore/posts/post-with-widgets/</link><pubDate>Thu, 14 Aug 2025 11:00:00 +0530</pubDate><guid>https://yogirk.github.io/explore/posts/post-with-widgets/</guid><description>&lt;p&gt;This post demonstrates a page with a widget sidebar but no Table of Contents in the sidebar.&lt;/p&gt;
-&lt;p&gt;The theme&amp;rsquo;s logic first checks if the Table of Contents is configured to display in the &lt;code&gt;left&lt;/code&gt; or &lt;code&gt;right&lt;/code&gt; sidebar. If it is, the ToC takes precedence.&lt;/p&gt;
-&lt;p&gt;If the ToC is set to &lt;code&gt;inline&lt;/code&gt; or is disabled (like on this page with &lt;code&gt;toc: false&lt;/code&gt;), the theme will then check for the &lt;code&gt;sidebar.position&lt;/code&gt; setting. If that is set to &lt;code&gt;left&lt;/code&gt; or &lt;code&gt;right&lt;/code&gt;, the widget area will be displayed.&lt;/p&gt;</description></item><item><title>Contact Us</title><link>https://yogirk.github.io/explore/pages/contact/</link><pubDate>Fri, 01 Aug 2025 11:05:00 +0530</pubDate><guid>https://yogirk.github.io/explore/pages/contact/</guid><description>&lt;p&gt;This is the contact page. I don&amp;rsquo;t know if you wish you be contacted. I myself don&amp;rsquo;t. If you do, add your details here. Be mindful of spammers.&lt;/p&gt;</description></item><item><title>About Us</title><link>https://yogirk.github.io/explore/pages/about/</link><pubDate>Fri, 01 Aug 2025 11:00:00 +0530</pubDate><guid>https://yogirk.github.io/explore/pages/about/</guid><description>&lt;p&gt;This is the about page. Here you can write about yourself, your project, or your company. If you don&amp;rsquo;t have anything interesting to say about yourself, like me, you can always borrow words from wonderful people from the past :)&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;With sufficient imagination a man could write a whole series of versions of his life; it would form a union of sets in which the facts would be the only elements in common. People, even intelligent people, who are young, and therefore inexperienced and naïve, see only cynicism in such a possibility. They are mistaken, because the problem is not moral but cognitive. The number of metaphysical beliefs is no greater or less than the number of different beliefs a man may entertain on the subject of himself— sequentially, at various periods of his life, and occasionally even at the same time. Therefore, I cannot claim to offer anything other than the &lt;em&gt;notions of myself&lt;/em&gt; that I have formed over the space of roughly forty years, and their only singularity, it seems to me, is that &lt;strong&gt;they are not flattering&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Explore Theme</title>
+    <link>https://yogirk.github.io/explore/</link>
+    <description>Recent content in Home on Explore Theme</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Aug 2025 10:00:00 +0530</lastBuildDate>
+    <atom:link href="https://yogirk.github.io/explore/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello World: A Guide to Getting Started</title>
+      <link>https://yogirk.github.io/explore/posts/hello-world/</link>
+      <pubDate>Wed, 20 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://yogirk.github.io/explore/posts/hello-world/</guid>
+      <description>This guide will walk you through the entire process of setting up a new Hugo site and installing the Explore theme. We&amp;rsquo;ll cover installing Hugo, creating a site, adding the theme, and basic configuration to get you up and running quickly.</description>
+    </item>
+    <item>
+      <title>Explore Theme Features</title>
+      <link>https://yogirk.github.io/explore/posts/theme-features/</link>
+      <pubDate>Tue, 19 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://yogirk.github.io/explore/posts/theme-features/</guid>
+      <description>Explore is a minimal, text-heavy theme for Hugo, designed for academic sites, personal blogs, and essays. This post provides a detailed overview of its features and configuration.</description>
+    </item>
+    <item>
+      <title>Markdown &amp; Typography Guide</title>
+      <link>https://yogirk.github.io/explore/posts/markdown-and-typography/</link>
+      <pubDate>Mon, 18 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://yogirk.github.io/explore/posts/markdown-and-typography/</guid>
+      <description>A demonstration of all the basic Markdown elements and typographic styles available in the Explore theme, including headings, lists, blockquotes, and more.</description>
+    </item>
+    <item>
+      <title>Customizing Your Theme</title>
+      <link>https://yogirk.github.io/explore/posts/customizing-your-theme/</link>
+      <pubDate>Sun, 17 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://yogirk.github.io/explore/posts/customizing-your-theme/</guid>
+      <description>Everything you need to personalize the look and feel of Explore — font presets, color palettes, custom primary and accent colors, container width, and a brief tour of the design token system underneath.</description>
+    </item>
+    <item>
+      <title>Interactive Features</title>
+      <link>https://yogirk.github.io/explore/posts/interactive-features/</link>
+      <pubDate>Sat, 16 Aug 2025 10:00:00 +0530</pubDate>
+      <guid>https://yogirk.github.io/explore/posts/interactive-features/</guid>
+      <description>This post is a self-demonstrating showcase of Explore&amp;rsquo;s interactive features. Scroll to see the reading progress bar. Copy the code blocks. Watch the table of contents track your position. Every feature described here is active on this very page.</description>
+    </item>
+    <item>
+      <title>A Post with Widgets</title>
+      <link>https://yogirk.github.io/explore/posts/post-with-widgets/</link>
+      <pubDate>Thu, 14 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://yogirk.github.io/explore/posts/post-with-widgets/</guid>
+      <description>&lt;p&gt;This post demonstrates a page with a widget sidebar but no Table of Contents in the sidebar.&lt;/p&gt;&#xA;&lt;p&gt;The theme&amp;rsquo;s logic first checks if the Table of Contents is configured to display in the &lt;code&gt;left&lt;/code&gt; or &lt;code&gt;right&lt;/code&gt; sidebar. If it is, the ToC takes precedence.&lt;/p&gt;&#xA;&lt;p&gt;If the ToC is set to &lt;code&gt;inline&lt;/code&gt; or is disabled (like on this page with &lt;code&gt;toc: false&lt;/code&gt;), the theme will then check for the &lt;code&gt;sidebar.position&lt;/code&gt; setting. If that is set to &lt;code&gt;left&lt;/code&gt; or &lt;code&gt;right&lt;/code&gt;, the widget area will be displayed.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contact Us</title>
+      <link>https://yogirk.github.io/explore/pages/contact/</link>
+      <pubDate>Fri, 01 Aug 2025 11:05:00 +0530</pubDate>
+      <guid>https://yogirk.github.io/explore/pages/contact/</guid>
+      <description>&lt;p&gt;This is the contact page. I don&amp;rsquo;t know if you wish you be contacted. I myself don&amp;rsquo;t. If you do, add your details here. Be mindful of spammers.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>About Us</title>
+      <link>https://yogirk.github.io/explore/pages/about/</link>
+      <pubDate>Fri, 01 Aug 2025 11:00:00 +0530</pubDate>
+      <guid>https://yogirk.github.io/explore/pages/about/</guid>
+      <description>&lt;p&gt;This is the about page. Here you can write about yourself, your project, or your company. If you don&amp;rsquo;t have anything interesting to say about yourself, like me, you can always borrow words from wonderful people from the past :)&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;With  sufficient  imagination  a  man  could  write  a  whole  series  of   versions  of   his  life;  it  would  form  a  union  of   sets  in  which the facts would be the only elements in common. People, even  intelligent  people,  who  are  young,  and  therefore  inexperienced and naïve, see only cynicism in such a possibility. They are mistaken, because the problem is not moral but cognitive. The number of  metaphysical beliefs is no greater or less than the  number  of   different  beliefs  a  man  may  entertain  on  the  subject  of   himself—  sequentially,  at  various  periods  of   his  life,  and occasionally even at the same time. Therefore,  I  cannot  claim  to  offer  anything  other  than  the  &lt;em&gt;notions of  myself&lt;/em&gt;  that I have formed over the space of  roughly forty  years,  and  their  only  singularity,  it  seems  to  me,  is  that  &lt;strong&gt;they are not flattering&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

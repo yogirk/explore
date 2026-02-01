@@ -3,15 +3,15 @@
 {{ with $related }}
 <section class="related-posts">
   <h3 class="related-title">{{ i18n "relatedPosts" }}</h3>
-  <div class="related-grid">
+  <ul class="related-list">
     {{ range . }}
-    <div class="related-card">
-      <a href="{{ .RelPermalink }}">
-        <h4 class="related-card-title">{{ .Title }}</h4>
-        <time class="related-card-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+    <li class="related-item">
+      <a href="{{ .RelPermalink }}" class="related-link">
+        <span class="related-item-title">{{ .Title }}</span>
+        <time class="related-item-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
       </a>
-    </div>
+    </li>
     {{ end }}
-  </div>
+  </ul>
 </section>
 {{ end }}
