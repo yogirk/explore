@@ -20,7 +20,7 @@
   </header>
   {{ if $cfg.list.showExcerpt }}
     <div class="post-excerpt">
-      {{ .Plain | htmlUnescape | truncate 300 }}
+      {{ .Plain | htmlUnescape | truncate 400 }}
     </div>
   {{ end }}
   {{ if or .Params.categories .Params.tags }}
