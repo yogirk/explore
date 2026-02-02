@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
       new window.PagefindUI({
         element: "#pagefind-search",
         showSubResults: true,
+        bundlePath: baseUrl + 'pagefind/',
       });
     }
   };
