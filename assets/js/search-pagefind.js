@@ -17,6 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
         element: "#pagefind-search",
         showSubResults: true,
         bundlePath: baseUrl + 'pagefind/',
+        translations: {
+          placeholder: "Search articles, topics, ideas...",
+          zero_results: "Couldn\u2019t find anything for \u201c[SEARCH_TERM]\u201d \u2014 try different words?",
+        },
       });
 
       // Pre-fill from ?q= URL parameter (used by search forms on list/section pages)

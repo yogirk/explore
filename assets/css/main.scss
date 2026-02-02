@@ -1485,6 +1485,17 @@ figcaption {
   font-size: var(--text-sm);
 }
 
+/* Pagefind UI theme integration */
+#pagefind-search {
+  --pagefind-ui-font: var(--font-body);
+  --pagefind-ui-text: var(--color-text);
+  --pagefind-ui-background: var(--color-background);
+  --pagefind-ui-border: var(--color-border);
+  --pagefind-ui-primary: var(--color-primary);
+  --pagefind-ui-tag: var(--color-background-offset);
+  --pagefind-ui-border-radius: var(--radius);
+}
+
 /*--------------------------------------------------------------
 # 5.0 VENDOR OVERRIDES
 #--------------------------------------------------------------*/
