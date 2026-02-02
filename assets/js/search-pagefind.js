@@ -18,6 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
         showSubResults: true,
         bundlePath: baseUrl + 'pagefind/',
       });
+
+      // Pre-fill from ?q= URL parameter (used by search forms on list/section pages)
+      const urlQuery = new URLSearchParams(window.location.search).get('q');
+      if (urlQuery) {
+        const input = searchContainer.querySelector('.pagefind-ui__search-input');
+        if (input) {
+          input.value = urlQuery;
+          input.dispatchEvent(new Event('input', { bubbles: true }));
+        }
+      }
     }
   };
   script.onerror = () => {
