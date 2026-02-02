@@ -1,8 +1,10 @@
+{{ $cfg := partial "func/defaults" . }}
 <div class="widget widget-categories">
   <h3 class="widget-title">{{ i18n "categories" }}</h3>
   {{ if .Site.Taxonomies.categories }}
   <ul>
-    {{ range .Site.Taxonomies.categories.ByCount }}
+    {{ $categoriesCount := $cfg.sidebar.categoriesCount }}
+    {{ range first $categoriesCount .Site.Taxonomies.categories.ByCount }}
     <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a><span class="widget-count">{{ .Count }}</span></li>
     {{ end }}
   </ul>
