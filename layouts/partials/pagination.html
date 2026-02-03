@@ -11,13 +11,15 @@
     <span class="disabled">&laquo;</span>
   {{ end }}
 
-  {{ range $paginator.Pagers }}
+  <span class="pagination-pages">
+  {{- range $paginator.Pagers }}
     {{ if eq . $paginator }}
-      <span class="active" aria-current="page">{{ .PageNumber }}</span>
+      <span class="page-number active" aria-current="page">{{ .PageNumber }}</span>
     {{ else }}
-      <a href="{{ .URL }}">{{ .PageNumber }}</a>
+      <a class="page-number" href="{{ .URL }}">{{ .PageNumber }}</a>
     {{ end }}
-  {{ end }}
+  {{- end }}
+  </span>
 
   {{ if $paginator.HasNext }}
     <a href="{{ $paginator.Next.URL }}" aria-label="Next page">&raquo;</a>

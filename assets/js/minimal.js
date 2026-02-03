@@ -190,6 +190,100 @@
     });
   }
 
+  /**
+   * Responsive Pagination
+   * Collapses page numbers on smaller screens, showing a window around
+   * the active page with ellipsis for hidden ranges.
+   */
+  function initResponsivePagination() {
+    var container = document.querySelector('.pagination-pages');
+    if (!container) return;
+
+    var pages = Array.prototype.slice.call(
+      container.querySelectorAll('.page-number')
+    );
+    var total = pages.length;
+    if (total <= 1) return;
+
+    function update() {
+      // Remove previous ellipsis
+      var old = container.querySelectorAll('.pagination-ellipsis');
+      for (var i = 0; i < old.length; i++) old[i].parentNode.removeChild(old[i]);
+
+      // Reset visibility
+      for (var i = 0; i < total; i++) pages[i].style.display = '';
+
+      // Determine siblings count based on viewport width
+      var width = window.innerWidth;
+      var siblings;
+      if (width < 640) {
+        siblings = 1;
+      } else if (width < 1024) {
+        siblings = 2;
+      } else {
+        return; // Large screens show all pages
+      }
+
+      // If all pages fit, show everything
+      if (total <= 2 * siblings + 3) return;
+
+      // Find the active page index
+      var activeIdx = -1;
+      for (var i = 0; i < total; i++) {
+        if (pages[i].classList.contains('active')) {
+          activeIdx = i;
+          break;
+        }
+      }
+      if (activeIdx === -1) return;
+
+      // Calculate visible window around active page
+      var winStart = activeIdx - siblings;
+      var winEnd = activeIdx + siblings;
+
+      // Shift window to stay in bounds (between first and last)
+      if (winStart < 1) {
+        winEnd = Math.min(total - 2, winEnd + (1 - winStart));
+        winStart = 1;
+      }
+      if (winEnd > total - 2) {
+        winStart = Math.max(1, winStart - (winEnd - (total - 2)));
+        winEnd = total - 2;
+      }
+
+      // Hide pages outside the visible set (always keep first and last)
+      for (var i = 1; i < total - 1; i++) {
+        if (i < winStart || i > winEnd) {
+          pages[i].style.display = 'none';
+        }
+      }
+
+      // Insert ellipsis after first page if there is a gap
+      if (winStart > 1) {
+        var dots = document.createElement('span');
+        dots.className = 'pagination-ellipsis';
+        dots.textContent = '\u2026';
+        container.insertBefore(dots, pages[winStart]);
+      }
+
+      // Insert ellipsis before last page if there is a gap
+      if (winEnd < total - 2) {
+        var dots = document.createElement('span');
+        dots.className = 'pagination-ellipsis';
+        dots.textContent = '\u2026';
+        pages[winEnd].parentNode.insertBefore(dots, pages[winEnd].nextSibling);
+      }
+    }
+
+    update();
+
+    var timer;
+    window.addEventListener('resize', function() {
+      clearTimeout(timer);
+      timer = setTimeout(update, 150);
+    });
+  }
+
   // Initialize all modules when DOM is ready
   document.addEventListener('DOMContentLoaded', function() {
     initThemeToggle();
@@ -198,5 +292,6 @@
     initScrollSpy();
     initCodeCopy();
     initReadingProgress();
+    initResponsivePagination();
   });
 })();

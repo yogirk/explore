@@ -1337,6 +1337,16 @@ kbd {
   cursor: not-allowed;
 }
 
+.pagination-pages {
+  display: contents;
+}
+
+.pagination .pagination-ellipsis {
+  border: none;
+  padding: var(--space-s) 0;
+  cursor: default;
+}
+
 /* 4.10 Shortcodes */
 .callout {
   padding: var(--space-m);
