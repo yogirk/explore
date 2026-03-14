@@ -12,32 +12,19 @@
    */
   function initThemeToggle() {
     var themeToggle = document.getElementById('theme-toggle');
-    var userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    var currentTheme = localStorage.getItem('theme');
+    if (!themeToggle) return;
 
-    function setTheme(theme) {
-      document.documentElement.setAttribute('data-theme', theme);
-      localStorage.setItem('theme', theme);
-      if (themeToggle) {
-        themeToggle.setAttribute('aria-pressed', theme === 'dark');
-      }
-    }
+    // Sync aria-pressed with the theme already set by the inline <head> script
+    themeToggle.setAttribute('aria-pressed',
+      document.documentElement.getAttribute('data-theme') === 'dark');
 
-    if (currentTheme) {
-      setTheme(currentTheme);
-    } else if (userPrefersDark) {
-      setTheme('dark');
-    } else {
-      setTheme('light');
-    }
-
-    if (themeToggle) {
-      themeToggle.addEventListener('click', function() {
-        var newTheme = document.documentElement.getAttribute('data-theme') === 'dark'
-          ? 'light' : 'dark';
-        setTheme(newTheme);
-      });
-    }
+    themeToggle.addEventListener('click', function() {
+      var newTheme = document.documentElement.getAttribute('data-theme') === 'dark'
+        ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      themeToggle.setAttribute('aria-pressed', newTheme === 'dark');
+    });
   }
 
   /**
