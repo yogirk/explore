@@ -5,6 +5,9 @@
 {{ with .Description | default .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
 {{ with .Params.author | default .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
 <link rel="canonical" href="{{ .Permalink }}">
+{{ with .OutputFormats.Get "rss" }}
+  {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+{{ end }}
 
 <!-- Favicon -->
 <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
