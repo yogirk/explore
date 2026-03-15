@@ -12,18 +12,37 @@
    */
   function initThemeToggle() {
     var themeToggle = document.getElementById('theme-toggle');
+    var htmlEl = document.documentElement;
     if (!themeToggle) return;
+
+    function applyTheme(theme) {
+      htmlEl.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      themeToggle.setAttribute('aria-pressed', theme === 'dark');
+    }
 
     // Sync aria-pressed with the theme already set by the inline <head> script
     themeToggle.setAttribute('aria-pressed',
-      document.documentElement.getAttribute('data-theme') === 'dark');
+      htmlEl.getAttribute('data-theme') === 'dark');
 
     themeToggle.addEventListener('click', function() {
-      var newTheme = document.documentElement.getAttribute('data-theme') === 'dark'
+      var newTheme = htmlEl.getAttribute('data-theme') === 'dark'
         ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      themeToggle.setAttribute('aria-pressed', newTheme === 'dark');
+      var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (prefersReducedMotion) {
+        applyTheme(newTheme);
+        return;
+      }
+
+      htmlEl.classList.add('theme-transitioning');
+      window.requestAnimationFrame(function() {
+        applyTheme(newTheme);
+      });
+
+      window.setTimeout(function() {
+        htmlEl.classList.remove('theme-transitioning');
+      }, 520);
     });
   }
 
