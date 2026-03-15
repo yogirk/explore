@@ -7,9 +7,6 @@ languageCode = "en-us"
 title = "Explore Theme"
 theme = "explore"
 
-# Where Hugo writes the generated site. Change to "public" if not using GitHub Pages.
-publishDir = "../docs"
-
 # Default length of generated summaries (in words).
 summaryLength = 70
 

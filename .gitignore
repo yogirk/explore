@@ -2,6 +2,7 @@
 /public/
 /resources/
 /dist/
+/docs/
 exampleSite/public/
 exampleSite/resources/
 hugo_stats.json
