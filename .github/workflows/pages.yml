@@ -38,7 +38,7 @@ jobs:
           extended: true
 
       - name: Build Site
-        run: hugo --source exampleSite --themesDir .. --baseURL "${{ steps.pages.outputs.base_url }}/" --destination ../public
+        run: hugo --source exampleSite --config config.toml --themesDir "${{ github.workspace }}/.." --baseURL "${{ steps.pages.outputs.base_url }}/" --destination "${{ github.workspace }}/public"
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
