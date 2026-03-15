@@ -194,6 +194,9 @@
 
   // Transition
   --transition-duration: var(--duration-fast);
+  --theme-transition-surface: 220ms;
+  --theme-transition-detail: 280ms;
+  --theme-transition-detail-delay: 35ms;
 }
 
 /* 1.3 Component Tokens */
@@ -274,6 +277,11 @@ html {
   tab-size: 4;
   scroll-behavior: smooth;
   scroll-padding-top: 4rem;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
 }
 
 /* Prevent body scroll when mobile menu is open */
@@ -293,26 +301,54 @@ body {
   transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease;
 }
 
-/* Theme transition: smooth color changes when toggling light/dark */
+/* Theme transition: stagger surfaces instead of changing the whole page at once */
 .site-header,
 .site-footer,
 .post-list-item,
 .post-single,
 .sidebar,
 .toc,
-.chroma,
-.code-header,
-.copy-code,
-.reading-progress,
-input,
 .callout,
 blockquote,
 pre,
-:not(pre) > code,
+.chroma,
+input,
 .widget-tags a,
 .tag-link,
-.post-nav a {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+.post-nav a,
+.copy-code,
+.reading-progress {
+  transition-property: background-color, color, border-color, box-shadow, opacity, transform;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: ease;
+}
+
+html.theme-transitioning body {
+  transition-duration: var(--theme-transition-surface);
+}
+
+html.theme-transitioning .site-header,
+html.theme-transitioning .site-footer,
+html.theme-transitioning .sidebar,
+html.theme-transitioning .toc,
+html.theme-transitioning .post-single,
+html.theme-transitioning .post-list-item,
+html.theme-transitioning blockquote,
+html.theme-transitioning .callout {
+  transition-duration: var(--theme-transition-surface);
+  transition-delay: 0s;
+}
+
+html.theme-transitioning pre,
+html.theme-transitioning .chroma,
+html.theme-transitioning .copy-code,
+html.theme-transitioning input,
+html.theme-transitioning .widget-tags a,
+html.theme-transitioning .tag-link,
+html.theme-transitioning .post-nav a,
+html.theme-transitioning .reading-progress {
+  transition-duration: var(--theme-transition-detail);
+  transition-delay: var(--theme-transition-detail-delay);
 }
 
 main {
@@ -799,21 +835,51 @@ kbd {
   cursor: pointer;
   color: var(--color-text-offset);
   padding: var(--space-s);
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
+  position: relative;
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
 }
 .theme-toggle:hover {
   color: var(--color-primary);
 }
 
 .theme-toggle .icon-sun,
-[data-theme="dark"] .theme-toggle .icon-moon {
-  display: block;
+.theme-toggle .icon-moon,
+.theme-toggle .icon-moon {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%) scale(0.85) rotate(-12deg);
+  transform-origin: center;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-.theme-toggle .icon-moon,
+.theme-toggle .icon-sun {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1) rotate(0deg);
+}
+
+.theme-toggle .icon-moon {
+  opacity: 0;
+}
+
 [data-theme="dark"] .theme-toggle .icon-sun {
-  display: none;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.85) rotate(12deg);
+}
+
+[data-theme="dark"] .theme-toggle .icon-moon {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1) rotate(0deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle .icon-sun,
+  .theme-toggle .icon-moon {
+    transition: none;
+  }
 }
 
 @media (max-width: 768px) {
