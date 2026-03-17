@@ -66,6 +66,9 @@ summaryLength = 70
   # dateFormat = "Jan 2, 2006"
   # Which content sections appear on the homepage. Default: ["posts"]
   # mainSections = ["posts"]
+  # Value for "fediverse:creator" meta tag, for verified attribution in Mastodon and other federated socials.
+  # To enable attribution from this site on your Mastodon account, you must add this domain in your account settings.
+  # fediverseCreator = "@username@instance"
 
 # ---- UI Behavior ----
 
