@@ -85,10 +85,14 @@
 {{ $listParams := .Site.Params.list | default dict }}
 {{ $showExcerpt := true }}
 {{ if isset $listParams "showexcerpt" }}{{ $showExcerpt = $listParams.showExcerpt }}{{ end }}
+{{ $showSectionBadge := false }}
+{{ if isset $listParams "showsectionbadge" }}{{ $showSectionBadge = $listParams.showSectionBadge }}{{ end }}
 {{ $listView := $listParams.listView | default "default" }}
 {{ $list := dict
-  "showExcerpt" $showExcerpt
-  "listView"    $listView
+  "showExcerpt"      $showExcerpt
+  "showSectionBadge" $showSectionBadge
+  "listView"         $listView
+  "groupBy"          ($listParams.groupBy | default "none")
 }}
 
 {{/* 3. Assemble final config dict */}}

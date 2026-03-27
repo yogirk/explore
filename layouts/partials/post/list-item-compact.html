@@ -1,6 +1,13 @@
 <article class="post-list-item post-list-item--compact">
   <a href="{{ .RelPermalink }}" class="compact-post-link">
     <span class="compact-post-title">{{ .Title }}</span>
+    {{- if .Site.Params.list.showSectionBadge -}}
+      {{- $mainSections := .Site.Params.mainSections | default (slice "posts") -}}
+      {{- $primary := index $mainSections 0 -}}
+      {{- if ne .Section $primary -}}
+        <span class="section-badge">{{ .Section }}</span>
+      {{- end -}}
+    {{- end -}}
   </a>
   <div class="compact-post-taxonomies">
     {{ with .Params.categories }}

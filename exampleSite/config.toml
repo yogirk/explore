@@ -113,6 +113,11 @@ summaryLength = 70
     listView = "default"
     # Show post excerpts in default list view. Default: true
     showExcerpt = true
+    # Show a section badge on list items when mainSections includes multiple sections.
+    # Badge appears on items not in the primary (first) section. Default: false
+    # showSectionBadge = false
+    # Group section pages by date. Options: "none" (paginated list), "year", "month". Default: "none"
+    # groupBy = "none"
 
 # ---- Single Posts ----
 

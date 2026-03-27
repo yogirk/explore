@@ -11,9 +11,9 @@
   <div class="layout-grid {{ if or (eq $sidebarPosition "left") (eq $sidebarPosition "right") }}layout-grid--sidebar-{{ $sidebarPosition }}{{ end }}">
     <div class="main-content {{ if eq $sidebarPosition "left" }}main-content--sidebar-left{{ end }}">
       <div class="post-list">
-        {{ $paginator := .Paginate (where .Site.RegularPages.ByDate.Reverse "Type" "in" $cfg.mainSections) }}
+        {{ $filtered := where .Site.RegularPages "Section" "in" $cfg.mainSections }}
         {{ $listView := $cfg.list.listView }}
-        {{ range $paginator.Pages }}
+        {{ range $filtered.ByDate.Reverse }}
           {{ if eq $listView "compact" }}
             {{ partial "post/list-item-compact.html" . }}
           {{ else }}
@@ -21,7 +21,6 @@
           {{ end }}
         {{ end }}
       </div>
-      {{ partial "pagination.html" . }}
     </div>
 
     {{ if or (eq $sidebarPosition "left") (eq $sidebarPosition "right") }}

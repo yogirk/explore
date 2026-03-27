@@ -21,6 +21,7 @@
 - WCAG 2.1 AA: semantic HTML, ARIA landmarks, keyboard navigation
 - SEO: JSON-LD structured data, OpenGraph, Twitter Cards
 - SRI hashes, IIFE scripts, Hugo Pipes asset pipeline
+- Multi-section homepage with section badges and year/month grouped archives
 - Responsive figure shortcode with WebP and LQIP blur-up
 
 ## Quickstart
@@ -99,6 +100,8 @@ summaryLength = 70
   [params.list]
     listView = "default"          # "default" or "compact"
     showExcerpt = true
+    showSectionBadge = false      # badge on items from non-primary sections
+    groupBy = "none"              # "none", "year", or "month"
 
   [params.single]
     showPrevNext = true

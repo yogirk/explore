@@ -1190,6 +1190,64 @@ kbd {
 }
 
 
+/* 4.4b Section Badges */
+.section-badge {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-text-offset);
+  background: var(--color-background-offset);
+  border-radius: 3px;
+  padding: 0.15em 0.45em;
+  margin-left: 0.5em;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/* 4.4c Grouped Lists (year / month) */
+.list-group {
+  margin-bottom: var(--space-l);
+}
+
+.list-group-heading {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-s);
+  color: var(--color-text-offset);
+}
+
+.list-group-entries {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-group-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: var(--space-s) 0;
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.list-group-entry a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.list-group-entry a:hover {
+  color: var(--color-primary);
+}
+
+.list-group-entry time {
+  color: var(--color-text-offset);
+  font-size: var(--text-sm);
+  flex-shrink: 0;
+  margin-left: var(--space-m);
+}
+
 /* 4.5 Single Post */
 .post-single .post-header {
   margin-bottom: var(--space-l);

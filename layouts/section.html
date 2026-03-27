@@ -16,18 +16,38 @@
   </form>
   {{ end }}
 
-  <div class="post-list">
-    {{ $listView := $cfg.list.listView }}
-    {{ $paginator := .Paginate .Pages }}
-    {{ range $paginator.Pages }}
-      {{ if eq $listView "compact" }}
-        {{ partial "post/list-item-compact.html" . }}
-      {{ else }}
-        {{ partial "post/list-item-default.html" . }}
-      {{ end }}
+  {{ $groupBy := $cfg.list.groupBy }}
+  {{ if ne $groupBy "none" }}
+    {{/* Year or month grouped list */}}
+    {{ $format := "2006" }}
+    {{ if eq $groupBy "month" }}{{ $format = "January 2006" }}{{ end }}
+    {{ range .Pages.ByDate.Reverse.GroupByDate $format }}
+    <div class="list-group">
+      <h2 class="list-group-heading">{{ .Key }}</h2>
+      <ul class="list-group-entries">
+        {{ range .Pages }}
+        <li class="list-group-entry">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format $cfg.dateFormat }}</time>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
     {{ end }}
-  </div>
-
-  {{ partial "pagination.html" . }}
+  {{ else }}
+    {{/* Standard paginated list */}}
+    <div class="post-list">
+      {{ $listView := $cfg.list.listView }}
+      {{ $paginator := .Paginate .Pages }}
+      {{ range $paginator.Pages }}
+        {{ if eq $listView "compact" }}
+          {{ partial "post/list-item-compact.html" . }}
+        {{ else }}
+          {{ partial "post/list-item-default.html" . }}
+        {{ end }}
+      {{ end }}
+    </div>
+    {{ partial "pagination.html" . }}
+  {{ end }}
 </div>
 {{ end }}
