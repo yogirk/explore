@@ -605,6 +605,10 @@ kbd {
   gap: var(--space-l);
 }
 
+.layout-grid > * {
+  min-width: 0;
+}
+
 @media (min-width: 960px) {
   .layout-grid--sidebar-right {
     grid-template-columns: 1fr minmax(220px, 280px);
