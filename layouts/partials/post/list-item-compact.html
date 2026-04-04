@@ -10,19 +10,11 @@
     {{- end -}}
   </a>
   <div class="compact-post-taxonomies">
-    {{ with .Params.categories }}
-      <div class="compact-post-categories">
-        {{ range . }}
-          <a href="{{ "categories/" | relLangURL }}{{ . | urlize }}/" class="compact-post-category">{{ . }}</a>
-        {{ end }}
-      </div>
-    {{ end }}
-    {{ with .Params.tags }}
-      <div class="compact-post-tags">
-        {{- range $i, $tag := . -}}
-          <a href="{{ "tags/" | relLangURL }}{{ . | urlize }}/" class="compact-post-tag">{{ . }}</a>{{ if lt (add $i 1) (len $.Params.tags) }}, {{ end }}
-        {{- end -}}
-      </div>
-    {{ end }}
+    {{- range .Params.categories -}}
+      <a href="{{ "categories/" | relLangURL }}{{ . | urlize }}/" class="compact-post-taxonomy compact-post-category">{{ . }}</a>
+    {{- end -}}
+    {{- range .Params.tags -}}
+      <a href="{{ "tags/" | relLangURL }}{{ . | urlize }}/" class="compact-post-taxonomy compact-post-tag">{{ . }}</a>
+    {{- end -}}
   </div>
 </article>

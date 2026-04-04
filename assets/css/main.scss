@@ -1151,14 +1151,7 @@ kbd {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
-  gap: var(--space-s);
   font-size: var(--text-sm);
-}
-
-.compact-post-categories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-s);
 }
 
 .compact-post-category {
@@ -1187,7 +1180,21 @@ kbd {
 
 .compact-post-tag:hover {
   color: var(--color-primary);
-  text-decoration: none;
+}
+
+.compact-post-category + .compact-post-category {
+  margin-left: var(--space-xs);
+}
+
+.compact-post-tag + .compact-post-tag::before {
+  content: "·";
+  margin: 0 var(--space-xs);
+  color: var(--color-border);
+  pointer-events: none;
+}
+
+.compact-post-category + .compact-post-tag {
+  margin-left: var(--space-s);
 }
 
 
