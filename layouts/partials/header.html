@@ -28,6 +28,9 @@
         </ul>
       </div>
       <div class="nav-utils">
+        <a href="{{ "index.xml" | absURL }}" class="nav-rss" aria-label="RSS Feed" target="_blank" rel="noopener">
+          {{ partial "icons/rss.html" }}
+        </a>
         {{ if $cfg.ui.showSearch }}
         <a href="{{ "search" | relLangURL }}" class="nav-search" aria-label="Search">
           {{ partial "icons/search.html" }}

@@ -819,6 +819,7 @@ kbd {
   border-left: var(--border-width) solid var(--color-border);
 }
 
+.nav-rss,
 .nav-search {
   color: var(--color-text-offset);
   padding: var(--space-s);
@@ -828,6 +829,7 @@ kbd {
   transition: color var(--transition-duration) ease;
 }
 
+.nav-rss:hover,
 .nav-search:hover {
   color: var(--color-primary);
   text-decoration: none;
