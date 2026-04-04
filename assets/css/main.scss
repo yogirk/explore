@@ -1743,3 +1743,11 @@ figcaption {
   .chroma .o, .chroma .ow { color: #8ab4f8; }
   .chroma .c, .chroma .c1, .chroma .cm, .chroma .cp, .chroma .cs { color: var(--color-dark-300) !important; }
 }
+
+/* -- Mermaid diagrams -- */
+pre.mermaid {
+  background: transparent;
+  border: none;
+  text-align: center;
+  padding: var(--space-4) 0;
+}

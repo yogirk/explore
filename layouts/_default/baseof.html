@@ -11,6 +11,13 @@
   {{ partial "footer.html" . }}
   {{ $js := resources.Get "js/minimal.js" | resources.Minify | fingerprint }}
   <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous" defer></script>
+  {{ if .Store.Get "hasMermaid" }}
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default';
+    mermaid.initialize({ startOnLoad: true, theme: theme });
+  </script>
+  {{ end }}
   {{ partial "analytics.html" . }}
 </body>
 </html>
