@@ -1112,10 +1112,8 @@ kbd {
 
 .post-list-item--compact {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: var(--space-s) var(--space-m);
+  flex-direction: column;
+  gap: var(--space-xs);
   padding: var(--space-m) 0;
   margin-bottom: 0;
   border: none;
@@ -1131,8 +1129,6 @@ kbd {
 
 .compact-post-link {
   text-decoration: none;
-  flex-grow: 1;
-  margin-right: var(--space-m);
 }
 
 .compact-post-link:hover {
@@ -1157,7 +1153,6 @@ kbd {
   flex-wrap: wrap;
   gap: var(--space-s);
   font-size: var(--text-sm);
-  flex-shrink: 0;
 }
 
 .compact-post-categories {
