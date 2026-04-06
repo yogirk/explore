@@ -27,7 +27,16 @@
       <ul class="list-group-entries">
         {{ range .Pages }}
         <li class="list-group-entry">
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <div>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            {{- with .Params.tags }}
+            <div class="compact-post-taxonomies">
+              {{- range . -}}
+                <a href="{{ "tags/" | relLangURL }}{{ . | urlize }}/" class="compact-post-taxonomy compact-post-tag">{{ . }}</a>
+              {{- end -}}
+            </div>
+            {{- end }}
+          </div>
           <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format $cfg.dateFormat }}</time>
         </li>
         {{ end }}
