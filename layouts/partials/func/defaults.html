@@ -66,9 +66,23 @@
 {{ $tocParams := $singleParams.toc | default dict }}
 {{ $tocEnabled := true }}
 {{ if isset $tocParams "enable" }}{{ $tocEnabled = $tocParams.enable }}{{ end }}{{/* "enable" is already lowercase */}}
+{{/* Smart ToC position: if the user hasn't set toc.position explicitly,
+     place the ToC on the opposite side of the widget sidebar.
+     If no sidebar, fall back to "inline". User override always wins. */}}
+{{ $tocPosition := "inline" }}
+{{ if isset $tocParams "position" }}
+  {{ $tocPosition = $tocParams.position }}
+{{ else }}
+  {{ $sidebarPos := $sidebar.globalPosition }}
+  {{ if eq $sidebarPos "left" }}
+    {{ $tocPosition = "right" }}
+  {{ else if eq $sidebarPos "right" }}
+    {{ $tocPosition = "left" }}
+  {{ end }}
+{{ end }}
 {{ $toc := dict
   "enable"   $tocEnabled
-  "position" ($tocParams.position | default "inline")
+  "position" $tocPosition
 }}
 {{ $showPrevNext := true }}
 {{ if isset $singleParams "showprevnext" }}{{ $showPrevNext = $singleParams.showPrevNext }}{{ end }}
