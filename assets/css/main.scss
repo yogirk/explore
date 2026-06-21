@@ -950,20 +950,23 @@ kbd {
 }
 
 .widget-recent li:last-child,
-.widget-categories li:last-child {
+.widget-categories li:last-child,
+.widget-links li:last-child {
   border-bottom: none;
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
 .widget-recent li a,
-.widget-categories li a {
+.widget-categories li a,
+.widget-links li a {
   color: var(--color-text);
   text-decoration: none;
 }
 
 .widget-recent li a:hover,
-.widget-categories li a:hover {
+.widget-categories li a:hover,
+.widget-links li a:hover {
   color: var(--color-primary);
 }
 

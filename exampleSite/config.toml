@@ -3,7 +3,7 @@
 # ============================================================
 
 baseURL = "https://yogirk.github.io/explore/"
-languageCode = "en-us"
+locale = "en"
 title = "Explore Theme"
 theme = "explore"
 
